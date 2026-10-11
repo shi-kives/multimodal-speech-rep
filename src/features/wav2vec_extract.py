@@ -4,11 +4,10 @@ import torch
 import pandas as pd
 from pathlib import Path
 from tqdm import tqdm
-import os
 
 feature_ext = Wav2Vec2FeatureExtractor.from_pretrained("microsoft/wavlm-base")
 model = AutoModel.from_pretrained("microsoft/wavlm-base")
-print("Wav2Vec model loaded.")
+print("WavLM model loaded.")
 
 current_dir = Path(__file__).resolve().parents
 ROOT = current_dir[2]
@@ -37,4 +36,4 @@ pooled_embeddings = torch.stack([e.mean(dim = 0) for e in embeddings])
 
 save_path = ROOT / "embeddings" / "acoustic" / "wavlm_features.pt"
 torch.save(pooled_embeddings, save_path)
-print("WavLM feature extraction complete. Pooled embeddings saved at: ", save_path)
+print("Wav2Vec feature extraction complete. Pooled embeddings saved at: ", save_path)

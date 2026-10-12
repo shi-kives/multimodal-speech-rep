@@ -19,7 +19,14 @@ for row in tqdm(manifest.itertuples(index=True), total = len(manifest), desc = "
 
     if Path(abs_path).is_file():
         result = model.transcribe(str(abs_path))
-        transcripts.append([result["text"], row.Dialogue_ID, row.Utterance_ID, row.Speaker, row.Label])
+        transcripts.append({
+            'SNo': row.SNo,
+            'Whisper_Transcript': result["text"],
+            'Dialogue_ID': row.Dialogue_ID, 
+            'Utterance_ID': row.Utterance_ID, 
+            'Speaker': row.Speaker,
+            'Label': row.Label
+        })
 
     else:
         print(f"error! couldn't find file: dia{row.Dialogue_ID}_utt{row.Utterance_ID}")

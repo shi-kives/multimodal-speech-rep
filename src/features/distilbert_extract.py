@@ -3,7 +3,6 @@ import torch
 from pathlib import Path
 import pandas as pd
 from tqdm import tqdm
-import json
 
 model_name = "distilbert-base-uncased"
 tokenizer = AutoTokenizer.from_pretrained(model_name)

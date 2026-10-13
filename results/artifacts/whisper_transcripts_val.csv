@@ -1,0 +1,382 @@
+,SNo,Whisper_Transcript,Dialogue_ID,Utterance_ID,Speaker,Label
+0,3," Or we could go to the bank, close our accounts, and cut them off at the source.",1,0,Ross,neutral
+1,10, Where? Hama Tushi.,1,7,Rachel,surprise
+2,12, And that's not against your oath.,1,9,Ross,neutral
+3,26,ал,3,1,Ross,joy
+4,28," Yes, yes, how can I help you?",4,0,Ross,neutral
+5,30," Oh, oh, you're in your fellow scholars.",4,2,Ross,surprise
+6,31, What exactly were you looking for?,4,3,Ross,neutral
+7,32, Perhaps Dr. Chester Stotz musings on the Smilodin Telephornicus?,4,4,Ross,neutral
+8,34," Uh, uh, uh, get out of here! I'm meeting someone, or are you just here to brush up on Mariam's views on evolution?",4,6,Ross,anger
+9,36, I find Maryam's view as far to progression as.,4,8,Ross,neutral
+10,38," Professor here, Ross Deller.",4,10,Ross,neutral
+11,40, Yes. You're the person who checked out my book.,4,12,Ross,surprise
+12,42," Well, I, uh, I skipped fourth grade.",4,14,Ross,neutral
+13,43, I have no right to tell me you ever had feelings from a-,5,0,Ross,anger
+14,44, What? I was doing great with-,5,1,Rachel,surprise
+15,45, What? I was doing great with Julie before I found out about you.,5,2,Ross,anger
+16,46," Hey, I was doing great before I found out about you. You think it's easy for me to see you with Julie.",5,3,Rachel,anger
+17,47, The point is I...,5,4,Ross,anger
+18,48, I don't need this right now.,5,5,Ross,anger
+19,49," Okay, it's it's too late. I'm with somebody else. I'm happy this ship has say",5,6,Ross,anger
+20,50," I was somebody else, I'm happy. This ship has saved...",5,7,Ross,anger
+21,51," Alright fine, you can go ahead and you do that alright Ross?",5,8,Rachel,anger
+22,52,,5,9,Ross,anger
+23,53, I don't need your stupid shit.,5,10,Rachel,anger
+24,54, Good!,5,11,Ross,anger
+25,55,,5,12,Rachel,anger
+26,66," Wow, it looks like we got a lot of good stuff.",7,0,Ross,joy
+27,67," Oh, we did. But my mom, God is the greatest gift of all.",7,1,Rachel,joy
+28,68, A Play Doe Barbershop?,7,2,Ross,neutral
+29,69, She's going to live with us for eight weeks.,7,3,Rachel,neutral
+30,70, What?,7,4,Ross,surprise
+31,71," Yes, she's gonna help us take care of the baby! That's it!",7,5,Rachel,joy
+32,72, You're not serious.,7,6,Ross,surprise
+33,73," I mean, she's a very nice woman, but there's no way we can take eight weeks of...",7,7,Ross,anger
+34,74, short drive is totally crazy.,7,8,Ross,disgust
+35,76," Hey, Rumi!",7,10,Ross,joy
+36,101, Where are we going next?,10,0,Ross,neutral
+37,106,,10,5,Ross,anger
+38,108," Hey, I'm more captain YouTube.",10,7,Ross,anger
+39,110," I'm in the front seat, okay? I'm Gary's partner.",10,9,Ross,neutral
+40,112, Thank you. Great bridge.,11,1,Rachel,neutral
+41,114," Oh, wait, you want both of them?",11,3,Rachel,surprise
+42,116," Okay, okay, okay, look, just don't freak out, but I kind of lost...",11,5,Rachel,fear
+43,117," I know it's in the apartment, but I definitely lost it.",11,6,Rachel,neutral
+44,119, I don't- Tell her to wear her own earrings. He's our her earring.,11,8,Rachel,anger
+45,121," No, no, no. You let me, Monica's earrings are no loud to borrow her stuff.",11,10,Rachel,anger
+46,123, Because I lose her stuff.,11,12,Rachel,anger
+47,127, Can I see you for a second?,12,0,Ross,neutral
+48,130, again.,12,3,Ross,surprise
+49,164," I want me to stay too. Oh, thank you. Oh, Joey, look at this! It's so...",15,0,Rachel,joy
+50,166, Are you really? It's such good condition. Yeah.,15,2,Rachel,surprise
+51,168," Wow! Whoa, what's under the cover?",15,4,Rachel,surprise
+52,170,,15,6,Rachel,fear
+53,172," That was gonna tail, get out of here!",15,8,Rachel,fear
+54,176, I'll just say it Kyle.,16,2,Ross,surprise
+55,181," You know, he homes when he pees.",16,7,Ross,anger
+56,183, makes him miss the bowl but whatever,16,9,Ross,disgust
+57,185," That's alright, we don't need you. Alright, in fact, hey, I'm over it.",16,11,Ross,anger
+58,188, I'm sorry. Ah. The thieves you were right about her.,16,14,Ross,sadness
+59,190, We'd better off without them.,16,16,Ross,anger
+60,192, Divorced men's club. Potato potato.,16,18,Ross,sadness
+61,197, that's totally your fault.,17,2,Rachel,anger
+62,198, My fault you threatened the job.,17,3,Ross,anger
+63,199, You ripped a paper and the court reporters were sh-,17,4,Rachel,anger
+64,221," Come on, come on.",19,0,Ross,neutral
+65,222, Damn it! Damn it! Damn it! Damn it! This is...,19,1,Ross,anger
+66,223, It's always your fault.,19,2,Ross,anger
+67,224, This is supposed to be like the greatest day of my life.,19,3,Ross,anger
+68,225," My son is being born, and I should be in there. You don't sit and I'm stuck in the closet with you.",19,4,Ross,anger
+69,227, I don't believe me. No one has-,19,6,Ross,anger
+70,228, has been winning for this as much as I have.,19,7,Ross,anger
+71,229, And you know what the funny thing is?,19,8,Ross,neutral
+72,230," Stay is over you get to go home with the baby, okay?",19,9,Ross,anger
+73,231, Leave me.,19,10,Ross,sadness
+74,236, Every day is less than a lov-a-day,19,15,Ross,neutral
+75,238, Do you want to explain that?,19,17,Ross,neutral
+76,246," God Tiffany, you smell so great.",20,2,Rachel,joy
+77,248," Oh, you know Joey, you are sick.",20,4,Rachel,disgust
+78,250, not beingchipl,20,6,Rachel,disgust
+79,255, I just want to clarify this. Are you outing Mr. Peanut?,21,3,Ross,neutral
+80,265, little louder okay I think there's a man on the 12th floor in a coma who didn't quite hear you,22,6,Ross,anger
+81,267, My first time with cows.,22,8,Ross,neutral
+82,269, It was my first.,22,10,Ross,neutral
+83,273, Close everybody.,23,0,Ross,neutral
+84,275," I think my marriage is kind of over. Oh no, why?",23,2,Ross,sadness
+85,277, Because Carol's a lesbian. And I'm not one. And apparently it's not a mix and match situation.,23,4,Ross,sadness
+86,279, I'm an idiot.,23,6,Ross,disgust
+87,280," Carol and I'd be out and she'd see some beautiful woman and she'd be Ross, you know, look at her and I think...",23,7,Ross,sadness
+88,282," Well, now I do.",23,9,Ross,surprise
+89,284, Seven years!,23,11,Ross,sadness
+90,285," I mean, we've been together seven years. She's the only woman that's ever loved me. She's the only woman I've ever...",23,12,Ross,sadness
+91,303, What?,26,1,Rachel,surprise
+92,305," You were with Julie? Oh, look.",26,3,Rachel,neutral
+93,308, Oh my god.,26,6,Rachel,surprise
+94,310," Yeah, right? Really?",26,8,Rachel,anger
+95,314," Oh please! Please, you wanted to get caught!",26,12,Rachel,anger
+96,316, So you just sort of happen to leave it any-,26,14,Rachel,anger
+97,318," Okay Monica, I just have to know one thing. Did you go with her to Bloomingdale's?",26,16,Rachel,sadness
+98,325," Oh my god, who is it?",27,5,Rachel,surprise
+99,330," in this life, Phoebe.",28,0,Ross,neutral
+100,334, I know Monica's worst Thanksgiving.,28,4,Rachel,neutral
+101,338, What? Joey got a turd he stuck on his head?,28,8,Rachel,surprise
+102,342, Who is that?,29,1,Rachel,neutral
+103,344, That's too bad. Bye-bye.,29,3,Rachel,sadness
+104,346,,29,5,Rachel,neutral
+105,348," Mom, I wish I could, but I've made plans to walk around.",29,7,Rachel,neutral
+106,351, Darn it!,29,10,Rachel,joy
+107,377," Oh, you did it!",31,6,Ross,joy
+108,378, X3,31,7,Ross,joy
+109,379," Cory, I know this is a big surprise for you.",31,8,Ross,joy
+110,380," It's a long story, but the things you just said really made my",31,9,Ross,joy
+111,381, I mean the fact that you are here means more to me than if this room were filled with people,31,10,Ross,joy
+112,383, Did you hear that? Cory Weston had a crush on me!,31,12,Ross,joy
+113,385, Okay.,32,1,Rachel,neutral
+114,387,,32,3,Rachel,neutral
+115,389," No, just dad.",32,5,Rachel,neutral
+116,393," If you're anxious, there are a few ways to help things along. Do them.",32,9,Ross,anger
+117,395," Well, we aren't ready to try anything.",32,11,Rachel,neutral
+118,397, drink.,32,13,Rachel,neutral
+119,401," Okay, okay here we go",34,1,Ross,neutral
+120,402," Okay, where am I talking to here? I mean now.",34,2,Ross,neutral
+121,403," Well, there is one way that seems to offer a certain acoustical advantage, but...",34,3,Ross,neutral
+122,405, Okay. Okay. Okay. Okay. Here it goes.,34,5,Ross,neutral
+123,406," No, I, you know, I can't do this.",34,6,Ross,fear
+124,407," This is, it's too weird.",34,7,Ross,disgust
+125,408, I feel stupid.,34,8,Ross,sadness
+126,410," Oh, baby. Oh, no.",34,10,Ross,joy
+127,418," Easy, easy, you have to go to the hospital, okay?",36,0,Ross,fear
+128,419," Okay, I do.",36,1,Rachel,neutral
+129,420, Okay.,36,2,Ross,neutral
+130,421, Okay.,36,3,Rachel,neutral
+131,422," get your coat and then I'll put you in a cab, okay?",36,4,Ross,neutral
+132,423," Oh, you're not gonna come with me?",36,5,Rachel,sadness
+133,424, Of course I am. I just have to make a call.,36,6,Ross,surprise
+134,425, Okay.,36,7,Rachel,neutral
+135,426,,36,8,Ross,neutral
+136,427, Okay. Ow! Aw.,36,9,Rachel,surprise
+137,428, What's wrong?,36,10,Ross,fear
+138,429," Sorry, I just can't go to the hospital looking like this.",36,11,Rachel,disgust
+139,432, I can't watch this.,37,2,Rachel,fear
+140,439, This is ironic.,37,9,Ross,surprise
+141,440, last two boyfriends Richard didn't want to have kids and from the looks of it now Pete can't.,37,10,Ross,neutral
+142,445," The photo is a complete idiot. Hey, I'm with you.",40,0,Rachel,surprise
+143,447," Oh, I think I'm gonna throw up a little bit. What did you say? I said no.",40,2,Rachel,disgust
+144,449,,40,4,Rachel,surprise
+145,451," Okay, Joey.",40,6,Rachel,anger
+146,453," Don't tell him, don't tell him, just tell him, call me, okay?",40,8,Rachel,fear
+147,455," Okay, you go do it. I'll come back to that set. I will meet more actors. I'll meet them all. Yeah.",40,10,Rachel,joy
+148,456," Oh, there you are. It's looking for you before. Joshua's gone, so you and Emily are free to go.",41,0,Rachel,neutral
+149,457, It's okay.,41,1,Ross,neutral
+150,458, She's still in there enjoying her fake party and it's too late to do any of the stuff I had planned so...,41,2,Ross,neutral
+151,459, I forgot they japped.,42,0,Ross,anger
+152,461, You tell him to wait.,42,1,Ross,anger
+153,462," Okay, wait!",42,2,Rachel,neutral
+154,463, Emily,42,3,Ross,neutral
+155,464," Oh no, no, no, no, no, no, no! Dude, you're Emily!",42,4,Ross,anger
+156,466, Okay.,43,1,Rachel,neutral
+157,468, Never mind.,44,1,Ross,anger
+158,472, Jen Jen I know this may sound a little But would you maybe want to grab a cup of coffee sometime?,44,4,Ross,neutral
+159,474, Um...,44,6,Ross,neutral
+160,476, I will give you a call.,44,8,Ross,neutral
+161,478, Okay.,44,10,Ross,joy
+162,482, Okay.,45,2,Rachel,neutral
+163,485," No, thank you.",45,5,Rachel,neutral
+164,487," Well, they never have any paper in there. You know what I mean? My rule is, I'll teach you no to sheep. LAUGHTER Well, if everybody's going...",45,7,Rachel,neutral
+165,492, At Thomas.,46,0,Rachel,neutral
+166,495," No, no he's not.",46,3,Ross,neutral
+167,497, What's all so what are you gonna do? I mean how are you gonna tell channel?,46,5,Ross,surprise
+168,499," You can't keep this to yourself. If you know about this, you have to tell him.",46,7,Rachel,neutral
+169,505, I was just wondering when you and I split up did you get the tape that was um half the last episode of,47,1,Ross,neutral
+170,507, What's that?,47,3,Ross,neutral
+171,509," It's a safe time. It's a very slow game, but I didn't decide to explain that",47,5,Ross,surprise
+172,511, I thought you guys got married in January.,47,7,Ross,surprise
+173,513, Trump. Oh.,47,9,Ross,surprise
+174,516," Oh, I'll get ready, Javier.",48,1,Rachel,joy
+175,518," Oh god, it's kinda so done.",48,3,Rachel,fear
+176,520, Gidesin.,48,5,Rachel,neutral
+177,522," Oh, it's just like a bloodbath in here today.",48,7,Rachel,sadness
+178,523," Oh please, this is so your fault. How? How is this my fault?",49,0,Ross,anger
+179,525," Tell, never threw me out of a room before you came along. Yeah.",49,2,Ross,anger
+180,537, for another season.,49,12,Ross,neutral
+181,568," Well, so you took mine. I said mine. Chandler, what about you?",54,3,Ross,neutral
+182,570," Say there's always one guy. Vite a wish, I'd wish for three more wishes.",54,5,Rachel,disgust
+183,576," Joey, I'm Nippetin.",54,11,Ross,surprise
+184,597, No way. Most romantic song ever was the way we were.,57,0,Rachel,neutral
+185,599," What song is that, Feb?",57,2,Rachel,neutral
+186,601, Can I add a...,57,4,Ross,joy
+187,602,,57,5,Rachel,joy
+188,604, Has she slept at all? No.,57,7,Ross,neutral
+189,605," No, it's been three nights in a row.",57,8,Rachel,neutral
+190,606," Yeah, she finally stopped crying yesterday, but then she found one of Richard's cigar butts out on the terrace.",57,9,Ross,neutral
+191,611, You know what? I don't know how comfortable I am. I'm going to see how hot the sex is between some guy and your girl.,58,1,Ross,disgust
+192,613," Oh, I'm there.",58,3,Ross,neutral
+193,622, Oh yeah!,58,11,Ross,joy
+194,644," So honey, this uh, this three-some thing. I don't know. I mean, how are you going to start to",62,0,Ross,neutral
+195,646," Oh, wow. Huh? Boy! Someone's been doing their homework.",62,2,Ross,surprise
+196,648," Oh, I know. You know, just talking about it is getting me kind of...",62,4,Ross,neutral
+197,650, And then we could have gone from the ceremony to the reception with you in the side car.,63,0,Ross,joy
+198,651, it just wouldn't have been feasible.,63,1,Rachel,neutral
+199,652, But having a dove place the ring on your finger would have been no problem.,63,2,Ross,anger
+200,653, It was really fun to be in Mary-Tune tonight.,63,3,Rachel,joy
+201,654, And it was the easiest 400 bucks I have in me.,63,4,Ross,joy
+202,655," Oh, you've russ, can I ask you something?",63,5,Rachel,sadness
+203,656, Sydney,63,6,Ross,neutral
+204,657, that proposal at the Planetarium.,63,7,Rachel,neutral
+205,658," I know, I know, I was so stupid.",63,8,Ross,sadness
+206,659, Are you kidding?,63,9,Rachel,surprise
+207,660, with the lilies and the song and the stars.,63,10,Rachel,joy
+208,661, It was really wonderful.,63,11,Rachel,joy
+209,662, You just make that up?,63,12,Rachel,surprise
+210,663," Uh, well actually I thought about it when we were going out.",63,13,Ross,neutral
+211,664, That's how I imagined I would ask you to marry me.,63,14,Ross,neutral
+212,665," Oh, that would have been very hard to say no to.",63,15,Rachel,neutral
+213,666," Well, that's a good thing I didn't do it because it sounds like it would have been a very expensive wedding. Okay. Good night. Good night.",63,16,Ross,neutral
+214,667,,63,17,Rachel,neutral
+215,668, Even if the side car had a windscreen so your hair wouldn't get messed,63,18,Ross,neutral
+216,669, I will think about it.,63,19,Rachel,neutral
+217,670, cámara unmasked,63,20,Ross,neutral
+218,671," And guys, it was bananas, cream, and beef. I just cannot believe that you ate that so that I wouldn't feel bad.",64,0,Rachel,surprise
+219,677, And that's why I'm so glad there's no problem.,65,0,Rachel,joy
+220,679," Oh, that's great!",65,2,Rachel,joy
+221,681, Really?,65,4,Rachel,surprise
+222,686, I can't...,65,9,Rachel,fear
+223,689," Yeah, but maybe it's not what we think. Maybe it's... Tell Monica I'm sorry. I drink the last of the milk.",66,1,Rachel,neutral
+224,691, I think it means he freaked out and left. Don't be so negative!,66,3,Ross,surprise
+225,693," Okay Phoebe, I think Ross is right. What are we gonna do?",66,5,Rachel,sadness
+226,694," Okay, I'm just gonna, I'm gonna have to go find him and bring him back",66,6,Ross,neutral
+227,695, Okay.,66,7,Ross,neutral
+228,696, you make sure Monica does not find out.,66,8,Ross,neutral
+229,699, I will find him.,66,11,Ross,neutral
+230,700, Ready? Ready.,67,0,Rachel,joy
+231,702, Do you guys know any cute guys?,67,2,Rachel,neutral
+232,705," Anyway, there's this big charity ball this weekend and Ralph Lauren bought a table so I didn't have to go",67,5,Rachel,neutral
+233,707, I don't know. Something either trees or disease. I think Ralph Mumbles a lot. There's Ralph Mumbles.,67,7,Rachel,neutral
+234,709," when you're not paying attention? Yeah, it's weird. But the thing is, I need to find a date.",67,9,Rachel,surprise
+235,711, Okay.,68,0,Rachel,joy
+236,712," Hey, what are you guys doing later?",68,1,Ross,neutral
+237,714,,68,3,Rachel,surprise
+238,717, I just found out Elizabeth's dad wants to meet me.,68,5,Ross,sadness
+239,719, I really want this guy to like me.,68,7,Ross,fear
+240,720, It would really help me out if you guys could be here to kind of make me look good. Of course not!,68,8,Ross,sadness
+241,722, it.,68,10,Ross,joy
+242,724," Hi, how are you doing?",69,0,Rachel,joy
+243,728," Thank you, you're going?",69,3,Ross,neutral
+244,730, Thanks for having me over you guys. China gear you're going?,69,4,Ross,joy
+245,731, We didn't get a chance to talk.,69,5,Ross,neutral
+246,732, So where did you see your film again?,69,6,Ross,neutral
+247,734, What good do you?,69,8,Ross,neutral
+248,735," Look, I think we should talk about what happened on the terrace.",69,9,Rachel,neutral
+249,737, I never should have said what I said.,69,11,Rachel,sadness
+250,738, You know what it is?,69,12,Rachel,neutral
+251,739, It just doesn't matter how I feel.,69,13,Rachel,sadness
+252,740," We worked together so nothing could really ever happen between us. And what I would love is just to go to work on Monday and never talk about this again. Okay, big day Monday, lots to do. So, are we okay?",69,14,Rachel,sadness
+253,742," Oh, I know what I've hurt you out. No, you didn't.",69,16,Rachel,sadness
+254,744, Really?,69,18,Rachel,surprise
+255,746, Get him! Get him! Get him! Yes! I'm not laughing now on your pile!,70,0,Ross,anger
+256,748, Pass it! Pass it!,70,2,Ross,joy
+257,752, I am so psyched. I kept this chair for myself.,71,0,Rachel,joy
+258,756," Wow, you know that this thing has speakers in that head.",71,2,Rachel,surprise
+259,758, You can hook it up to your TV and you get radio.,71,4,Rachel,joy
+260,777, That is man the whole damn-,72,17,Rachel,neutral
+261,779," And shame on you, you should know better. Joy needs to work. Now come on. Hey.",73,0,Ross,anger
+262,781," No, I can have this back when the five pages are done",73,2,Ross,anger
+263,782, Fine.,74,0,Rachel,joy
+264,783, 이 게임을,74,1,Ross,neutral
+265,784, Hi. Um... I think there's something that we really need to talk about.,74,2,Rachel,joy
+266,785," I think we do. Why don't we go inside? Look, uh... I know what you're here. You...",74,3,Ross,sadness
+267,786, here.,74,4,Rachel,surprise
+268,787," Yeah, and to save you from any embarrassment, I think maybe I should talk first.",74,5,Ross,neutral
+269,788, Okay,74,6,Rachel,neutral
+270,789," Ross and Rachel. That's been one heck of a sea saw, hasn't it?",74,7,Ross,neutral
+271,790, What?,74,8,Rachel,surprise
+272,791," I mean, look, that one night we had was fun and certainly passionate, but don't think it's better if we just stay friends.",74,9,Ross,sadness
+273,792," Seriously, what?",74,10,Rachel,surprise
+274,793, Okay,74,11,Ross,neutral
+275,794, Okay,74,12,Ross,neutral
+276,795, You know what?,74,13,Ross,neutral
+277,796," If you want to, we can do it one more time.",74,14,Ross,neutral
+278,797," I mean, I'd be okay with that.",74,15,Ross,neutral
+279,798," In fact, I have some time right now.",74,16,Ross,neutral
+280,799, Can I talk to him?,74,17,Rachel,joy
+281,800, Oh sure. Okay.,74,18,Ross,neutral
+282,801," I'm pregnant. LAUGHTER Ross. Ross. OK, whenever you're ready. LAUGHTER And you're the father, by the way, but you go.",74,19,Rachel,anger
+283,802, We should definitely play football more often. Maybe that's like a lead like a join or something. Isn't there like a national football league?,75,0,Rachel,neutral
+284,804," Wow, well that was easy. Okay, you, you.",76,1,Ross,surprise
+285,806, Okay.,76,3,Ross,neutral
+286,808,,76,5,Ross,neutral
+287,811, with the belly button roll.,76,8,Ross,joy
+288,817, Mom? You're telling me about your mom? What is the matter with you?,76,14,Ross,disgust
+289,819, Not scared!,76,16,Ross,neutral
+290,821, I'm looking at Emma. I just can't decide who she looks more.,77,1,Ross,surprise
+291,823," Oh, he can't see gorgeous. It's all Rachel.",77,3,Ross,joy
+292,828," It's complicated, okay?",77,8,Ross,sadness
+293,830, We're in together.,77,10,Ross,sadness
+294,831," Okay, and then apart",77,11,Ross,neutral
+295,832, and then together and then apart. And now we have a baby.,77,12,Ross,sadness
+296,833," That's just if we got together again and it didn't work out, I could never do that to Emma.",77,13,Ross,sadness
+297,834," And then she came into this world thinking everything, oh that's you, now me.",77,14,Ross,sadness
+298,835, What do they put something in the water in this place?,77,15,Ross,neutral
+299,836," So Rachel, we're doing really well right now.",77,16,Ross,sadness
+300,838," Yeah, exactly.",77,18,Ross,neutral
+301,840," God, I forgot how much I love driving.",78,0,Rachel,joy
+302,841," You don't have a valid driver's license, okay? That is a pullover right now",78,1,Ross,neutral
+303,842," Ross, give so ten super-scoffs out of relax, okay? Just teach relax, alright? Just need to relax!",78,2,Rachel,neutral
+304,843, What are you crying? Are you okay? That's not funny. Just stop forcing around.,78,3,Ross,anger
+305,844, I am not forcing around.,78,4,Rachel,joy
+306,845, Uh oh.,78,5,Rachel,fear
+307,846," Stay calm, nothing is going to happen to you. You are not in that much trouble.",78,6,Ross,neutral
+308,847, Really? You think so?,78,7,Rachel,fear
+309,848," I was talking to myself, we're going down.",78,8,Ross,anger
+310,871," Yes, yes, please come in.",81,1,Ross,neutral
+311,873,,81,2,Ross,joy
+312,903, Did you catch any of that?,84,1,Ross,surprise
+313,905, Why? Why not?,84,3,Rachel,surprise
+314,911, Bien chaud!,85,0,Rachel,neutral
+315,912, paying about 10 seconds you're gonna see him kiss.,85,1,Rachel,joy
+316,913, and in about 5 seconds you're gonna see what.,85,2,Ross,neutral
+317,914, Ross and I ever tell you about the time that I went backpacking through Western Europe.,85,3,Rachel,neutral
+318,915," Okay, get ready to see some bagging.",85,4,Rachel,joy
+319,917," What? Well, I'm so happy.",85,6,Rachel,surprise
+320,918, press 1 ngày,85,7,Ross,joy
+321,919, What are you talking about?,85,8,Rachel,surprise
+322,922, How do you know about that story? How do you know about that story?,85,11,Rachel,surprise
+323,924, I heard it from my friend Irene who heard it from some God.,85,13,Rachel,neutral
+324,926," No, no, she told me that his name was Ken Adam.",85,15,Rachel,neutral
+325,928, How are we doing? You guys ready?,86,0,Ross,neutral
+326,930, Some days it's all I can think about.,86,2,Ross,neutral
+327,932, Okay,87,0,Ross,neutral
+328,933, okay fine but um,87,1,Ross,neutral
+329,934, I just have one question for you.,87,2,Ross,neutral
+330,935," When we exit, should we walk or run or pranks or stuff?",87,3,Ross,neutral
+331,948," I'm sorry, I'm really sorry.",89,5,Ross,sadness
+332,949,,89,6,Ross,sadness
+333,950,,89,7,Ross,sadness
+334,953," Sorry, hey, hey, I got my asses back.",89,8,Ross,joy
+335,954, which we can celebrate later.,89,9,Ross,neutral
+336,955,,89,10,Ross,neutral
+337,956," Okay, palo. Why don't you just go get dressed and you'll be on your way, okay?",90,0,Rachel,joy
+338,958," I don't know, I just kinda read into him last night.",90,2,Rachel,fear
+339,960, Where? What is the apartment? Is this juice?,90,4,Rachel,neutral
+340,962," Oh god, I know, I'm pathetic, I'm a loser!",90,6,Rachel,sadness
+341,964, This is breast milk!,91,1,Ross,neutral
+342,966," Baby, that is juiced, squeezed from a person.",91,3,Rachel,neutral
+343,969," Okay, the people stop drinking the breast milk",91,6,Ross,disgust
+344,971, No.,91,8,Ross,disgust
+345,973, Not even if Carol's breast had a picture of a missing child.,91,10,Ross,disgust
+346,976," If you have to do please, and not put your feet up on my new old sheet.",92,1,Ross,disgust
+347,978,,92,3,Rachel,surprise
+348,979, Up on the carry table!,92,4,Ross,surprise
+349,982, No!,92,6,Rachel,fear
+350,985, Oh my god!,92,8,Rachel,anger
+351,989," Of course not, it smells like wine which you spilled and thanks for wrecking my sheep by the way.",92,11,Ross,anger
+352,990, How is she?,93,0,Rachel,sadness
+353,992, How's the hair? I'm not gonna lie to you.,93,2,Ross,neutral
+354,1001, That would be no.,94,2,Ross,disgust
+355,1006, You've tasted it. You've tasted it.,94,7,Ross,surprise
+356,1008," Oh, you've tested it.",94,9,Ross,anger
+357,1010, Give me the bottle.,94,11,Ross,anger
+358,1042, Wait a minute. The house was built on radioactive waste and an ancient Indian burial ground. That would never happen.,97,16,Ross,surprise
+359,1044, Hey! Hey!,97,18,Rachel,surprise
+360,1046, I need to talk to you.,97,20,Rachel,joy
+361,1047," Sure, what's up?",97,21,Ross,neutral
+362,1052,,98,4,Ross,anger
+363,1062," Oh, okay. How did it go? Tell me everything.",99,7,Rachel,neutral
+364,1065," Oh, I'm sorry. Was that another joke? Was that another question?",101,0,Rachel,sadness
+365,1067, tomorrow.,102,1,Rachel,neutral
+366,1069," Hello, hey, but you love that nail.",103,1,Rachel,sadness
+367,1117, What are you talking about? You're a terrific actor!,107,1,Rachel,neutral
+368,1119, How can you even ask that question?,107,3,Rachel,surprise
+369,1129," Hey, where are Monica and Rachel anyway?",108,9,Ross,neutral
+370,1132, Alright. Hi.,108,11,Rachel,joy
+371,1134," Oh honey, no worries, she's gonna make it on.",108,13,Rachel,neutral
+372,1138," Unbelievable. I mean, you really kept Joey's underwear? What the hell would you do that?",109,2,Ross,disgust
+373,1146,喝茶,110,1,Rachel,neutral
+374,1148," It's from your, like the days of your, you know?",110,3,Rachel,neutral
+375,1155," Oh, yes, that I know. This is from White Plains.",110,8,Rachel,joy
+376,1166, Red....,113,1,Rachel,sadness
+377,1171, Yes? Really?,113,6,Rachel,surprise
+378,1173, You know what? I'm not gonna live together anymore?,113,8,Rachel,sadness
+379,1175," Oh my god, I'm gonna miss you so much.",113,10,Rachel,sadness
+380,1177, I'm eating the handsome one here!,113,12,Rachel,sadness

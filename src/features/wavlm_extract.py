@@ -12,7 +12,7 @@ print("WavLM model loaded.")
 current_dir = Path(__file__).resolve().parents
 ROOT = current_dir[2]
 
-manifest_path = ROOT / "results" / "artifacts" / "train_manifest.csv"
+manifest_path = ROOT / "results" / "artifacts" / "test_manifest.csv"
 manifest = pd.read_csv(manifest_path)
 embeddings = []
 
@@ -34,6 +34,6 @@ for row in tqdm(manifest.itertuples(index=True), total = len(manifest), desc = "
 
 pooled_embeddings = [[e[0], e[1].mean(dim = 0), e[2]] for e in embeddings]
 
-save_path = ROOT / "embeddings" / "acoustic" / "wavlm_features.pt"
+save_path = ROOT / "embeddings" / "acoustic" / "wavlm_test.pt"
 torch.save(pooled_embeddings, save_path)
 print("WavLM feature extraction complete. Pooled embeddings saved at: ", save_path)

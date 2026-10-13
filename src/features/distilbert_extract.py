@@ -65,24 +65,24 @@ def get_embeddings(manifest: pd.DataFrame, mode: str):
 
 
 if mode == "REFERENCE":
-    manifest_path = ROOT / "results" / "artifacts" / "train_manifest.csv"
+    manifest_path = ROOT / "results" / "artifacts" / "test_manifest.csv"
     manifest = pd.read_csv(manifest_path)
 
     embeddings = get_embeddings(manifest, mode = "REFERENCE")
 
-    save_path = Path(ROOT / "embeddings" / "linguistic" / "distilbert_reference.pt")
+    save_path = Path(ROOT / "embeddings" / "linguistic" / "distilbert_reference" / "distilbert_reference_test.pt")
     save_path.parent.mkdir(parents = True, exist_ok = True)
 
     torch.save(embeddings, save_path)
     print("distilbert generated embeddings for reference transcripts saved at: ", save_path)
 
 if mode == "TRANSCRIPTS":
-    transcript_path = ROOT / "results" / "artifacts" / "whisper_transcripts.csv"
+    transcript_path = ROOT / "results" / "artifacts" / "whisper_transcripts_test.csv"
 
     transcripts = pd.read_csv(transcript_path)
     embeddings = get_embeddings(transcripts, mode = "TRANSCRIPTS")
 
-    save_path = ROOT / "embeddings" / "linguistic" / "distilbert_transcripts.pt"
+    save_path = ROOT / "embeddings" / "linguistic" / "distilbert_transcript" / "distilbert_transcripts_test.pt"
     save_path.parent.mkdir(parents = True, exist_ok = True)
 
     torch.save(embeddings, save_path)

@@ -1,0 +1,377 @@
+,SNo,Whisper_Transcript,Dialogue_ID,Utterance_ID,Speaker,Label
+0,50, Oh my God! I overslept! I was supposed to be on the center half an hour ago. I get to get out of here!,4,5,Joey,fear
+1,52, I thought I'd sleep before I could take a shower now I don't have to,4,7,Joey,anger
+2,53," They just tell blocks away if I run, I can make it.",4,8,Joey,neutral
+3,62, So why don't you give me a number?,5,8,Joey,neutral
+4,63, Previously on Friends. I don't even feel like I have a girlfriend anymore.,6,0,Joey,neutral
+5,68," And it's not fake, it's totally bru-",7,2,Joey,neutral
+6,74, What? My hands are totally clean. I just gave the duck a bath.,7,8,Joey,neutral
+7,87," Hey buddy, I think I could borrow your uniform this Thursday.",9,5,Joey,neutral
+8,90," Oh, how bad is it? Oh, it's bad. It's really bad.",9,8,Joey,sadness
+9,141," You've really done this before? Yeah, yeah, yeah.",14,1,Joey,joy
+10,142," You've really done this before? Yeah, yeah, yeah.",14,2,Joey,joy
+11,143, Yeah.,14,3,Joey,joy
+12,144," You just take a big, big swing, okay?",14,4,Joey,neutral
+13,145,來 坐後回來好,14,5,Joey,neutral
+14,148, No!,14,7,Joey,joy
+15,157, Thank you so much. Good-bye.,15,4,Joey,neutral
+16,158," Cut it out, Ross. I'd hate to have to save you life and kick your ass in the same day.",15,5,Joey,anger
+17,161, I prefer to think I'm coming Joe.,16,1,Joey,neutral
+18,162," Because since I don't know anyone here, I thought it might be fun to try out a cool work nickname.",16,2,Joey,neutral
+19,164," It's like, is like, 300 bucks in this.",16,4,Joey,surprise
+20,173," Question was, uh, egg the gallows, the war cry of your neighborhood?",17,2,Joey,neutral
+21,207, Although I don't think we really need one baby I never started.,18,1,Joey,neutral
+22,209, familiar but,19,0,Joey,surprise
+23,211, Looks like a woman's purse. No.,20,1,Joey,neutral
+24,213," See? Look, women carrying the bag.",20,3,Joey,neutral
+25,215, Maybe you need sex. I had sex a couple days ago.,20,5,Joey,neutral
+26,217, And you're gonna say no to that.,20,7,Joey,neutral
+27,275, I don't see any tater tots.,26,0,Joey,joy
+28,296, You gotta press the button.,28,16,Joey,neutral
+29,369, I never said hate. I was very careful about that.,37,1,Joey,neutral
+30,371, You got to hate from that? You're taking a big leap there.,37,3,Joey,fear
+31,374, But what does it...,37,6,Joey,anger
+32,377," Oh, one of my students got an audition. I'm so proud.",38,1,Joey,joy
+33,379, Are you bad? What's the point?,38,3,Joey,joy
+34,422," Yeah, let's play in.",43,1,Joey,neutral
+35,426," Alright, beep stick out your plate.",43,5,Joey,neutral
+36,456," That's gonna be weird when I come home and you're not here, you know?",47,0,Joey,sadness
+37,458, I'm not,47,1,Joey,sadness
+38,459, More James C's.,47,2,Joey,sadness
+39,460," No Governo de Junho em Teanas, canto na teia.",47,3,Joey,neutral
+40,461, Can't sit there,47,4,Joey,neutral
+41,463, We won't be able to get up in the middle of the night and have those long talks about our feelings in the future.,47,6,Joey,sadness
+42,467, Hey!,47,10,Joey,neutral
+43,477,,48,4,Joey,joy
+44,479,,48,6,Joey,joy
+45,482, Kenya? What time is it?,49,2,Joey,neutral
+46,484, What a starko.,49,4,Joey,neutral
+47,486, I guess I'll get washed up down. Why's that sunrise?,49,6,Joey,neutral
+48,502, Okay. Bye.,51,0,Joey,joy
+49,504," Oh, you know, uh, Cash really liked you the other day. He said he thought you were charming. Huh.",51,2,Joey,neutral
+50,506, To take the game you do this every time Ross. You're not gonna be on TV,52,1,Joey,disgust
+51,508," Are you switching apartments? This is not for me, it's for Rachel.",52,3,Joey,surprise
+52,510," The Rachel has an apartment. Yeah, but when the baby comes, she's gonna want to move.",52,5,Joey,neutral
+53,512, Cheers. Yeah.,52,7,Joey,surprise
+54,514,� replacement.,52,9,Joey,neutral
+55,606, Got there? I can't pay for this right now because I'm not working so I've had to cut down on some luxuries like Paying for stuff,64,8,Joey,neutral
+56,608, I don't know.,64,10,Joey,neutral
+57,609, Just see I was a regular on a soap opera.,64,11,Joey,neutral
+58,610," And to go from that to there, it's just... And plus, I don't know, I don't know, wait along my friends.",64,12,Joey,sadness
+59,612, Bàs?,64,14,Joey,surprise
+60,614, Maybe I could be a waiter. Could I use the phone?,64,16,Joey,neutral
+61,618, No way are you cool enough to pull off Clint.,65,3,Joey,disgust
+62,622, You laid a dream.,65,7,Joey,neutral
+63,625, What's up with Jane?,65,10,Joey,surprise
+64,636," Wait, I told you everything I knew last night.",68,1,Joey,anger
+65,637," Look, it's not that big a deal. So monogon channeler doing it. Ah!",68,2,Joey,neutral
+66,639," Sorry, monogon Chandler are making love.",68,4,Joey,neutral
+67,641, I don't know.,68,6,Joey,neutral
+68,643, I don't know.,68,8,Joey,neutral
+69,645, Oh,68,10,Joey,neutral
+70,647," Oh, I don't want to think. What?",68,12,Joey,joy
+71,649, did it right down the couches.,68,14,Joey,neutral
+72,656," So you see Molly, what people don't understand is that acting is a discipline. Takes a lot of hard work.",70,0,Joey,neutral
+73,658," Oh, I didn't go to college.",70,2,Joey,neutral
+74,660," Molly, people don't study acting.",70,4,Joey,neutral
+75,664," Well, the stable boy never get the princess.",70,8,Joey,sadness
+76,666," No, the leather sticks to my ass.",70,10,Joey,disgust
+77,667," Look, you know what, this isn't fair. What makes you think that I'm just gonna...",70,11,Joey,anger
+78,668, put there and then blow her off.,70,12,Joey,anger
+79,669,,70,13,Joey,anger
+80,670, Get you guys open your minds to the possibility that I actually like her and might want something real?,70,14,Joey,anger
+81,671," Look, the truth is, I haven't felt this way about anyone since Rachel.",70,15,Joey,sadness
+82,672," Okay, I didn't think I could ever love again.",70,16,Joey,sadness
+83,679," It's like my favorite fairy tale come true. LAUGHTER The princess, the stable boy in the lesbian.",70,22,Joey,joy
+84,680, And what's cool is the character is from Naples.,71,0,Joey,joy
+85,682, My whole family is from Naples.,71,2,Joey,joy
+86,685," Joey, this is the awkward part. Oh, hey, man. Another problem.",71,5,Joey,surprise
+87,686," Joey, this is the awkward part. Oh, hey, man. Another problem.",71,6,Joey,surprise
+88,687, Not a problem.,71,7,Joey,neutral
+89,688, I totally understand.,71,8,Joey,neutral
+90,689, to make sure I don't have any horrible scars or t-,71,9,Joey,neutral
+91,690, Don't you worry? I have nothing to hide.,71,10,Joey,neutral
+92,691," So there you go, that's me.",71,11,Joey,neutral
+93,692, 100% natural.,71,12,Joey,joy
+94,693, I'll tell you that has never happened before.,71,13,Joey,fear
+95,711," Okay, rust, rust, rust, rust. I'm gonna stay away from that guy and that guy. And that one, dude, they're all huge.",73,0,Joey,fear
+96,713," Well, maybe that's because you're closer to you. So you look bigger to you from where you are.",73,2,Joey,anger
+97,720, Totally don't know what he's talking about.,73,9,Joey,neutral
+98,723," If you decide to do this, we'll be supportive like crazy.",74,1,Joey,neutral
+99,775, He made Rachel true,80,2,Joey,disgust
+100,779," All right, I'll try. But if I can't, you stay with Chandler and I till you get so-",80,6,Joey,neutral
+101,781, All right.,80,8,Joey,neutral
+102,782," I mean, I'll have to check with him first, but I think he'll be close.",80,9,Joey,neutral
+103,798,,84,1,Joey,anger
+104,799," No. No, I'm still working on mine. That's it.",84,2,Joey,sadness
+105,800, I don't think it's anything serious.,85,0,Joey,neutral
+106,802, away..,85,2,Joey,anger
+107,803," If I'm gonna go to the doctor for anything, it's gonna be for this thing sticking out of my stomach.",85,3,Joey,anger
+108,804, But I have to start working out again.,85,4,Joey,disgust
+109,805, Damn you 15's!,85,5,Joey,anger
+110,812, I like it.,86,6,Joey,joy
+111,818," Guys, please don't watch this.",88,2,Joey,disgust
+112,822," Well, you said it, Mike, I don't know. Oh! Oh! There's gotta be a better way. And there is, Kevin.",88,6,Joey,anger
+113,824," So please turn this off. It's no way, Kevin.",88,8,Joey,sadness
+114,832," This works in any milk carton. Oh, it is easy. Now I can have milk every day.",89,2,Joey,surprise
+115,839," Hey Ross, you passed me that knife. No, I will not.",91,0,Joey,neutral
+116,846, Can't believe I'm gonna lose this job.,93,0,Joey,sadness
+117,848, Yeah. Help me get this mini-frage pass to security room.,93,2,Joey,neutral
+118,850," I don't want to talk to you, Wayne. I hate you. You're ruined my life.",93,4,Joey,neutral
+119,854," Oh, Chandler Wayne, Wayne Chandler.",93,8,Joey,neutral
+120,855," Oh, Chandler Wayne, Wayne Chandler.",93,9,Joey,neutral
+121,858, Why should I help you out?,93,12,Joey,anger
+122,860, 우리 님?,93,14,Joey,neutral
+123,886," Here, I need to borrow some moisturizer. For what?",96,0,Joey,neutral
+124,888, you think today's the big day.,96,2,Joey,joy
+125,890, Thank you.,96,4,Joey,joy
+126,908," Hey Monica, it's Joey. Joey?",97,0,Joey,joy
+127,910," Oh, come on, it'll be years before I forget you.",97,2,Joey,neutral
+128,914," Uh, well yeah, yeah, I gotta all that go",97,6,Joey,neutral
+129,915," Yeah, listen, I want you to make sure you tell Chandler that he couldn't have been more wrong.",97,7,Joey,neutral
+130,916," I gotta go, Monica, my sushi's here.",97,8,Joey,fear
+131,917," I gotta go, monica, my sushi's here.",97,9,Joey,neutral
+132,918, Sorry about that. Thanks for waiting.,97,10,Joey,neutral
+133,919, Everybody smile. Okay. Thanks a lot. Enjoy your stay at Seasers. We hope it's togarific.,97,11,Joey,joy
+134,932, What you doing?,99,0,Joey,neutral
+135,934, You want the chick?,99,2,Joey,neutral
+136,936, Ayah?,99,4,Joey,neutral
+137,938, Should we try? Sure.,99,6,Joey,neutral
+138,940," I'm like, give me a minute.",99,8,Joey,neutral
+139,1160, Me too. Now let's finish this and go to bed. Okay.,121,1,Joey,joy
+140,1162, Cat.,121,3,Joey,neutral
+141,1164, I love you too.,121,5,Joey,joy
+142,1204,,125,1,Joey,neutral
+143,1207, She happy you gave her the job,125,4,Joey,neutral
+144,1209, Hello?,125,6,Joey,neutral
+145,1210, Oh hey!,125,7,Joey,surprise
+146,1211, Can you hang on a second?,125,8,Joey,neutral
+147,1212, This the producers over at Mac and Chi.,125,9,Joey,neutral
+148,1213," Excuse me, from him.",125,10,Joey,neutral
+149,1214," Hey, funny you should call him.",125,11,Joey,joy
+150,1215, I was just looking over next week's script.,125,12,Joey,neutral
+151,1216, Can someone zoom in? Okay,125,13,Joey,surprise
+152,1217, Like they're checking it off the air?,125,14,Joey,surprise
+153,1218, 오,125,15,Joey,neutral
+154,1219, Right. See you Monday.,125,16,Joey,neutral
+155,1220, We're not even shooting them anymore!,125,17,Joey,surprise
+156,1221," All right, bye.",125,18,Joey,anger
+157,1222, They canceled Mac and cheese!,125,19,Joey,anger
+158,1225," Why would they do that? It was a good show, right?",125,22,Joey,surprise
+159,1260, I know it's the best I could get out of it.,129,2,Joey,neutral
+160,1262," Creep, creep, creep.",129,4,Joey,neutral
+161,1285, Waheyeyeyey,131,1,Joey,joy
+162,1291," I don't see the baby, where is it?",131,7,Joey,neutral
+163,1301, She's with me Dr. Drake Ramon,132,6,Joey,neutral
+164,1303," Remore, I support you, geese. We need that information, I'm a doctor.",132,8,Joey,neutral
+165,1305, Now do you want this man's blood on your-,132,10,Joey,anger
+166,1307, fans.,132,12,Joey,neutral
+167,1308, It is absolutely essential that you tell me what room the man my assistant described to stay in,132,13,Joey,neutral
+168,1309," He's a patient of mine, I've been treating him for years.",132,14,Joey,neutral
+169,1311," And 16, thank you.",132,16,Joey,joy
+170,1313, And what is his name?,132,18,Joey,neutral
+171,1345, до,137,1,Joey,neutral
+172,1347, there.,137,3,Joey,neutral
+173,1350, Huh?,137,6,Joey,neutral
+174,1352," Sorry, by the way. We got to start the game. All right.",137,8,Joey,neutral
+175,1354, What tonight?,137,10,Joey,surprise
+176,1356, After she gave me that big speech.,137,12,Joey,surprise
+177,1357, She goes to make a date with a guy in the same night she has plans with me.,137,13,Joey,anger
+178,1358, I think she's trying to pull her fast on a big daddy.,137,14,Joey,anger
+179,1373, That part was perfect for me. I can't believe I didn't get it.,140,0,Joey,anger
+180,1381," Come on Ross, be realistic, you know. If I did write something, what are the chances I could get those guys to star in it?",140,8,Joey,sadness
+181,1382, The second I could star in it.,140,9,Joey,joy
+182,1384, I can't rise. You know what I mean? I'm an actor.,140,11,Joey,anger
+183,1385," I can't write. You know what I mean? I'm an actor. I don't have the discipline that it takes. You know, I can't do it.",140,12,Joey,sadness
+184,1386," I don't have the discipline that it takes, you know? I can't do it.",140,13,Joey,sadness
+185,1444, It's 2.30 in the morning. Yeah. Get out.,147,2,Joey,sadness
+186,1452, Oh yeah.,147,10,Joey,joy
+187,1474," Well, I've never been through the tunnel myself, because as I understand it, you're not allowed to go through with more than one girl in the car, right?",153,2,Joey,neutral
+188,1475," But it seems to me it's pretty much like anything else, you know? Face your fear.",153,3,Joey,neutral
+189,1476, You have a fear of heights? You go to the top of the building.,153,4,Joey,fear
+190,1477, You're afraid of bugs. Get a bug.,153,5,Joey,neutral
+191,1478, Bye.,153,6,Joey,neutral
+192,1479, case you have a fear of committing it. So I say you go in there and you be the most committed guy there ever was.,153,7,Joey,neutral
+193,1482," Jump off the high dive, stare down the barrel of the gun, pee into the wind.",153,10,Joey,joy
+194,1488," Oh, ordinarily I would love to but I am just swamped right now.",154,4,Joey,neutral
+195,1491, I'm missing picture time.,154,7,Joey,joy
+196,1530," Look at you, all sweet ninescent sleepin' like an angel. With those chubby little hands wrapped around ya.",157,0,Joey,neutral
+197,1531," It's okay, am I you're still here? Yeah!",157,1,Joey,neutral
+198,1533," It's okay, it's okay, right? It's me. Put down the scrunchy.",157,3,Joey,neutral
+199,1535," What are you doing? Well, I heard Emma stirring, so I came in to make sure she could reach Huggsy.",157,5,Joey,neutral
+200,1537," Okay, there you go sweetie. This isn't over.",157,7,Joey,neutral
+201,1557, Hey!,160,8,Joey,anger
+202,1558, Did not cry my eyes out.,160,9,Joey,anger
+203,1559, That's the end of an era!,160,10,Joey,sadness
+204,1560, 저는,160,11,Joey,sadness
+205,1561, No more J-Man and Chanis!,160,12,Joey,sadness
+206,1594," You know, you forget how many great songs.",164,0,Joey,neutral
+207,1598," Oh, you guys with this joke? Look, I gotta say, I know I cracked up, but I'm not even sure I got.",164,4,Joey,neutral
+208,1609," She had to ring on, she seemed so excited, and then she took her breath out.",166,1,Joey,anger
+209,1611, I didn't look at it. Stupid baby's head was barking most of it.,166,3,Joey,anger
+210,1613," Look, it's not that easy. She said she wanted to marry me. I don't want to hurt her.",166,5,Joey,sadness
+211,1615, You're right.,166,7,Joey,neutral
+212,1616,,166,8,Joey,neutral
+213,1617, All right. I'm good telling now before Ross finds out. And I'll be.,166,9,Joey,neutral
+214,1618, I can do that.,166,10,Joey,neutral
+215,1619, I am a gentle person.,166,11,Joey,neutral
+216,1620," Oh, by the way.",166,12,Joey,neutral
+217,1621, two people screwing in there if you want to check that out.,166,13,Joey,neutral
+218,1643," Okay, okay, this is great. Uh, Chandler, you get behind the desk.",168,0,Joey,neutral
+219,1644," And when she comes in, hopefully she won't recognize it because... Well, why would she?",168,1,Joey,neutral
+220,1645," Okay, and then your buzz rossin' on you. F***.",168,2,Joey,neutral
+221,1646, Mr. Gonzalez and I'll be Mr. Wong.,168,3,Joey,neutral
+222,1654," There was a ring in a box on my nightstand. After you left, it was gone.",168,11,Joey,anger
+223,1667, Why do I get you married me?,169,5,Joey,surprise
+224,1670, My god,169,8,Joey,surprise
+225,1674, I can't believe it Rachel's pregnant. Yeah. Who's the father?,169,12,Joey,surprise
+226,1676, I wonder if it's that dude. There's a dude?,169,14,Joey,neutral
+227,1678, here,169,16,Joey,neutral
+228,1680," About a month ago, this guy spent the night with Rachel, and I didn't see who it was, but...",169,18,Joey,disgust
+229,1682, You guys left this.,169,20,Joey,neutral
+230,1685," Oh my god, you're back!",170,0,Joey,surprise
+231,1698, Yeah Happy no year,171,7,Joey,joy
+232,1764," Hey, Ross, this one of my co-stars, Der, Der, this is my good friend Ross.",176,0,Joey,neutral
+233,1780," Well, I'm totally over it, Chandler. Friends, forever. Don't come out here. Would you mind doing a picture with us? Well, Lowe.",179,1,Joey,anger
+234,1782,,179,3,Joey,neutral
+235,1794, Everyone you're a kid and your mom and drop you off at the movies with a jar of jam and all spoo.,181,0,Joey,neutral
+236,1799, I'm talking to him. I'm talking to him.,181,5,Joey,surprise
+237,1811," Yeah, where's the guy who decides whose picture has got up on the wall?",183,1,Joey,neutral
+238,1813, Are you kidding me?,183,3,Joey,anger
+239,1814," Alright, well make sure you tell them the Joey Tribion and stop by and drop off all these",183,4,Joey,neutral
+240,1815, Okay.,183,5,Joey,neutral
+241,1816," I'm an actor, trying to get my picture up down the wall.",183,6,Joey,neutral
+242,1818," Oh, really? Well, maybe you and I go out for drinks. You're the other one, right?",183,8,Joey,neutral
+243,1857," Hey, Ross! Listen, you want to go see that new IMAX movie on tide pools?",185,3,Joey,joy
+244,1859," But I got next tickets for you, me and Chandler.",185,5,Joey,neutral
+245,1861, I'll finish it off. It was good.,185,7,Joey,neutral
+246,1865, I'm sorry I got a cancel tonight baby.,186,3,Joey,sadness
+247,1875,,188,0,Joey,neutral
+248,1879, That night we had beaches.,188,4,Joey,neutral
+249,1883," Hey, that woman's got an ass-like carols. What? Don't we try to find stuff?",188,8,Joey,joy
+250,1884, All right!,189,0,Joey,joy
+251,1885, What's Mr. Army?,189,1,Joey,joy
+252,1886," Hands down, best to have you ever seen.",189,2,Joey,joy
+253,1887, Thank you.,189,3,Joey,joy
+254,1888, Okay.,189,4,Joey,neutral
+255,1889, You think of the Abby Chandler?,189,5,Joey,neutral
+256,1891," Billy, what?",189,7,Joey,surprise
+257,1893," man, you are Westminster Craving.",189,9,Joey,neutral
+258,1971," I don't know, she kicked our butts. You could be on the Olympics standing there, team.",198,2,Joey,anger
+259,1975, Now I was when you swoop.,198,6,Joey,joy
+260,1976," You gotta make sure that when Paula walks out of there, the first guy Rachel sees is you. She's gotta know that you're everything he's not.",198,7,Joey,joy
+261,1977, You like the anti-pollow?,198,8,Joey,anger
+262,1998, Was in my room all night.,200,0,Joey,surprise
+263,1999, shoot.,200,1,Joey,anger
+264,2000," and I didn't take it and you didn't take it, then who did?",200,2,Joey,anger
+265,2001, We're trying to think.,200,3,Joey,anger
+266,2002,,200,4,Joey,anger
+267,2003," This is the unit for you, my friend. Sturdy construction, tons of storage compartments, some big enough to fit a grown man.",201,0,Joey,neutral
+268,2005, Oh yeah.,201,2,Joey,joy
+269,2006, I got to admit myself much.,201,3,Joey,neutral
+270,2007," My roommate let me five bucks that I couldn't, and then he stuck a board through the handles and locked me...",201,4,Joey,neutral
+271,2008, Art just touched every single technique prested by Edited chiarian Bergene动.,201,5,Joey,neutral
+272,2009, It was funny until I started feeling like I was in a coffin.,201,6,Joey,neutral
+273,2011," Oh, yeah? If I can't, I'll knock five bucks off the price of the unit.",201,8,Joey,anger
+274,2013," See? I saw it, yeah!",201,10,Joey,surprise
+275,2014," Sometimes I come in here just to get away from it. LAUGHTER Hey, you nickel!",201,11,Joey,anger
+276,2015, Hey! What's up?,202,0,Joey,neutral
+277,2017," Hey, who's your friend? Hey!",202,2,Joey,joy
+278,2019, here.,202,4,Joey,joy
+279,2021, Why wouldn't you? Aaron is great. Then there's you guys.,202,6,Joey,joy
+280,2047," No way, Mr. Salty is a sailor, all right? He's got to be like the toughest snack there is.",205,1,Joey,anger
+281,2054," Man, that was great, huh? Can you believe how long we threw that ball around?",206,0,Joey,joy
+282,2074,,208,0,Joey,neutral
+283,2075, I saw a woman breastfeeding both of her twins at the same time. It is like a free show up here.,208,1,Joey,neutral
+284,2076, It's better.,208,2,Joey,neutral
+285,2078, What is it? Hey.,208,4,Joey,sadness
+286,2080," Rach, come on.",208,6,Joey,neutral
+287,2082, What are you talking about alone? What about Ross?,208,8,Joey,surprise
+288,2084," Okay, how long was I watching that one?",208,10,Joey,neutral
+289,2086, I guess so.,208,12,Joey,neutral
+290,2105," I did not go out with your wife, okay?",211,4,Joey,anger
+291,2108, Yeah!,211,7,Joey,neutral
+292,2130," Well, Trigger, don't say that. Just uh...",214,1,Joey,sadness
+293,2131, You just need more practice.,214,2,Joey,neutral
+294,2132," Come on, let's try it again.",214,3,Joey,neutral
+295,2134, Plus it was it was probably mostly my fault anyway.,214,4,Joey,sadness
+296,2135," I'm not really that comfortable dancer, I'm gonna tell you what. Woohoo!",214,5,Joey,joy
+297,2136,,214,6,Joey,joy
+298,2159, Planting a Rachel made out.,216,3,Joey,neutral
+299,2178," I mean, we were last week left, you were totally in love with, you know.",220,1,Joey,anger
+300,2232, He said number two,227,2,Joey,neutral
+301,2248," I know. Well, his name's Pat. Pat the dog.",229,1,Joey,neutral
+302,2250," You look like you ready for a refill? Ah, probably shouldn't.",229,3,Joey,neutral
+303,2252," It's like it's raining! Pretty cool, huh?",229,5,Joey,joy
+304,2253, But if you're thinking you could put a fish in there and it wouldn't get sucked up into the mechanism well you'd be wrong.,229,6,Joey,neutral
+305,2255, So I'll write to you there. Okay. Ah!,229,8,Joey,neutral
+306,2257, It's pretty great and then.,229,10,Joey,joy
+307,2259," You know, I think I was 16.",230,0,Joey,neutral
+308,2263," Oh no, no, no. I'm not fond of that again.",230,4,Joey,anger
+309,2273, Hey.,231,5,Joey,surprise
+310,2278," Okay, good, good, good, good, because I was kind of having second thoughts, too.",231,9,Joey,fear
+311,2280," That's horrible! Well, you did the right thing man.",231,11,Joey,disgust
+312,2333, Okay.,236,0,Joey,joy
+313,2335, It's creamier.,237,1,Joey,neutral
+314,2337," I don't know, we're talking about whipped fish, Monica. I'm just happy I'm keeping it down.",237,3,Joey,disgust
+315,2369, That was a great scene. And that slap looks so real. How do you do that?,240,4,Joey,surprise
+316,2372," Anyway, I just wanted to say how wonderful I think you are.",240,7,Joey,joy
+317,2376," No, I'm Joey Trebione. We did a scene together yesterday. I'm the guy in the coma.",240,9,Joey,joy
+318,2378," Anyway, I just wanted to say that since I'm getting your brain when you leave the show I was wondering if there's any tips you could give me. I'm leaving the show",240,11,Joey,neutral
+319,2380, I don't know why did you hear something?,240,13,Joey,neutral
+320,2382, one of the writers.,240,15,Joey,sadness
+321,2386, Yeah.,241,1,Joey,joy
+322,2387, Much.,241,2,Joey,joy
+323,2388," Listen, uh, not that I'm insecure about my manhood or anything, you know, but, uh, I think I need to hook up with a woman like right now.",241,3,Joey,neutral
+324,2390, Yeah. Yeah. Hey. Bye. Bye. Bye. Hey. Bye.,241,5,Joey,joy
+325,2392," You look familiar, do I know you from somewhere?",241,7,Joey,surprise
+326,2394," Maybe it's because I'm on television. I'm an actor on Days of Our Lives. Wow, really?",241,9,Joey,joy
+327,2396, Really?,241,11,Joey,neutral
+328,2400,,241,14,Joey,neutral
+329,2442, How come?,246,0,Joey,neutral
+330,2444, That's crazy.,246,2,Joey,surprise
+331,2452, I think everybody's pretending they don't hear you.,246,10,Joey,neutral
+332,2453," Anyway, look, I don't know about you and your jackets and your separate tables, but Ross is one of my best friends. And if I say receipt, I'm telling you, he will sit in it.",246,11,Joey,neutral
+333,2475," Wow, that was kind of brutal.",250,5,Joey,surprise
+334,2494, No?,252,7,Joey,surprise
+335,2501, Sure it's hard to forget.,252,14,Joey,neutral
+336,2502, But that doesn't mean you have to talk about it.,252,15,Joey,neutral
+337,2503, A lot of things happen on that trip that we should never ever talk about.,252,16,Joey,neutral
+338,2505," It's between us and the sea, Ross.",252,18,Joey,neutral
+339,2525," All right, all right.",254,6,Joey,anger
+340,2527, for the right.,254,8,Joey,neutral
+341,2534, Taipei praying...,254,15,Joey,anger
+342,2548, Oh yeah sure we live in the building by the sidewalk.,257,0,Joey,neutral
+343,2550," Hey, look since we're neighbors. What do you say we get together for a drink?",257,2,Joey,neutral
+344,2552,,257,4,Joey,joy
+345,2554," Oh, still too ethnic. My agent thinks I should have a name that's more new.",258,1,Joey,neutral
+346,2556, I think it should be Joe.,258,3,Joey,neutral
+347,2557," You know, Joey makes me sound like, um, this big.",258,4,Joey,neutral
+348,2558, 박아 Lift requiring peace.,258,5,Joey,neutral
+349,2560," Stalin. Stalin, do I know that name? That sounds for-",258,7,Joey,neutral
+350,2562," Joe Stalin. You know, that's pretty good.",258,9,Joey,joy
+351,2564, Joseph Stalin. I think you'd remember that.,258,11,Joey,joy
+352,2585," Hey, thiefs! Check this out.",260,3,Joey,joy
+353,2587," And listen, so I thought I was getting better. So on my way home today, I stopped by this guitar store. And...",260,5,Joey,neutral
+354,2589, No.,260,7,Joey,neutral
+355,2591, Yes!,260,9,Joey,joy
+356,2593," Really, you do that for me?",261,0,Joey,surprise
+357,2595,,261,2,Joey,joy
+358,2597, Done!,261,4,Joey,joy
+359,2599, It's not.,261,6,Joey,neutral
+360,2601, Oh,261,8,Joey,neutral
+361,2620, Hey!,263,1,Joey,neutral
+362,2621, Where have you been? I just got back from the vet.,263,2,Joey,neutral
+363,2625," Hey, he beat ya.",263,6,Joey,joy
+364,2629," Oh man, I can't believe I locked myself out again.",264,0,Joey,anger
+365,2631," Oh my god, what happened here? Did you do all this? I sure did. Why?",264,2,Joey,surprise
+366,2660, So does that mean the auditions are off?,267,3,Joey,sadness
+367,2662, Was?,267,5,Joey,surprise
+368,2665, It's a step-by-step in jazz hands.,267,8,Joey,sadness
+369,2667, Bye,267,10,Joey,neutral
+370,2705," What's up, man?",271,2,Joey,neutral
+371,2707," Oh my god, he's trapped in an ATM vest to build a chill good egg. Charlie listen listen.",271,4,Joey,surprise
+372,2717, You can't make it. He said he had to go back to his job.,273,1,Joey,surprise
+373,2722, Are you just going down there to gawk at that hot girl with the belly button ring again?,274,2,Joey,anger
+374,2724,,274,4,Joey,joy
+375,2726, Fifth FIVE,275,1,Joey,neutral

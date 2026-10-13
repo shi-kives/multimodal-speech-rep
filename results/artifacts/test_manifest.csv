@@ -1,0 +1,412 @@
+SNo,Dialogue_ID,Utterance_ID,Speaker,Label,Reference_Transcript,Path_to_WAV
+19,1,0,Joey,neutral,"Come on, Lydia, you can do it.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia1_utt0.wav
+20,1,1,Joey,joy,Push!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia1_utt1.wav
+21,1,2,Joey,joy,"Push 'em out, push 'em out, harder, harder.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia1_utt2.wav
+22,1,3,Joey,joy,"Push 'em out, push 'em out, way out!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia1_utt3.wav
+23,1,4,Joey,joy,"Let's get that ball and really move, hey, hey, ho, ho.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia1_utt4.wav
+24,1,5,Joey,joy,"Let's  I was justyeah, right.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia1_utt5.wav
+25,1,6,Joey,joy,Push!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia1_utt6.wav
+26,1,7,Joey,joy,Push!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia1_utt7.wav
+50,4,5,Joey,fear,Oh my God! I overslept! I was supposed to be on the set a half an hour ago! I gotta get out of here!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia4_utt5.wav
+52,4,7,Joey,anger,"Look, I know I feel asleep before I could shower and now I don't have time!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia4_utt7.wav
+53,4,8,Joey,neutral,"They're just ten blocks away, if I run, I can make it.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia4_utt8.wav
+62,5,8,Joey,neutral,So why don't you give me your number?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia5_utt8.wav
+63,6,0,Joey,neutral,Previously on Friends.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia6_utt0.wav
+68,7,2,Joey,neutral,"And it's not fake, it's totally brutal.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia7_utt2.wav
+74,7,8,Joey,neutral,"What? My hands are totally clean, I just gave the duck a bath.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia7_utt8.wav
+87,9,5,Joey,neutral,"Hey buddy, do you think I can borrow your uniform this Thursday?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia9_utt5.wav
+90,9,8,Joey,sadness,"Oh, how bad is it?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia9_utt8.wav
+100,10,0,Joey,anger,There's just so much pressure.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia10_utt0.wav
+101,10,1,Joey,neutral,"I mean no offense, but what you guys do is very different.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia10_utt1.wav
+102,10,2,Joey,neutral,I don't know if you'd understand.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia10_utt2.wav
+141,14,1,Joey,joy,Yeah!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia14_utt1.wav
+142,14,2,Joey,joy,Yeah!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia14_utt2.wav
+143,14,3,Joey,joy,Yeah!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia14_utt3.wav
+144,14,4,Joey,neutral,"You just take a big, big swing.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia14_utt4.wav
+145,14,5,Joey,neutral,"Now, don't hold back.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia14_utt5.wav
+148,14,7,Joey,joy,Hey-hey-hey!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia14_utt7.wav
+157,15,4,Joey,neutral,Bye!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia15_utt4.wav
+158,15,5,Joey,anger,Cut it out Ross! I hate to have to save your life and kick your ass in the same day!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia15_utt5.wav
+161,16,1,Joey,neutral,"Listen uh, I'd prefer it if you didn't call me Joey.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia16_utt1.wav
+162,16,2,Joey,neutral,"Since I don't know anyone here, I thought it'd be cool to try out a cool work nickname.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia16_utt2.wav
+164,16,4,Joey,surprise,There's like-there's like 300 bucks in this one!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia16_utt4.wav
+173,17,2,Joey,neutral,"Question. Was ah, Egg the Gellers!' the war cry of your neighbourhood?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia17_utt2.wav
+207,18,1,Joey,neutral,"All right, then you'd better show me some of that too then.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia18_utt1.wav
+209,19,0,Joey,surprise,Really? A purse?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia19_utt0.wav
+211,20,1,Joey,neutral,It looks like a women's purse.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia20_utt1.wav
+213,20,3,Joey,neutral,"See look,",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia20_utt3.wav
+215,20,5,Joey,neutral,Maybe you need sex.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia20_utt5.wav
+217,20,7,Joey,neutral,"Well, I ain't gonna say no to that.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia20_utt7.wav
+275,26,0,Joey,joy,Hey I got one! I got one!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia26_utt0.wav
+296,28,16,Joey,neutral,"Uh, you gotta press the button.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia28_utt16.wav
+369,37,1,Joey,neutral,"I, ah, I never said hate, I was very careful about that.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia37_utt1.wav
+371,37,3,Joey,fear,And you got a 'hate' from that?! Your taking a big leap there...,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia37_utt3.wav
+374,37,6,Joey,anger,But what does that gonna do...,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia37_utt6.wav
+377,38,1,Joey,joy,"Awww, one of my students got an audition. I'm so proud.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia38_utt1.wav
+379,38,3,Joey,joy,You bet! What's the part?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia38_utt3.wav
+422,43,1,Joey,neutral,"Oh yeah, who's playing?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia43_utt1.wav
+426,43,5,Joey,neutral,"All right Pheebs, stick out your plate!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia43_utt5.wav
+456,47,0,Joey,sadness,"God, it's gonna so weird like when I come home and you're not here.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia47_utt0.wav
+458,47,1,Joey,sadness,No more Joey and Chan's.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia47_utt1.wav
+459,47,2,Joey,sadness,No more J and C's.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia47_utt2.wav
+460,47,3,Joey,neutral,"""You wanna go over to Joey and Chandler's?""",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia47_utt3.wav
+461,47,4,Joey,neutral,"""Can't, its not there.""",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia47_utt4.wav
+463,47,6,Joey,sadness,Yeah but we won't be able to like get up in the middle of the night and have those long talks about our feelings and the future.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia47_utt6.wav
+467,47,10,Joey,neutral,Hi.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia47_utt10.wav
+477,48,4,Joey,joy,Woo-hoo!!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia48_utt4.wav
+479,48,6,Joey,joy,London baby!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia48_utt6.wav
+482,49,2,Joey,neutral,Monica? What time is it?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia49_utt2.wav
+484,49,4,Joey,neutral,But it's dark out.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia49_utt4.wav
+486,49,6,Joey,neutral,I guess I'll get washed up then. Watch that sunrise.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia49_utt6.wav
+502,51,0,Joey,joy,Hey!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia51_utt0.wav
+504,51,2,Joey,neutral,"Oh you know uh Kash, really liked you the other day. He said he thought you were charming.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia51_utt2.wav
+506,52,1,Joey,disgust,"To tape the game? You do this every time Ross, you're",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia52_utt1.wav
+508,52,3,Joey,surprise,"Oh, you're switching apartments?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia52_utt3.wav
+510,52,5,Joey,neutral,But Rachel has an apartment.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia52_utt5.wav
+512,52,7,Joey,surprise,She is?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia52_utt7.wav
+514,52,9,Joey,neutral,I guess I didn't really think about it.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia52_utt9.wav
+606,64,8,Joey,neutral,"Ah, Gunther, I can't pay for this right now because I'm not working, so I've had to cut down on some luxuries like uh, payin' for stuff.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia64_utt8.wav
+608,64,10,Joey,neutral,"Uh, I don't know.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia64_utt10.wav
+609,64,11,Joey,neutral,"Ya see, it's just, see I was a regular on a soap opera y'know?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia64_utt11.wav
+610,64,12,Joey,sadness,"And to go from that to this, I just Plus, I'd have to wait on all my friends.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia64_utt12.wav
+612,64,14,Joey,surprise,What?!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia64_utt14.wav
+614,64,16,Joey,neutral,Maybe I could be a waiter. Could I use the phone?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia64_utt16.wav
+618,65,3,Joey,disgust,No way are you cool enough to pull of Clint.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia65_utt3.wav
+622,65,7,Joey,neutral,"See you later, Gene.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia65_utt7.wav
+625,65,10,Joey,surprise,What's up with Gene?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia65_utt10.wav
+636,68,1,Joey,anger,"Rach, I told you everything I knew last night!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia68_utt1.wav
+637,68,2,Joey,neutral,"Look, it's not that big of a deal, so Monica and Chandler are doing it.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia68_utt2.wav
+639,68,4,Joey,neutral,Sorry. Monica and Chandler are making love.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia68_utt4.wav
+641,68,6,Joey,neutral,I don't know.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia68_utt6.wav
+643,68,8,Joey,neutral,I don't know.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia68_utt8.wav
+645,68,10,Joey,neutral,I don't know.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia68_utt10.wav
+647,68,12,Joey,joy,"Ohh, I know one thing!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia68_utt12.wav
+649,68,14,Joey,neutral,They did it right there on the couch.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia68_utt14.wav
+656,70,0,Joey,neutral,"So you see, Molly, what people don't understand is that acting    is a discipline. It takes a lot of hard work.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia70_utt0.wav
+658,70,2,Joey,neutral,"Oh, I didn't go to college.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia70_utt2.wav
+660,70,4,Joey,neutral,Molly ... people don't study acting ...,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia70_utt4.wav
+664,70,8,Joey,sadness,Will the stable boy never get the princess??,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia70_utt8.wav
+666,70,10,Joey,disgust,No ... the leather sticks to my ass.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia70_utt10.wav
+667,70,11,Joey,anger,"You know, this isn't fair.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia70_utt11.wav
+668,70,12,Joey,anger,What makes you think that I'm just gonna sleep with her and then blow her off?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia70_utt12.wav
+669,70,13,Joey,anger,Huh?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia70_utt13.wav
+670,70,14,Joey,anger,"Can't you guys open your minds to the possibility that I actally like her,    and might want something real?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia70_utt14.wav
+671,70,15,Joey,sadness,"Look, the truth is, I haven't felt this    way about anyone since Rachel, ok?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia70_utt15.wav
+672,70,16,Joey,sadness,I didn't think I could ever love again.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia70_utt16.wav
+679,70,22,Joey,joy,"It's like my favorite fairy tale come true!  The princess, the stable boy and the lesbian!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia70_utt22.wav
+680,71,0,Joey,joy,"And what's cool is, the character is from Naples, right?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia71_utt0.wav
+682,71,2,Joey,joy,My whole family's from Naples!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia71_utt2.wav
+685,71,5,Joey,surprise,Oh!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia71_utt5.wav
+686,71,6,Joey,surprise,Hey right!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia71_utt6.wav
+687,71,7,Joey,neutral,Not a problem.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia71_utt7.wav
+688,71,8,Joey,neutral,I totally understand.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia71_utt8.wav
+689,71,9,Joey,neutral,You need to y'know make sure I don't have any horrible scars or tattoos.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia71_utt9.wav
+690,71,10,Joey,neutral,Don't you worry. I have nothing to hide.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia71_utt10.wav
+691,71,11,Joey,neutral,"So there you go, that's me.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia71_utt11.wav
+692,71,12,Joey,joy,One hundred percent natural!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia71_utt12.wav
+693,71,13,Joey,fear,"I tell ya, that has never happened before.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia71_utt13.wav
+711,73,0,Joey,fear,"Ross-Ross-Ross-Ross! Stay away from that guy , and that guy . And that oneDude! They're all huge!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia73_utt0.wav
+713,73,2,Joey,anger,"Well, maybe that's because you're closer to you. So you look bigger to you from where you are.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia73_utt2.wav
+720,73,9,Joey,neutral,I totally don't know what you're talking about.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia73_utt9.wav
+723,74,1,Joey,neutral,"No, Pheebs, listen, if you decide to do this, we'll be supportive like crazy.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia74_utt1.wav
+775,80,2,Joey,disgust,Well he made Rachel cry!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia80_utt2.wav
+779,80,6,Joey,neutral,"All right! I'll try! But if I can't, you can stay with Chandler and I until you get settled.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia80_utt6.wav
+781,80,8,Joey,neutral,"All right, all right, all right.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia80_utt8.wav
+782,80,9,Joey,neutral,"I mean I'll have to check with him first, but I'll think he'll be cool with it.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia80_utt9.wav
+798,84,1,Joey,anger,Nothing!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia84_utt1.wav
+799,84,2,Joey,sadness,"Well, I-I got this blinding pain in my stomach when I was lifting weights before, then I uh passed out and uh, haven't been able to stand up since.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia84_utt2.wav
+800,85,0,Joey,neutral,"But um, I don't think it's anything serious.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia85_utt0.wav
+802,85,2,Joey,anger,No way!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia85_utt2.wav
+803,85,3,Joey,anger,"Kay look, if I have to go to the doctor for anything it's gonna be for this thing sticking out of my stomach!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia85_utt3.wav
+804,85,4,Joey,disgust,Why did I have to start working out again?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia85_utt4.wav
+805,85,5,Joey,anger,Damn you 15s!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia85_utt5.wav
+812,86,6,Joey,joy,I like it.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia86_utt6.wav
+818,88,2,Joey,disgust,"You guys, can we please not watch this all right.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia88_utt2.wav
+822,88,6,Joey,anger,"Oh, you said it Mike.  Aw! There's got to be a better way!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia88_utt6.wav
+824,88,8,Joey,sadness,Can we please turn this off?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia88_utt8.wav
+832,89,2,Joey,surprise,"Wow, it is easy.  Now, I can have milk everyday.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia89_utt2.wav
+839,91,0,Joey,neutral,"Hey Ross, will you pass me that knife?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia91_utt0.wav
+846,93,0,Joey,sadness,I can't believe I'm going to lose this job!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia93_utt0.wav
+848,93,2,Joey,neutral,Yeah! Help me get this mini-fridge past the security guard.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia93_utt2.wav
+850,93,4,Joey,neutral,Yeah?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia93_utt4.wav
+854,93,8,Joey,neutral,"Oh, Chandler, Wayne.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia93_utt8.wav
+855,93,9,Joey,neutral,"Wayne, Chandler.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia93_utt9.wav
+858,93,12,Joey,anger,Why should I help you?!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia93_utt12.wav
+860,93,14,Joey,neutral,What do you need?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia93_utt14.wav
+886,96,0,Joey,neutral,Here. I need to borrow some moisturizer.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia96_utt0.wav
+888,96,2,Joey,joy,Whaddya think? Today's the big day!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia96_utt2.wav
+890,96,4,Joey,joy,Thank you!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia96_utt4.wav
+908,97,0,Joey,joy,"Hey Monica, it's Joey!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia97_utt0.wav
+910,97,2,Joey,neutral,"Aw, come on! It'll be years before I forget you!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia97_utt2.wav
+914,97,6,Joey,neutral,"Uh, well yeah-yeah, I've got all of that going on.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia97_utt6.wav
+915,97,7,Joey,neutral,"Yeah, listen uh, I want you to make sure you tell Chandler that he couldn't have been more wrong!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia97_utt7.wav
+916,97,8,Joey,fear,Uh-oh!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia97_utt8.wav
+917,97,9,Joey,neutral,"I gotta go Monica, my uh, my sushi's here!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia97_utt9.wav
+918,97,10,Joey,neutral,Sorry about that. Thanks for waitin'.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia97_utt10.wav
+919,97,11,Joey,joy,"Everybody smile!  Okay, thanks a lot! Enjoy your stay at",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia97_utt11.wav
+932,99,0,Joey,neutral,What cha doing?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia99_utt0.wav
+934,99,2,Joey,neutral,What about the chick?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia99_utt2.wav
+936,99,4,Joey,neutral,Are you sure?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia99_utt4.wav
+938,99,6,Joey,neutral,Sure.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia99_utt6.wav
+940,99,8,Joey,neutral,Wait. Give him a minute.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia99_utt8.wav
+977,103,1,Joey,neutral,Hey.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia103_utt1.wav
+979,103,3,Joey,surprise,"Sure. What? About uh, you showering with your mom?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia103_utt3.wav
+981,103,5,Joey,surprise,"Whoa, for like months?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia103_utt5.wav
+982,104,0,Joey,joy,"Excellent! Excellent! And uh, finally, are you into any weird stuff y'know, sexually?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia104_utt0.wav
+984,104,2,Joey,neutral,"Oooh, wrong answer.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia104_utt2.wav
+988,106,0,Joey,anger,"Oh yeah, Smokey Joe here got half way to the highway and collapsed.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia106_utt0.wav
+1016,109,1,Joey,joy,"Good for you.  Uh, quarters or rolls of quarters?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia109_utt1.wav
+1022,109,6,Joey,neutral,We can't do that.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia109_utt6.wav
+1024,110,0,Joey,surprise,She really said that?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia110_utt0.wav
+1027,110,3,Joey,surprise,'Tonight' tonight?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia110_utt3.wav
+1045,111,12,Joey,neutral,"Shh. He did it. He told her off, and not just about the kiss, about everything.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia111_utt12.wav
+1047,111,14,Joey,neutral,"No, no. He said ""When are you gonna grow up and start being a mom?""",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia111_utt14.wav
+1073,113,2,Joey,joy,That's right baby.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia113_utt2.wav
+1078,113,7,Joey,anger,"Oh yeah, that's right!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia113_utt7.wav
+1084,113,13,Joey,anger,"Whoa-whoa you guys, it's not a cat!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia113_utt13.wav
+1089,114,1,Joey,neutral,"Or not. Uh, Rach, why don't you just move in with me?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia114_utt1.wav
+1091,114,3,Joey,neutral,"No-no-no-no-no-no-no-no It's okay, I mean Ilook Rach, I know I scared you off with that whole Naked Thursday's thing, but we don't have to do that!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia114_utt3.wav
+1093,114,5,Joey,joy,"Thursday's clearly not good for ya, pick a day!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia114_utt5.wav
+1101,116,1,Joey,neutral,"Yeah, so, uh, so, uh, what's the deal with this father guy, I mean, if someone was havin' my baby somewhere, I'd wanna know about it, you know?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia116_utt1.wav
+1103,116,3,Joey,neutral,"Ok, look, maybe I should just go.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia116_utt3.wav
+1105,116,5,Joey,sadness,"Good luck, and uh, take care, huh?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia116_utt5.wav
+1106,116,6,Joey,neutral,You know what the Celtics problem is? They let the players run the team.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia116_utt6.wav
+1108,116,8,Joey,neutral,"Oh, it is.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia116_utt8.wav
+1110,116,10,Joey,neutral,It is.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia116_utt10.wav
+1160,121,1,Joey,joy,"Aww, me too. Now let's finish this and go to bed.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia121_utt1.wav
+1162,121,3,Joey,neutral,Cat.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia121_utt3.wav
+1164,121,5,Joey,joy,I love you too.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia121_utt5.wav
+1204,125,1,Joey,neutral,Hey.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt1.wav
+1207,125,4,Joey,neutral,Was she happy you gave her the job?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt4.wav
+1209,125,6,Joey,neutral,Hello?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt6.wav
+1210,125,7,Joey,surprise,Oh hey!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt7.wav
+1211,125,8,Joey,neutral,"Can you, can you hang on a second?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt8.wav
+1212,125,9,Joey,neutral,It's the producers over at Mac and C.H.E.E.S.E.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt9.wav
+1213,125,10,Joey,neutral,can you excuse me for a minute?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt10.wav
+1214,125,11,Joey,joy,"Hey, funny you should call.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt11.wav
+1215,125,12,Joey,neutral,I was just looking over next week's script.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt12.wav
+1216,125,13,Joey,surprise,Canceled?!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt13.wav
+1217,125,14,Joey,surprise,Like they're taking it off the air?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt14.wav
+1218,125,15,Joey,neutral,Ohh.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt15.wav
+1219,125,16,Joey,neutral,"All right, see you Monday.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt16.wav
+1220,125,17,Joey,surprise,We're not even shootin' them anymore?!!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt17.wav
+1221,125,18,Joey,anger,"All right, bye!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt18.wav
+1222,125,19,Joey,anger,They canceled Mac and C.H.E.E.S.E!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt19.wav
+1225,125,22,Joey,surprise,Why would they do that?! It was a good show right?!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia125_utt22.wav
+1260,129,2,Joey,neutral,"I know, it was the best I could get out of them.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia129_utt2.wav
+1262,129,4,Joey,neutral,"People, people, people.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia129_utt4.wav
+1285,131,1,Joey,joy,Hey!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia131_utt1.wav
+1291,131,7,Joey,neutral,I don't see the baby. Where is it?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia131_utt7.wav
+1301,132,6,Joey,neutral,"Uh, she's with me.  Dr. Drake Remoray.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia132_utt6.wav
+1303,132,8,Joey,neutral,Remoray. It's Portuguese. We need that information. I'm a doctor.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia132_utt8.wav
+1305,132,10,Joey,anger,Damnit woman we're losing precious time! Now do you want this man's blood on your head?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia132_utt10.wav
+1307,132,12,Joey,neutral,Hands!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia132_utt12.wav
+1308,132,13,Joey,neutral,It is absolutely essential that you tell me what room the man my assistant described is staying in.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia132_utt13.wav
+1309,132,14,Joey,neutral,"He's a patient of mine, I've been treating him for years!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia132_utt14.wav
+1311,132,16,Joey,joy,"816, thank you!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia132_utt16.wav
+1313,132,18,Joey,neutral,And what is his name?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia132_utt18.wav
+1345,137,1,Joey,neutral,Hey!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia137_utt1.wav
+1347,137,3,Joey,neutral,What do you got there?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia137_utt3.wav
+1350,137,6,Joey,neutral,Huh? Uh,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia137_utt6.wav
+1352,137,8,Joey,neutral,"Oh!  Sorry. Uh, I've got those plans with Phoebe, why?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia137_utt8.wav
+1354,137,10,Joey,surprise,What?! Tonight?!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia137_utt10.wav
+1356,137,12,Joey,surprise,After she gave me that big speech?!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia137_utt12.wav
+1357,137,13,Joey,anger,She goes and makes a date with a guy on the same night she has plans with me?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia137_utt13.wav
+1358,137,14,Joey,anger,I think she's trying to pull a fast one on Big Daddy!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia137_utt14.wav
+1373,140,0,Joey,anger,That part was perfect for me! I can't believe I didn't get it!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia140_utt0.wav
+1381,140,8,Joey,sadness,"Come on Ross be realistic, y'know? If I did write something, what are the chances I could get those guys to star in it?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia140_utt8.wav
+1382,140,9,Joey,joy,"Wait a second, I could star in it!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia140_utt9.wav
+1384,140,11,Joey,anger,I can't write!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia140_utt11.wav
+1385,140,12,Joey,sadness,"Y'know I mean I-I-I'm an actor, I don't have the discipline that takes, y'know?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia140_utt12.wav
+1386,140,13,Joey,sadness,I can't do it.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia140_utt13.wav
+1444,147,2,Joey,sadness,"Uh, it's 2:30 in the morning!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia147_utt2.wav
+1452,147,10,Joey,joy,Oh yeah!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia147_utt10.wav
+1474,153,2,Joey,neutral,"Well, I've never been through the tunnel myself, 'cause as I understand it, you're not allowed to go through with more than one girl in the car, right.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia153_utt2.wav
+1475,153,3,Joey,neutral,"But, it seems to me it's pretty much like anything else, you know, face your fear.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia153_utt3.wav
+1476,153,4,Joey,fear,"It have a fear of heights, you go to the top of the building!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia153_utt4.wav
+1477,153,5,Joey,neutral,If you're afraid of bugs.....get a bug.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia153_utt5.wav
+1478,153,6,Joey,neutral,Right.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia153_utt6.wav
+1479,153,7,Joey,neutral,"In this case, you have a fear of commitment, so I say you go in there and be the most committed guy there ever was.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia153_utt7.wav
+1482,153,10,Joey,joy,"Oh, yeah. Go for it man, jump off the high dive, stare down the barrel of the gun, pee into the wind!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia153_utt10.wav
+1488,154,4,Joey,neutral,"Oh uh, ordinarily I would love too, but I am just swamped right now.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia154_utt4.wav
+1491,154,7,Joey,joy,I'm missin' picture time?!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia154_utt7.wav
+1530,157,0,Joey,neutral,"Look at you, all sweet and innocent, sleeping like an angel...    with Emma's chubby little hands wrapped around ya.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia157_utt0.wav
+1531,157,1,Joey,neutral,"It's    okay, Emma, you stay asleep.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia157_utt1.wav
+1533,157,3,Joey,neutral,"It's okay, it's okay Rach, it's me. Put down the scrunchy.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia157_utt3.wav
+1535,157,5,Joey,neutral,"Well, I heard Emma stirring, so I came to make sure she could    reach Hugsy.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia157_utt5.wav
+1537,157,7,Joey,neutral,There you go sweetie...     This isn't over.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia157_utt7.wav
+1557,160,8,Joey,anger,Hey!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia160_utt8.wav
+1558,160,9,Joey,anger,I did not cry my eyes out!!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia160_utt9.wav
+1559,160,10,Joey,sadness,Come on!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia160_utt10.wav
+1560,160,11,Joey,sadness,It's like the end of an era!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia160_utt11.wav
+1561,160,12,Joey,sadness,No more J-man and Channie's!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia160_utt12.wav
+1594,164,0,Joey,neutral,You forget how many great songs Heart had.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia164_utt0.wav
+1598,164,4,Joey,neutral,"Oh, you guys, with this joke. I gotta say, I know I cracked up, but I'm not even sure I got it.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia164_utt4.wav
+1609,166,1,Joey,anger,"No! She had the ring on, she seemed so excited, and then she  took her breast out.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia166_utt1.wav
+1611,166,3,Joey,anger,I didn’t look at it. Stupid baby’s head was blocking most of  it.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia166_utt3.wav
+1613,166,5,Joey,sadness,"Look, it’s not that easy. She said she wanted to marry me. I  don’t want to hurt her.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia166_utt5.wav
+1615,166,7,Joey,neutral,You’re right.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia166_utt7.wav
+1616,166,8,Joey,neutral,You’re right.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia166_utt8.wav
+1617,166,9,Joey,neutral,I-I’ll go tell her now before Ross  finds out and I’ll be gentle.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia166_utt9.wav
+1618,166,10,Joey,neutral,I can do that.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia166_utt10.wav
+1619,166,11,Joey,neutral,I am a gentle person.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia166_utt11.wav
+1620,166,12,Joey,neutral,"Oh, by the  way.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia166_utt12.wav
+1621,166,13,Joey,neutral,Two people screwing in there  if you want to check that out.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia166_utt13.wav
+1643,168,0,Joey,neutral,"All right, okay, this is great, uh, Chandler, you get behind the desk.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia168_utt0.wav
+1644,168,1,Joey,neutral,"And-and when she comes in hopefully, she won't recognise you because, well, why would she?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia168_utt1.wav
+1645,168,2,Joey,neutral,"Uh, okay, and then you buzz Ross and I.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia168_utt2.wav
+1646,168,3,Joey,neutral,"You be Mr. Gonzalez, and I'll be uh, Mr. Wong.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia168_utt3.wav
+1654,168,11,Joey,anger,"There was a ring, in a box, on my nightstand, after you left, it was gone!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia168_utt11.wav
+1667,169,5,Joey,surprise,Why?! Why can't she marry me?!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia169_utt5.wav
+1670,169,8,Joey,surprise,Oh my God.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia169_utt8.wav
+1674,169,12,Joey,surprise,Now I can't believe it! What? Rachel's pregnant?  Who's the father?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia169_utt12.wav
+1676,169,14,Joey,neutral,Ohh I wonder if that dude.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia169_utt14.wav
+1678,169,16,Joey,neutral,Yeah.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia169_utt16.wav
+1680,169,18,Joey,disgust,"About a month ago this guy spent the night with Rachel, I didn't see who it was but",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia169_utt18.wav
+1682,169,20,Joey,neutral,The guy left this.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia169_utt20.wav
+1685,170,0,Joey,surprise,"Oh my God, you're back!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia170_utt0.wav
+1698,171,7,Joey,joy,No! Year! Happy No Year!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia171_utt7.wav
+1764,176,0,Joey,neutral,"Hey Ross, this is one of my co-stars, Dirk.  Dirk, this    is my good friend Ross.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia176_utt0.wav
+1780,179,1,Joey,anger,"Well, I'm totally over it Chandler. Friends forever! Don't come out here!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia179_utt1.wav
+1782,179,3,Joey,neutral,"Uh,",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia179_utt3.wav
+1794,181,0,Joey,neutral,Remember when you where a kid and your Mom would drop you off at the movies with a jar of jam and a little spoon?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia181_utt0.wav
+1799,181,5,Joey,surprise,You talked to him. Are you crazy?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia181_utt5.wav
+1811,183,1,Joey,neutral,"Uh yeah, where-where's the guy who decides who's pictures go up on the wall?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia183_utt1.wav
+1813,183,3,Joey,anger,"Oh, you're kidding me!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia183_utt3.wav
+1814,183,4,Joey,neutral,"All-all right, well make sure you tell him that Joey Tribbiani stopped by to drop off all of these clothes.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia183_utt4.wav
+1815,183,5,Joey,neutral,Okay?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia183_utt5.wav
+1816,183,6,Joey,neutral,I'm an actor. I'm kinda getting my picture up there on the wall.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia183_utt6.wav
+1818,183,8,Joey,neutral,"Oh really? Well, maybe you and I go out for drinks?  You're the other one right?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia183_utt8.wav
+1857,185,3,Joey,joy,"Hey Ross! Listen, do you want to go see that new Imax movie on tide pools?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia185_utt3.wav
+1859,185,5,Joey,neutral,"No. But I got Knicks tickets for you, me, and Chandler.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia185_utt5.wav
+1861,185,7,Joey,neutral,"All right, well finish your coffee; let's go.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia185_utt7.wav
+1865,186,3,Joey,sadness,I'm sorry I gotta cancel tonight baby,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia186_utt3.wav
+1875,188,0,Joey,neutral,What?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia188_utt0.wav
+1879,188,4,Joey,neutral,-Peaches?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia188_utt4.wav
+1883,188,8,Joey,joy,"Hey, that woman's got an ass like Carol's!  What? Thought we were trying to find stuff.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia188_utt8.wav
+1884,189,0,Joey,joy,All right!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia189_utt0.wav
+1885,189,1,Joey,joy,Westminster Abbey!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia189_utt1.wav
+1886,189,2,Joey,joy,"Hands down, best Abbey I've ever seen.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia189_utt2.wav
+1887,189,3,Joey,joy,Hey!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia189_utt3.wav
+1888,189,4,Joey,neutral,Okay.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia189_utt4.wav
+1889,189,5,Joey,neutral,"What do you think of the Abbey, Chandler?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia189_utt5.wav
+1891,189,7,Joey,surprise,Really? To what?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia189_utt7.wav
+1893,189,9,Joey,neutral,"Man,",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia189_utt9.wav
+1971,198,2,Joey,anger,"No-no, she kicked our butts. You could be on the Olympic standing-there team.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia198_utt2.wav
+1975,198,6,Joey,joy,"Yes, now is when you swoop!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia198_utt6.wav
+1976,198,7,Joey,joy,"You gotta make sure that when Paolo walks out of there, the first guy Rachel sees is you, She's gotta know that you're everything he's not!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia198_utt7.wav
+1977,198,8,Joey,anger,"You're like, like the anti-Paolo!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia198_utt8.wav
+1998,200,0,Joey,surprise,I don't get it!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia200_utt0.wav
+1999,200,1,Joey,anger,It was in my room all night!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia200_utt1.wav
+2000,200,2,Joey,anger,"And if she didn't take it, and I didn't take it; and you  didn't take it, then who did?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia200_utt2.wav
+2001,200,3,Joey,anger,Shh!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia200_utt3.wav
+2002,200,4,Joey,anger,We're trying to think!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia200_utt4.wav
+2003,201,0,Joey,neutral,"This is the unit for you my friend. Sturdy construction, tons of storage compartments, some big enough to fit a grown man.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia201_utt0.wav
+2005,201,2,Joey,joy,Oh yeah!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia201_utt2.wav
+2006,201,3,Joey,neutral,I got in there myself once.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia201_utt3.wav
+2007,201,4,Joey,neutral,"My roommate bet me five bucks that I couldn't, and then he stuck a board through the handles that locked me in.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia201_utt4.wav
+2008,201,5,Joey,neutral,Yeah.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia201_utt5.wav
+2009,201,6,Joey,neutral,It was funny til I started feeling like I was in a coffin.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia201_utt6.wav
+2011,201,8,Joey,anger,"Oh yeah?  If I can't, I'll knock five bucks off the price off the unit.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia201_utt8.wav
+2013,201,10,Joey,surprise,Okay.  See?! I told ya!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia201_utt10.wav
+2014,201,11,Joey,anger,"Sometimes I get in here just to get away from it! Hey, a nickel!!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia201_utt11.wav
+2015,202,0,Joey,neutral,Hey! What's up?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia202_utt0.wav
+2017,202,2,Joey,joy,"Hey-hey, who's your friend?  Hey!!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia202_utt2.wav
+2019,202,4,Joey,joy,Erin! Still here!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia202_utt4.wav
+2021,202,6,Joey,joy,Why wouldn't ya? Erin is great! Then-then there's you guys.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia202_utt6.wav
+2047,205,1,Joey,anger,"No way! Mr.Salty is a sailor, all right, he's got to be, like, thetoughest snack there is.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia205_utt1.wav
+2054,206,0,Joey,joy,Man that was great! Huh? Can you believe how long we threw that ball around?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia206_utt0.wav
+2074,208,0,Joey,neutral,Hey.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia208_utt0.wav
+2075,208,1,Joey,neutral,I just saw a woman breast feeding both of her twins at the same time. it is like a freak show up here.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia208_utt1.wav
+2076,208,2,Joey,neutral,What's the matter?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia208_utt2.wav
+2078,208,4,Joey,sadness,What is it? Hey!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia208_utt4.wav
+2080,208,6,Joey,neutral,"Rach come on, what?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia208_utt6.wav
+2082,208,8,Joey,surprise,What are you talking about alone? What about Ross?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia208_utt8.wav
+2084,208,10,Joey,neutral,"Okay, how long was I watching that woman?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia208_utt10.wav
+2086,208,12,Joey,neutral,"Yeah, I guess so.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia208_utt12.wav
+2105,211,4,Joey,anger,"Whoa-whoa-whoa-whoa, I-IHey! I did",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia211_utt4.wav
+2108,211,7,Joey,neutral,Yeah.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia211_utt7.wav
+2130,214,1,Joey,sadness,"Come on Treeger, don't say that.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia214_utt1.wav
+2131,214,2,Joey,neutral,"You just ahh, you just need more practice.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia214_utt2.wav
+2132,214,3,Joey,neutral,"Here, come on, let's ahh, let's try it again.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia214_utt3.wav
+2134,214,4,Joey,sadness,"Plus, it was, it was probably mostly my fault, anyway.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia214_utt4.wav
+2135,214,5,Joey,joy,"I mean, y'know, I'm not really that comfortable dancing with a We-he!!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia214_utt5.wav
+2136,214,6,Joey,joy,Hey!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia214_utt6.wav
+2159,216,3,Joey,neutral,Monica and Rachel made out.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia216_utt3.wav
+2178,220,1,Joey,anger,I know!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia220_utt1.wav
+2232,227,2,Joey,neutral,You said number two.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia227_utt2.wav
+2248,229,1,Joey,neutral,"I know.  Yeah, his name is Pat.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia229_utt1.wav
+2250,229,3,Joey,neutral,"Do you uh, do youready for a refill?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia229_utt3.wav
+2252,229,5,Joey,joy,"Pretty cool, huh?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia229_utt5.wav
+2253,229,6,Joey,neutral,"But if you're thinking you can put a fish in there and it wouldn't get sucked up into the mechanism, well you'd be wrong.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia229_utt6.wav
+2255,229,8,Joey,neutral,"It's uh, right through there.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia229_utt8.wav
+2257,229,10,Joey,joy,"Yeah, life's pretty great isn't it?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia229_utt10.wav
+2259,230,0,Joey,neutral,"You know, I think I was sixteen.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia230_utt0.wav
+2263,230,4,Joey,anger,"No-no-no-no-no,  I'm not fallin' for that again.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia230_utt4.wav
+2273,231,5,Joey,surprise,Hey!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia231_utt5.wav
+2278,231,9,Joey,fear,"Okay, good, good, good, cause, good, cause I was kinda having second thoughts too.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia231_utt9.wav
+2280,231,11,Joey,disgust,"That's horrible! Well, you did the right thing man.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia231_utt11.wav
+2333,236,0,Joey,joy,Mmmm. Good.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia236_utt0.wav
+2335,237,1,Joey,neutral,It's creamier.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia237_utt1.wav
+2337,237,3,Joey,disgust,"I don't know. We're talking about whipped fish, Monica. I'm just happy I'm keeping it down, y'know?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia237_utt3.wav
+2369,240,4,Joey,surprise,That was a great scene! And-and-and that slap looks so real! How do you do that?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia240_utt4.wav
+2372,240,7,Joey,joy,"Oh anyway, I just wanted to say how wonderful I think you are.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia240_utt7.wav
+2376,240,9,Joey,joy,"No. No, I'm Joey Tribbiani; we did a scene together yesterday. I-I'm the guy in the coma!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia240_utt9.wav
+2378,240,11,Joey,neutral,"An-an-anyway I-I just wanted to say that since I'm getting your brain when you leave the show, I was wondering if there was any tips you can give me",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia240_utt11.wav
+2380,240,13,Joey,neutral,I don't know. Why? Did you hear something?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia240_utt13.wav
+2382,240,15,Joey,sadness,"Oh uh, one of the writers.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia240_utt15.wav
+2386,241,1,Joey,joy,Yeah!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia241_utt1.wav
+2387,241,2,Joey,joy,Much!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia241_utt2.wav
+2388,241,3,Joey,neutral,"Listen uh, not that I'm y'know insecure about my manhood or anything y'know, but I think I need to hook up with a woman like right now.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia241_utt3.wav
+2390,241,5,Joey,joy,Yeah! Okay!  Hey! Hi!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia241_utt5.wav
+2392,241,7,Joey,surprise,"Y'know, you look familiar. Do I know you from somewhere?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia241_utt7.wav
+2394,241,9,Joey,joy,Oh! Maybe it's because I'm on television. I'm an actor on,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia241_utt9.wav
+2396,241,11,Joey,neutral,Yeah.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia241_utt11.wav
+2400,241,14,Joey,neutral,"Oh, let me get this.    These are for you.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia241_utt14.wav
+2442,246,0,Joey,neutral,"Well, how-how come?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia246_utt0.wav
+2444,246,2,Joey,surprise,That's crazy.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia246_utt2.wav
+2452,246,10,Joey,neutral,I-I think everybody's pretending they don't hear you.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia246_utt10.wav
+2453,246,11,Joey,neutral,"Anyway, look, I don't know about you and your jackets and your separate tables, but Ross is one of my best friends, and if I save him a seat, I'm telling you, he",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia246_utt11.wav
+2475,250,5,Joey,surprise,"Wow, that was kinda brutal.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia250_utt5.wav
+2494,252,7,Joey,surprise,No?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia252_utt7.wav
+2501,252,14,Joey,neutral,"Sure, it's hard to forget!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia252_utt14.wav
+2502,252,15,Joey,neutral,But that doesn't mean you have to talk about it!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia252_utt15.wav
+2503,252,16,Joey,neutral,"A lot of things happened on that trip that we should never,  ever talk about.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia252_utt16.wav
+2505,252,18,Joey,neutral,"It's between us and the sea, Ross!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia252_utt18.wav
+2525,254,6,Joey,anger,"All right, all right.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia254_utt6.wav
+2527,254,8,Joey,neutral,For the ride.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia254_utt8.wav
+2534,254,15,Joey,anger,"All right, I'm going. I'm going.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia254_utt15.wav
+2548,257,0,Joey,neutral,"Oh, yeah, yeah, sure. We live in the building by the uh sidewalk.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia257_utt0.wav
+2550,257,2,Joey,neutral,"Hey, look, since we're neighbors and all, what do you say we uh, get together for a drink?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia257_utt2.wav
+2552,257,4,Joey,joy,Ben! Ben! Ben!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia257_utt4.wav
+2554,258,1,Joey,neutral,"No, still too ethnic. My agent thinks I should have a name that's more neutral.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia258_utt1.wav
+2556,258,3,Joey,neutral,"Plus, y'know, I think it should be Joe.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia258_utt3.wav
+2557,258,4,Joey,neutral,"Y'know, Joey makes me sound like I'm, I dunno, this big.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia258_utt4.wav
+2558,258,5,Joey,neutral,Which I'm not.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia258_utt5.wav
+2560,258,7,Joey,neutral,Stalin...Stalin...do I know that name? It sounds familiar.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia258_utt7.wav
+2562,258,9,Joey,joy,"Joe Stalin. Y'know, that's pretty good.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia258_utt9.wav
+2564,258,11,Joey,joy,Joseph Stalin. I think you'd remember that!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia258_utt11.wav
+2585,260,3,Joey,joy,"Hey, Pheebs! Check-check this out.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia260_utt3.wav
+2587,260,5,Joey,neutral,"Yeah listen so, I thought I was getting better, so on my way home today I stopped by this guitar store and",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia260_utt5.wav
+2589,260,7,Joey,neutral,No.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia260_utt7.wav
+2591,260,9,Joey,joy,Yes!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia260_utt9.wav
+2593,261,0,Joey,surprise,Really? You'd-you'd do that for me?!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia261_utt0.wav
+2595,261,2,Joey,joy,Thanks!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia261_utt2.wav
+2597,261,4,Joey,joy,Done!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia261_utt4.wav
+2599,261,6,Joey,neutral,It's not.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia261_utt6.wav
+2601,261,8,Joey,neutral,Oh.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia261_utt8.wav
+2620,263,1,Joey,neutral,Hey.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia263_utt1.wav
+2621,263,2,Joey,neutral,Where've you been?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia263_utt2.wav
+2625,263,6,Joey,joy,Hey! He beat ya.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia263_utt6.wav
+2629,264,0,Joey,anger,Aww man! I can't believe I locked myself out again!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia264_utt0.wav
+2631,264,2,Joey,surprise,Oh my God! What happened here? Did you do all this?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia264_utt2.wav
+2660,267,3,Joey,sadness,"So, does that mean the audition is off?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia267_utt3.wav
+2662,267,5,Joey,surprise,What?!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia267_utt5.wav
+2665,267,8,Joey,sadness,"It's ah, step-ity, step and jazz hands.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia267_utt8.wav
+2667,267,10,Joey,neutral,Bye.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia267_utt10.wav
+2705,271,2,Joey,neutral,What's up man?,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia271_utt2.wav
+2707,271,4,Joey,surprise,"Oh my God! He's trapped in an ATM vestibule with Jill Goodacre!  Chandler, listen.",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia271_utt4.wav
+2717,273,1,Joey,surprise,"Ah, he can't make it, he said he had to his...  Whoa-oh!",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia273_utt1.wav
+2722,274,2,Joey,anger,"Yeah, are you just going down there to gawk at that hot girl with the belly button ring again?",data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia274_utt2.wav
+2724,274,4,Joey,joy,Yeah!,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia274_utt4.wav
+2726,275,1,Joey,neutral,Fine.,data/raw/MELD-RAW/MELD.Raw/test/output_repeated_splits_test/dia275_utt1.wav

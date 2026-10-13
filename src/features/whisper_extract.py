@@ -2,14 +2,13 @@ import whisper
 from pathlib import Path
 from tqdm import tqdm
 import pandas as pd
-import json
 
 model = whisper.load_model("base")
 
 current_dir = Path(__file__).resolve().parents
 ROOT = current_dir[2]
 
-manifest_path = ROOT / "results" / "artifacts" / "train_manifest.csv"
+manifest_path = ROOT / "results" / "artifacts" / "test_manifest.csv"
 manifest = pd.read_csv(manifest_path)
 transcripts = []
 
@@ -32,10 +31,10 @@ for row in tqdm(manifest.itertuples(index=True), total = len(manifest), desc = "
         print(f"error! couldn't find file: dia{row.Dialogue_ID}_utt{row.Utterance_ID}")
         continue
 
-transcripts_path = Path(ROOT / "results" / "artifacts" / "whisper_transcripts.json")
+transcripts_path = Path(ROOT / "results" / "artifacts" / "whisper_transcripts_test.csv")
 transcripts_path.parent.mkdir(parents=True, exist_ok=True)
 
-with open(transcripts_path, "w", encoding='utf-8') as f:
-    json.dump(transcripts, f, ensure_ascii = False, indent = 4)
+transcripts = pd.DataFrame(transcripts, columns = ['SNo', 'Whisper_Transcript', 'Dialogue_ID', 'Utterance_ID', 'Speaker', 'Label'])
+transcripts.to_csv(transcripts_path)
 
 print("Whisper generated transcripts saved at: ", transcripts_path)

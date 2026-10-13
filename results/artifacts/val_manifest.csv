@@ -1,0 +1,382 @@
+SNo,Dialogue_ID,Utterance_ID,Speaker,Label,Reference_Transcript,Path_to_WAV
+3,1,0,Ross,neutral,"Or! Or, we could go to the bank, close our accounts and cut them off at the source.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia1_utt0.wav
+10,1,7,Rachel,surprise,Where?!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia1_utt7.wav
+12,1,9,Ross,neutral,And,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia1_utt9.wav
+26,3,1,Ross,joy,Yeah!!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia3_utt1.wav
+28,4,0,Ross,neutral,Yes? Yes?! How can I help you?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia4_utt0.wav
+30,4,2,Ross,surprise,"Oh-oh, you're-you're fellow scholars.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia4_utt2.wav
+31,4,3,Ross,neutral,"What exactly were you looking for, hmm?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia4_utt3.wav
+32,4,4,Ross,neutral,"Perhaps,  perhaps Dr. Chester Stock's musings on the Smiledon Californicus?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia4_utt4.wav
+34,4,6,Ross,anger,"Ah AhGet out of here!  Uh, meeting someone? Or-or are you just here to brush up on Marion's views on evolution?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia4_utt6.wav
+36,4,8,Ross,neutral,I find Marion's views far too progressionist.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia4_utt8.wav
+38,4,10,Ross,neutral,"I'm a professor here uh, RossGeller.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia4_utt10.wav
+40,4,12,Ross,surprise,Yes! You're the person who checked out my book?!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia4_utt12.wav
+42,4,14,Ross,neutral,"Well I uh, I skipped forth grade.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia4_utt14.wav
+43,5,0,Ross,anger,You had no right to tell me you ever had feelings for me.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia5_utt0.wav
+44,5,1,Rachel,surprise,What?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia5_utt1.wav
+45,5,2,Ross,anger,I was doing great with Julie before I found out about you.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia5_utt2.wav
+46,5,3,Rachel,anger,"Hey, I was doin' great before I found out about you. You think it's easy for me to see you with Julie?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia5_utt3.wav
+47,5,4,Ross,anger,The point is I...,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia5_utt4.wav
+48,5,5,Ross,anger,"I don't need this right now, OK.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia5_utt5.wav
+49,5,6,Ross,anger,"It, it's too late, I'm with somebody else, I'm happy.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia5_utt6.wav
+50,5,7,Ross,anger,This ship has sailed.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia5_utt7.wav
+51,5,8,Rachel,anger,"Alright, fine, you go ahead and you do that, alright Ross.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia5_utt8.wav
+52,5,9,Ross,anger,Fine.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia5_utt9.wav
+53,5,10,Rachel,anger,Cause I don't need your stupid ship.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia5_utt10.wav
+54,5,11,Ross,anger,Good.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia5_utt11.wav
+55,5,12,Rachel,anger,Good.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia5_utt12.wav
+66,7,0,Ross,joy,Wow! It looks like we got a lot of good stuff.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia7_utt0.wav
+67,7,1,Rachel,joy,"Oh we did, but my mom got us the greatest gift of all.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia7_utt1.wav
+68,7,2,Ross,neutral,A,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia7_utt2.wav
+69,7,3,Rachel,neutral,No. She's going to live with us for eight weeks.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia7_utt3.wav
+70,7,4,Ross,surprise,"Uh, what?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia7_utt4.wav
+71,7,5,Rachel,joy,Yes! She's gonna help us take care of the baby! Woo-hoo.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia7_utt5.wav
+72,7,6,Ross,surprise,WhatYou're not serious.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia7_utt6.wav
+73,7,7,Ross,anger,"I mean she's a very nice woman, but there is no way we can take eight weeks of her.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia7_utt7.wav
+74,7,8,Ross,disgust,She'll drive us totally crazy.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia7_utt8.wav
+76,7,10,Ross,joy,Hi roomie!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia7_utt10.wav
+101,10,0,Ross,neutral,So where are we going next?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia10_utt0.wav
+106,10,5,Ross,anger,"Yeah, no one talks like that!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia10_utt5.wav
+108,10,7,Ross,anger,"Hey, I'm more cop than you two!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia10_utt7.wav
+110,10,9,Ross,neutral,"Hello! I'm in the front seat, okay? I'm Gary's partner!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia10_utt9.wav
+112,11,1,Rachel,neutral,Here you go. Thank you!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia11_utt1.wav
+114,11,3,Rachel,surprise,"Oh what, you-you want both of them?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia11_utt3.wav
+116,11,5,Rachel,fear,"Okay, okay, okay, look, just don't freak out, but I kinda lost it.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia11_utt5.wav
+117,11,6,Rachel,neutral,"I know it's in the apartment, but I",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia11_utt6.wav
+119,11,8,Rachel,anger,Tell her to wear her own earrings.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia11_utt8.wav
+121,11,10,Rachel,anger,Nooo! Nooooo! You lent me Monica's earrings?! I'm not allowed to borrow her stuff!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia11_utt10.wav
+123,11,12,Rachel,anger,Because I lose her stuff!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia11_utt12.wav
+127,12,0,Ross,neutral,"Uh Phoebe, can I see you for a second?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia12_utt0.wav
+130,12,3,Ross,surprise,Chandler's gone again!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia12_utt3.wav
+164,15,0,Rachel,joy,Thank you.  Oh Joey and look at this crib! It's so cute!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia15_utt0.wav
+166,15,2,Rachel,surprise,Are you seriousReally?! It's in such good condition.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia15_utt2.wav
+168,15,4,Rachel,surprise,Wow! Whoa-whoa what's under the covers?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia15_utt4.wav
+170,15,6,Rachel,fear,It's moving.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia15_utt6.wav
+172,15,8,Rachel,fear,It's stillIt's got a tail! Get it out of here! Get it out of here!!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia15_utt8.wav
+176,16,2,Ross,surprise,Oh just say it Kyle!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia16_utt2.wav
+181,16,7,Ross,anger,"Y'know, he hums when he pees!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia16_utt7.wav
+183,16,9,Ross,disgust,"It makes him miss the bowl, but whatever.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia16_utt9.wav
+185,16,11,Ross,anger,"That's all right, we-we don't need you. In fact, hey I'm over it already.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia16_utt11.wav
+188,16,14,Ross,sadness,"I'm sorry. Ugh, Pheebs, you were, you were right about her. Y'know, she",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia16_utt14.wav
+190,16,16,Ross,anger,"Yeah, we're better off without them.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia16_utt16.wav
+192,16,18,Ross,sadness,Divorced men's club.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia16_utt18.wav
+197,17,2,Rachel,anger,This is totally your fault!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia17_utt2.wav
+198,17,3,Ross,anger,My fault?! You threatened the judge!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia17_utt3.wav
+199,17,4,Rachel,anger,"Well, you ripped the paper out of the court reporter's machine!!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia17_utt4.wav
+221,19,0,Ross,neutral,"Come on, come on.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia19_utt0.wav
+222,19,1,Ross,anger,"Damnit, damnit, damnit, damnit.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia19_utt1.wav
+223,19,2,Ross,anger,This is all your fault.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia19_utt2.wav
+224,19,3,Ross,anger,"This is supposed to be, like, the greatest day of my life, y'know?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia19_utt3.wav
+225,19,4,Ross,anger,"My son is being born, and I should be in there, you know, instead of stuck in a closet with you.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia19_utt4.wav
+227,19,6,Ross,anger,"No no no, believe me.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia19_utt6.wav
+228,19,7,Ross,anger,"No one has been waiting for this as much as I have, ok?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia19_utt7.wav
+229,19,8,Ross,neutral,And you know what the funny thing is?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia19_utt8.wav
+230,19,9,Ross,anger,"When this day is over, you get to go home with the baby, ok?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia19_utt9.wav
+231,19,10,Ross,sadness,Where does that leave me?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia19_utt10.wav
+236,19,15,Ross,neutral,Every day is Lesbian Lover Day.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia19_utt15.wav
+238,19,17,Ross,neutral,You wanna explain that?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia19_utt17.wav
+246,20,2,Rachel,joy,"I'm doing just fine! God, Tiffany, you smell so great!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia20_utt2.wav
+248,20,4,Rachel,disgust,"Oh, y'know Joey, you are sick!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia20_utt4.wav
+250,20,6,Rachel,disgust,I'm not reading this!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia20_utt6.wav
+255,21,3,Ross,neutral,I just wanna clarify this: are you outing Mr. Peanut?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia21_utt3.wav
+265,22,6,Ross,anger,"Little louder, okay, I think there's a man on the twelfth floor in a coma that didn't quite hear you...",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia22_utt6.wav
+267,22,8,Ross,neutral,My first time with Carol was...,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia22_utt8.wav
+269,22,10,Ross,neutral,It was my,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia22_utt10.wav
+273,23,0,Ross,neutral,Hi. Where is everybody?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia23_utt0.wav
+275,23,2,Ross,sadness,"My marriage, I think my marriage is um, is kinda over.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia23_utt2.wav
+277,23,4,Ross,sadness,"Cause Carol's a lesbian.  And, and I'm not one. And apparently it's not a mix and match situation.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia23_utt4.wav
+279,23,6,Ross,disgust,I'm an idiot.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia23_utt6.wav
+280,23,7,Ross,sadness,"I mean shoulda seen it, I mean Carol and I'd be out and she'd, she'd see some beautiful woman, and, and she'd be Ross y'know look at her, and I'd think, God, my wife is cool!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia23_utt7.wav
+282,23,9,Ross,surprise,"Well, now I do!!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia23_utt9.wav
+284,23,11,Ross,sadness,Seven years.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia23_utt11.wav
+285,23,12,Ross,sadness,"I mean we've been together seven years, she's the only woman who's ever loved me, and the only woman I've-I've ever....",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia23_utt12.wav
+303,26,1,Rachel,surprise,What?!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia26_utt1.wav
+305,26,3,Rachel,neutral,You were with Julie?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia26_utt3.wav
+308,26,6,Rachel,surprise,Oh. Oh my God.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia26_utt6.wav
+310,26,8,Rachel,anger,"Yeah, right.  Sure!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia26_utt8.wav
+314,26,12,Rachel,anger,"Oh, please, you wanted to get caught.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia26_utt12.wav
+316,26,14,Rachel,anger,"Oh, so you just sort of happened to leave it in here?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia26_utt14.wav
+318,26,16,Rachel,sadness,"Ok, Monica. I just have to know one thing. Did you go with her to",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia26_utt16.wav
+325,27,5,Rachel,surprise,"Oh my God, who is it?!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia27_utt5.wav
+330,28,0,Ross,neutral,In,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia28_utt0.wav
+334,28,4,Rachel,neutral,I know Monica's worst Thanksgiving.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia28_utt4.wav
+338,28,8,Rachel,surprise,What?! Joey got a turkey stuck on his head?!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia28_utt8.wav
+342,29,1,Rachel,neutral,Who was that?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia29_utt1.wav
+344,29,3,Rachel,sadness,Oh... that's too bad. Bye bye.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia29_utt3.wav
+346,29,5,Rachel,neutral,No.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia29_utt5.wav
+348,29,7,Rachel,neutral,"Mon. I wish I could, but I've made plans to walk around.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia29_utt7.wav
+351,29,10,Rachel,joy,Done.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia29_utt10.wav
+377,31,6,Ross,joy,But you didn't!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia31_utt6.wav
+378,31,7,Ross,joy,I'm still alive!!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia31_utt7.wav
+379,31,8,Ross,joy,"Kori, I know this is a big surprise for you.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia31_utt8.wav
+380,31,9,Ross,joy,It's a long story but the things    you just said really made my day!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia31_utt9.wav
+381,31,10,Ross,joy,"I mean, the fact that you are here means more    to me than if this room were filled with people!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia31_utt10.wav
+383,31,12,Ross,joy,Did you hear that? Kori Weston had a crush on me!!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia31_utt12.wav
+385,32,1,Rachel,neutral,Okay.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia32_utt1.wav
+387,32,3,Rachel,neutral,Yeah.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia32_utt3.wav
+389,32,5,Rachel,neutral,"Eh, just a tad.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia32_utt5.wav
+393,32,9,Ross,anger,Do them!!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia32_utt9.wav
+395,32,11,Rachel,neutral,"Well, we are ready to try anything.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia32_utt11.wav
+397,32,13,Rachel,neutral,Okay.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia32_utt13.wav
+401,34,1,Ross,neutral,"Ok, ok, here we go.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia34_utt1.wav
+402,34,2,Ross,neutral,"Ok, where am I talking to, here?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia34_utt2.wav
+403,34,3,Ross,neutral,"I mean, uh, well, there is one way that seems to offer a certain acoustical advantage, but...",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia34_utt3.wav
+405,34,5,Ross,neutral,"Ok, ok, ok, ok, here goes.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia34_utt5.wav
+406,34,6,Ross,fear,"You know, I, you know, can't do this.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia34_utt6.wav
+407,34,7,Ross,disgust,"Uh, this is too weird.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia34_utt7.wav
+408,34,8,Ross,sadness,I feel stupid.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia34_utt8.wav
+410,34,10,Ross,joy,"Hello, baby. Hello, hello.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia34_utt10.wav
+418,36,0,Ross,fear,Easy. Easy. You have to go to the hospital. Okay?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia36_utt0.wav
+419,36,1,Rachel,neutral,"Okay, I do.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia36_utt1.wav
+420,36,2,Ross,neutral,Okay.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia36_utt2.wav
+421,36,3,Rachel,neutral,I really do.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia36_utt3.wav
+422,36,4,Ross,neutral,"Okay, I'm gonna get your coat and then I'll-I'll put you in a cab.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia36_utt4.wav
+423,36,5,Rachel,sadness,"Okay. Oh wait, wait-wait, you're not gonna come with me?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia36_utt5.wav
+424,36,6,Ross,surprise,Of course I am. I just have to make a call.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia36_utt6.wav
+425,36,7,Rachel,neutral,Okay.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia36_utt7.wav
+426,36,8,Ross,neutral,Okay?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia36_utt8.wav
+427,36,9,Rachel,surprise,Thank you.  Oww!!!! God!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia36_utt9.wav
+428,36,10,Ross,fear,"What?! I wh-, what's wrong?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia36_utt10.wav
+429,36,11,Rachel,disgust,"I'm sorry, I just can't go to the hospital lookin' like this.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia36_utt11.wav
+432,37,2,Rachel,fear,"Oh, I can't watch this.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia37_utt2.wav
+439,37,9,Ross,surprise,"Well, this is ironic.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia37_utt9.wav
+440,37,10,Ross,neutral,"Of your last two boyfriends, Richard didn't want to have kids, and from the looks of it, now Pete can't.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia37_utt10.wav
+445,40,0,Rachel,surprise,I thought I was a complete idiot.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia40_utt0.wav
+447,40,2,Rachel,disgust,"Oh! Oh, I think I'm gonna throw up a little bit. What did you say?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia40_utt2.wav
+449,40,4,Rachel,surprise,What?!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia40_utt4.wav
+451,40,6,Rachel,anger,"Okay Joey, first of all Kash Ford is not people. Second of all, what did he say when you told him I was pregnant?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia40_utt6.wav
+453,40,8,Rachel,fear,"Good-good, don't tell him. Don't tell him. Just have him call me okay?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia40_utt8.wav
+455,40,10,Rachel,joy,"Okay, you go do it! I'll come back to that set! I'll meet more actors! I'll meet em all!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia40_utt10.wav
+456,41,0,Rachel,neutral,"Ohh, here you are. I was looking for you before. Joshua's gone so you and Emily are free to go.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia41_utt0.wav
+457,41,1,Ross,neutral,That's okay.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia41_utt1.wav
+458,41,2,Ross,neutral,"She's still in there enjoying her fake party and uh, it's too late to do any of the things I had planned, so",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia41_utt2.wav
+459,42,0,Ross,anger,Ah! Ah! I forgot my jacket!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia42_utt0.wav
+461,42,1,Ross,anger,You tell them to wait!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia42_utt1.wav
+462,42,2,Rachel,neutral,Okay. Wait! Wait!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia42_utt2.wav
+463,42,3,Ross,neutral,Emily.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia42_utt3.wav
+464,42,4,Ross,anger,Oh no-no-no! Oh-no!  No! No! Emily!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia42_utt4.wav
+466,43,1,Rachel,neutral,Okay.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia43_utt1.wav
+468,44,1,Ross,anger,Nevermind!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia44_utt1.wav
+472,44,4,Ross,neutral,"Jen, I know this may sound a little But uh, would you maybe wanna grab a cup of coffee sometime, or",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia44_utt4.wav
+474,44,6,Ross,neutral,Umm?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia44_utt6.wav
+476,44,8,Ross,neutral,I will give you a call.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia44_utt8.wav
+478,44,10,Ross,joy,Okay!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia44_utt10.wav
+482,45,2,Rachel,neutral,Okay.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia45_utt2.wav
+485,45,5,Rachel,neutral,No. Thank you.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia45_utt5.wav
+487,45,7,Rachel,neutral,"Well, they never have any paper in there y'know. So my rule is no tissue, no tuschy.'  Well, if everybody's going.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia45_utt7.wav
+492,46,0,Rachel,neutral,I promise.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia46_utt0.wav
+495,46,3,Ross,neutral,"No, no he's not.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia46_utt3.wav
+497,46,5,Ross,surprise,"What?  So what are you going to do? I mean how, how are you going to tell Chandler?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia46_utt5.wav
+499,46,7,Rachel,neutral,"Joey, you can't keep this to yourself, if you know about this, you have to tell him.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia46_utt7.wav
+505,47,1,Ross,neutral,"Well, oh just ah, I was just wondering, when you and I split up, did you get the tape that was half the last episode of",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia47_utt1.wav
+507,47,3,Ross,neutral,Where's Ben?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia47_utt3.wav
+509,47,5,Ross,surprise,"Ahh.  Ooh, is this a ah, is this a bad time?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia47_utt5.wav
+511,47,7,Ross,surprise,"Oh! I thought you guys got married in uh, January?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia47_utt7.wav
+513,47,9,Ross,surprise,Ah!  Oh.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia47_utt9.wav
+516,48,1,Rachel,joy,"Oh, oh, oh, I'll get Rainy Day Bear'!!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia48_utt1.wav
+518,48,3,Rachel,fear,"Oh God, oh God, it's sowed on though.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia48_utt3.wav
+520,48,5,Rachel,neutral,Okay.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia48_utt5.wav
+522,48,7,Rachel,sadness,"Oh, it's just like a bloodbath in here today.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia48_utt7.wav
+523,49,0,Ross,anger,Please. This is so your fault.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia49_utt0.wav
+525,49,2,Ross,anger,"Look, Carol never threw me out of a room before you came along.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia49_utt2.wav
+537,49,12,Ross,neutral,"Yeah, Susan.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia49_utt12.wav
+568,54,3,Ross,neutral,"Yeah, see.. you took mine. Chandler, what about you?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia54_utt3.wav
+570,54,5,Rachel,disgust,"See, there's always one guy.  ""If I had a wish, I'd wish for three more wishes.""",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia54_utt5.wav
+576,54,11,Ross,surprise,"Joey, uh-",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia54_utt11.wav
+597,57,0,Rachel,neutral,Nooo Way! The most romantic song ever is,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia57_utt0.wav
+599,57,2,Rachel,neutral,"What song was that, Pheebs?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia57_utt2.wav
+601,57,4,Ross,joy,Hey Mon!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia57_utt4.wav
+602,57,5,Rachel,joy,Hey Mon!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia57_utt5.wav
+604,57,7,Ross,neutral,Nope.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia57_utt7.wav
+605,57,8,Rachel,neutral,"No, it's been three nights in a row.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia57_utt8.wav
+606,57,9,Ross,neutral,"Yeah, she finally stopped crying yesterday, but then she found one of Richard's cigar butts out on the terrace, so.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia57_utt9.wav
+611,58,1,Ross,disgust,"Y'know what, I don't know how comfortable I am going to see how hot the sex is between some guy and your girlfriend.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia58_utt1.wav
+613,58,3,Ross,neutral,"Oh no-no-no, I'm there.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia58_utt3.wav
+622,58,11,Ross,joy,Oh yeah!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia58_utt11.wav
+644,62,0,Ross,neutral,"So honey this uh, this threesome thing umm, I mean how-how are you gonna start to find",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia62_utt0.wav
+646,62,2,Ross,surprise,"Oh.  Wow!  Huh.  Boy!  Well, someone's been doing their homework.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia62_utt2.wav
+648,62,4,Ross,neutral,"Oh, I know.  Y'know, just-just talking about it is getting me kinda",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia62_utt4.wav
+650,63,0,Ross,joy,"and then, we could've gone from the ceremony to the reception with you in the sidecar!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt0.wav
+651,63,1,Rachel,neutral,"Ross, it just wouldn't have been feasible.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt1.wav
+652,63,2,Ross,anger,But having a dove place the ring on your finger would've been no problem?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt2.wav
+653,63,3,Rachel,joy,It was really fun being married to you tonight.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt3.wav
+654,63,4,Ross,joy,"Yeah! And! And, it was the easiest 400 bucks I've ever made.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt4.wav
+655,63,5,Rachel,sadness,"Okay Ross, can I uh, can I ask you something?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt5.wav
+656,63,6,Ross,neutral,Yeah.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt6.wav
+657,63,7,Rachel,neutral,"That proposal, at the planetarium",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt7.wav
+658,63,8,Ross,sadness,"I know, I know it was stupid.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt8.wav
+659,63,9,Rachel,surprise,Are you kidding?!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt9.wav
+660,63,10,Rachel,joy,"With the, with the lilies, and-and the song, and the stars!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt10.wav
+661,63,11,Rachel,joy,It wasreally wonderful!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt11.wav
+662,63,12,Rachel,surprise,Did you just make that up?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt12.wav
+663,63,13,Ross,neutral,"No, actually I thought about it when, when we were going out.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt13.wav
+664,63,14,Ross,neutral,"It's how I imagined I uh, I would ask you to marry me.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt14.wav
+665,63,15,Rachel,neutral,"Well, that would've been very hard to say no too.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt15.wav
+666,63,16,Ross,neutral,"It's a good thing I didn't do it, because it sounds like it would've been a very expensive wedding.  Okay, good night",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt16.wav
+667,63,17,Rachel,neutral,Goodnight,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt17.wav
+668,63,18,Ross,neutral,Even if the sidecar had a windscreen so your hair wouldn't get messed up?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt18.wav
+669,63,19,Rachel,neutral,I will think about it.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt19.wav
+670,63,20,Ross,neutral,That's all I'm askin',data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia63_utt20.wav
+671,64,0,Rachel,surprise,"You guys! It was bananas, cream, and beef! I-I just cannot believe that you ate that so that I wouldn't feel bad!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia64_utt0.wav
+677,65,0,Rachel,joy,And that's I'm so glad there's no problem.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia65_utt0.wav
+679,65,2,Rachel,joy,Ohh! That's great!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia65_utt2.wav
+681,65,4,Rachel,surprise,Really?!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia65_utt4.wav
+686,65,9,Rachel,fear,"Well, I, umm",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia65_utt9.wav
+689,66,1,Rachel,neutral,"Yeah but, maybe it's not what we think. Maybe it's tell Monica I'm sorry Idrank the last of the milk.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia66_utt1.wav
+691,66,3,Ross,surprise,I think it means he freaked out and left!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia66_utt3.wav
+693,66,5,Rachel,sadness,"Okay. Phoebe, I-I think Ross is right. What are we gonna do?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia66_utt5.wav
+694,66,6,Ross,neutral,"LookOkay, I'm just gonnaI'm gonna have to go find him and bring him back!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia66_utt6.wav
+695,66,7,Ross,neutral,Okay?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia66_utt7.wav
+696,66,8,Ross,neutral,"You-you make sure Monica does not find out, okay?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia66_utt8.wav
+699,66,11,Ross,neutral,"I will, I will find him.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia66_utt11.wav
+700,67,0,Rachel,joy,Hey!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia67_utt0.wav
+702,67,2,Rachel,neutral,Do you guys know any cute guys?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia67_utt2.wav
+705,67,5,Rachel,neutral,"Anyway, there's this big charity ball this weekend and Ralph Lauren bought a table, so I kinda have to go",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia67_utt5.wav
+707,67,7,Rachel,neutral,"I don't know, something either trees or diseaseRalph mumbles a lot.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia67_utt7.wav
+709,67,9,Rachel,surprise,Yeah! It's weird. But the thing is need to find a date.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia67_utt9.wav
+711,68,0,Rachel,joy,Hey!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia68_utt0.wav
+712,68,1,Ross,neutral,What are you guys doing later?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia68_utt1.wav
+714,68,3,Rachel,surprise,We do?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia68_utt3.wav
+717,68,5,Ross,sadness,I just found out that Elizabeth's dad wants to meet me.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia68_utt5.wav
+719,68,7,Ross,fear,"Come on guys, I-I really want this guy to like me.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia68_utt7.wav
+720,68,8,Ross,sadness,It-it would really help me out if you guys were here to make me look good.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia68_utt8.wav
+722,68,10,Ross,joy,Thanks!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia68_utt10.wav
+724,69,0,Rachel,joy,"Oh, hi! How are you doing?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia69_utt0.wav
+728,69,3,Ross,neutral,Tag?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia69_utt3.wav
+730,69,4,Ross,joy,Y-You're going?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia69_utt4.wav
+731,69,5,Ross,neutral,"Uh we didn't, uh we didn't get the chance to talk.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia69_utt5.wav
+732,69,6,Ross,neutral,"Uh, so, where did you say you're from again?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia69_utt6.wav
+734,69,8,Ross,neutral,"Ah, what good are you.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia69_utt8.wav
+735,69,9,Rachel,neutral,"Look, um, I think we should talk about what happened on the terrace.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia69_utt9.wav
+737,69,11,Rachel,sadness,"Ah, I-I never should have said what I said.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia69_utt11.wav
+738,69,12,Rachel,neutral,Ity'know what?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia69_utt12.wav
+739,69,13,Rachel,sadness,It just doesn't matter how I feel.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia69_utt13.wav
+740,69,14,Rachel,sadness,"I mean we work together, so nothing could really ever happen between us, and what I would love is just to go to work on Monday, and-and never talk about this again, okay?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia69_utt14.wav
+742,69,16,Rachel,sadness,"Oh, god, I knew it, that I freaked you out.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia69_utt16.wav
+744,69,18,Rachel,surprise,Really?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia69_utt18.wav
+746,70,0,Ross,anger,"Get him! GET HIM! Get him! Get- YESSS! Not laughing now, are ya pal!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia70_utt0.wav
+748,70,2,Ross,joy,Pass it! Pass it!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia70_utt2.wav
+752,71,0,Rachel,joy,I am so psyched I kept this chair for myself!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia71_utt0.wav
+756,71,2,Rachel,surprise,"Yeah? Wow! Y'know, that this thing has speakers in the headrest!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia71_utt2.wav
+758,71,4,Rachel,joy,Yeah! You can hook it up to your TV,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia71_utt4.wav
+777,72,17,Rachel,neutral,"""Baddest man in the whole damn town.""",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia72_utt17.wav
+779,73,0,Ross,anger,"And shame on you! You should know better, Joey needs to work.  Now come on!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia73_utt0.wav
+781,73,2,Ross,anger,No! Ah-ah-ah-ah-ah! You can have this back when the five pages are done!  Ahh!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia73_utt2.wav
+782,74,0,Rachel,joy,Hi!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt0.wav
+783,74,1,Ross,neutral,Hi.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt1.wav
+784,74,2,Rachel,joy,"Hi.  Umm, I think there's something that we really need to talk about.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt2.wav
+785,74,3,Ross,sadness,"I think we do. Why don't we go inside?  Look uh, I know why you're here.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt3.wav
+786,74,4,Rachel,surprise,You do?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt4.wav
+787,74,5,Ross,neutral,"Yeah, and to save you from any embarrassment umm, I think maybe I should talk first.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt5.wav
+788,74,6,Rachel,neutral,Okay.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt6.wav
+789,74,7,Ross,neutral,"Okay.  Uh, Ross and Rachel. Rachel and Ross. That's been one heck of a see-saw hasn't it?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt7.wav
+790,74,8,Rachel,surprise,What?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt8.wav
+791,74,9,Ross,sadness,"I mean look, that-that one night we had was fun andand certainly passionate, but don't you think it's better if we just stayed friends?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt9.wav
+792,74,10,Rachel,surprise,Seriously. What?!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt10.wav
+793,74,11,Ross,neutral,Okay.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt11.wav
+794,74,12,Ross,neutral,Okay.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt12.wav
+795,74,13,Ross,neutral,Y'know what?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt13.wav
+796,74,14,Ross,neutral,"If you want to, we can do it one more time.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt14.wav
+797,74,15,Ross,neutral,I mean I'd-I'd be okay with that.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt15.wav
+798,74,16,Ross,neutral,"In fact, I have some time right now.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt16.wav
+799,74,17,Rachel,joy,"Okay, y'know what? Can I, can I talk now?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt17.wav
+800,74,18,Ross,neutral,Oh sure.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt18.wav
+801,74,19,Rachel,anger,"I'm pregnant.  Ross?  Ross?  Okay, whenever you're ready.  And you're the father by the waybut you got that",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia74_utt19.wav
+802,75,0,Rachel,neutral,We should defiantly play football more often. Maybe there's a like league we could join or something.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia75_utt0.wav
+804,76,1,Ross,surprise,"Yes! Wow, well, that-that was easy. Okay, you-you go.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia76_utt1.wav
+806,76,3,Ross,neutral,Okay.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia76_utt3.wav
+808,76,5,Ross,neutral,Hmph.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia76_utt5.wav
+811,76,8,Ross,joy,"With the belly-button ring? Oh, muhawa!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia76_utt8.wav
+817,76,14,Ross,disgust,"Your Mom, your telling me, your telling me, about your Mom, what is the matter with you?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia76_utt14.wav
+819,76,16,Ross,neutral,I said ',data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia76_utt16.wav
+821,77,1,Ross,surprise,Look at Emma!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia77_utt1.wav
+823,77,3,Ross,joy,"Oh what are you kidding? She's gorgeous, it's all Rachel.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia77_utt3.wav
+828,77,8,Ross,sadness,It'sit's complicated okay?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia77_utt8.wav
+830,77,10,Ross,sadness,"Look, we've been together.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia77_utt10.wav
+831,77,11,Ross,neutral,Okay?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia77_utt11.wav
+832,77,12,Ross,sadness,"And then apart, and then together, and then apart, and now we have a baby.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia77_utt12.wav
+833,77,13,Ross,sadness,It's just if-if we got together again and it didn't work outI could never do that to Emma.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia77_utt13.wav
+834,77,14,Ross,sadness,I mean she-she thinking everything Oh that'snow me.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia77_utt14.wav
+835,77,15,Ross,neutral,What do they put something in the water in this place?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia77_utt15.wav
+836,77,16,Ross,sadness,"Since Rachel and I we're doing really, we're doing really well right now.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia77_utt16.wav
+838,77,18,Ross,neutral,"Yeah, exactly.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia77_utt18.wav
+840,78,0,Rachel,joy,God. I forgot how much I love driving. I have,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia78_utt0.wav
+841,78,1,Ross,neutral,You don't have a,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia78_utt1.wav
+842,78,2,Rachel,neutral,"Oh Ross you're so tense! You just gotta relax, okay? Just need to relax all right? Just need to relax",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia78_utt2.wav
+843,78,3,Ross,anger,What-what are you doing?! Are youOkay that's not funny! Just stop horsing around!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia78_utt3.wav
+844,78,4,Rachel,joy,"I am not horsing around, okay? I am Porsching around.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia78_utt4.wav
+845,78,5,Rachel,fear,Uh-oh.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia78_utt5.wav
+846,78,6,Ross,neutral,"Okay, stay calm. Nothing is going to happen to you, you are not in that much trouble.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia78_utt6.wav
+847,78,7,Rachel,fear,Really? You think so?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia78_utt7.wav
+848,78,8,Ross,anger,I was talking to myself! You're going down!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia78_utt8.wav
+871,81,1,Ross,neutral,"Yes. Yes! Please, come in.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia81_utt1.wav
+873,81,2,Ross,joy,Oo-oo!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia81_utt2.wav
+903,84,1,Ross,surprise,Wh-what did he say?!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia84_utt1.wav
+905,84,3,Rachel,surprise,Why?! Why not?!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia84_utt3.wav
+911,85,0,Rachel,neutral,"Oh yeah, sure.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia85_utt0.wav
+912,85,1,Rachel,joy,"Okay, in about ten seconds you're gonna see him kiss me.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia85_utt1.wav
+913,85,2,Ross,neutral,And in about five seconds you're gonna see why.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia85_utt2.wav
+914,85,3,Rachel,neutral,Ross did I ever tell you about the time that I went backpacking through Western Europe?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia85_utt3.wav
+915,85,4,Rachel,joy,"Okay, get ready to see some beggin'!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia85_utt4.wav
+917,85,6,Rachel,surprise,What?!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia85_utt6.wav
+918,85,7,Ross,joy,Now I'm so happy.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia85_utt7.wav
+919,85,8,Rachel,surprise,What are you talking about?!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia85_utt8.wav
+922,85,11,Rachel,surprise,How do you know about that story?!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia85_utt11.wav
+924,85,13,Rachel,neutral,I heard it from my friend Irene who heard it from some guy!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia85_utt13.wav
+926,85,15,Rachel,neutral,"No. No, she told me his name was Ken Adams.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia85_utt15.wav
+928,86,0,Ross,neutral,"How we doing, you guys ready?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia86_utt0.wav
+930,86,2,Ross,neutral,Some days it's all I can think about.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia86_utt2.wav
+932,87,0,Ross,neutral,"Oh... ok, fine.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia87_utt0.wav
+933,87,1,Ross,neutral,But... ehm...,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia87_utt1.wav
+934,87,2,Ross,neutral,"I just have one question for you,    ehm...",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia87_utt2.wav
+935,87,3,Ross,neutral,"When we exit should we walk, or run, or prance,    or stroll...",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia87_utt3.wav
+948,89,5,Ross,sadness,"Oh, I'm sorry, I'm really sorry.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia89_utt5.wav
+949,89,6,Ross,sadness,Sorry.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia89_utt6.wav
+950,89,7,Ross,sadness,Sorry!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia89_utt7.wav
+953,89,8,Ross,joy,I got my s's back!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia89_utt8.wav
+954,89,9,Ross,neutral,Which we can celebrate later.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia89_utt9.wav
+955,89,10,Ross,neutral,Celebrate.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia89_utt10.wav
+956,90,0,Rachel,joy,"Ok, Paulo, why don't you just go get dressed, and then you be on your way, ok, bye-bye.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia90_utt0.wav
+958,90,2,Rachel,fear,"I don't know, I just kinda ran into him last night.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia90_utt2.wav
+960,90,4,Rachel,neutral,At his apartment. Is this juice?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia90_utt4.wav
+962,90,6,Rachel,sadness,"Oh God, I know I'm a pathetic loser.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia90_utt6.wav
+964,91,1,Ross,neutral,It's breast milk.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia91_utt1.wav
+966,91,3,Rachel,neutral,"Phoebe, that is juice, squeezed from a person.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia91_utt3.wav
+969,91,6,Ross,disgust,"Ok, would people stop drinking the breast milk?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia91_utt6.wav
+971,91,8,Ross,disgust,No!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia91_utt8.wav
+973,91,10,Ross,disgust,Not even if Carol's breast had a picture of a missing child on it.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia91_utt10.wav
+976,92,1,Ross,disgust,"Hey Pheebs, could you please not put your feet up on my newold sheet?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia92_utt1.wav
+978,92,3,Rachel,surprise,Ohh!!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia92_utt3.wav
+979,92,4,Ross,surprise,My apothecary table!!!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia92_utt4.wav
+982,92,6,Rachel,fear,Noooooo!!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia92_utt6.wav
+985,92,8,Rachel,anger,"Oh my God, Phoebe,",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia92_utt8.wav
+989,92,11,Ross,anger,"Of course not, it smells like wine, which you spilled! And thanks for wrecking my sheet by the way.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia92_utt11.wav
+990,93,0,Rachel,sadness,How is she?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia93_utt0.wav
+992,93,2,Ross,neutral,How's the hair?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia93_utt2.wav
+1001,94,2,Ross,disgust,That would be no.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia94_utt2.wav
+1006,94,7,Ross,surprise,You've tasted it? You've tasted it.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia94_utt7.wav
+1008,94,9,Ross,anger,"Oh, you've tasted it.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia94_utt9.wav
+1010,94,11,Ross,anger,Gimme the bottle.  Gimme the towel.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia94_utt11.wav
+1042,97,16,Ross,surprise,"Wait a minute, the house was built on radioactive waste, and an ancient Indian burial ground? That would never happen.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia97_utt16.wav
+1044,97,18,Rachel,surprise,Hey!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia97_utt18.wav
+1046,97,20,Rachel,joy,I need to talk to you!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia97_utt20.wav
+1047,97,21,Ross,neutral,"Sure, what's up?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia97_utt21.wav
+1052,98,4,Ross,anger,I would!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia98_utt4.wav
+1062,99,7,Rachel,neutral,"O-o-o-okay, how did it go? Tell me everything.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia99_utt7.wav
+1065,101,0,Rachel,sadness,Emma!  See? I don't want it.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia101_utt0.wav
+1067,102,1,Rachel,neutral,What?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia102_utt1.wav
+1069,103,1,Rachel,sadness,"Oh honey, but you love that name.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia103_utt1.wav
+1117,107,1,Rachel,neutral,"Joey, what are you talking about? You're a terrific actor.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia107_utt1.wav
+1119,107,3,Rachel,surprise,"Ugh, how can you even ask that question?!",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia107_utt3.wav
+1129,108,9,Ross,neutral,"Hey, where are Monica and Rachel anyway?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia108_utt9.wav
+1132,108,11,Rachel,joy,Hi!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia108_utt11.wav
+1134,108,13,Rachel,neutral,"Oh, honey, don't worry. She's gonna make it on time.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia108_utt13.wav
+1138,109,2,Ross,disgust,Unbelievable! I mean you really kept Joey's underwear?! Why? Why would you do that?!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia109_utt2.wav
+1146,110,1,Rachel,neutral,Yeah.,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia110_utt1.wav
+1148,110,3,Rachel,neutral,"Uh, it's from yore. Like the days of yore. Y'know?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia110_utt3.wav
+1155,110,8,Rachel,joy,"Yes! That I know, this is from White Plains.",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia110_utt8.wav
+1166,113,1,Rachel,sadness,But I,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia113_utt1.wav
+1171,113,6,Rachel,surprise,It is? Really?,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia113_utt6.wav
+1173,113,8,Rachel,sadness,"I mean we're not, we're not gonna live together anymore?",data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia113_utt8.wav
+1175,113,10,Rachel,sadness,What? Oh my God! I'm gonna miss you so much!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia113_utt10.wav
+1177,113,12,Rachel,sadness,I mean it's the end of an era!,data/raw/MELD-RAW/MELD.Raw/dev/dev_splits_complete/dia113_utt12.wav

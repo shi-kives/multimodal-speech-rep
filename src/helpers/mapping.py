@@ -26,6 +26,6 @@ def perform_mapping(emb_path: str, save_path: str):
     print(f"successfully saved mapped labels to {save_path}")
 
 
-path = ROOT / "embeddings" / "linguistic" / "distilbert_transcript" / "distilbert_transcripts_test.pt"
-
-perform_mapping(path, path)
+if __name__ == '__main__':
+    path = ROOT / "embeddings" / "linguistic" / "distilbert_transcript" / "distilbert_transcripts_test.pt"
+    perform_mapping(path, path)

@@ -8,13 +8,17 @@ ROOT = current_dir[2]
 acoustic_inputs = torch.load(ROOT / "embeddings" / "acoustic" / "wavlm_val.pt")
 linguistic_inputs = torch.load(ROOT / "embeddings" / "linguistic" / "distilbert_transcript" / "distilbert_transcripts_val.pt")
 
-acoustic_df = pd.DataFrame(acoustic_inputs, columns = ["Utterance_ID", "Embeddings", "Label"])
-linguistic_df = pd.DataFrame(linguistic_inputs, columns = ["Utterance_ID", "Embeddings", "Label"])
+acoustic_df = pd.DataFrame(acoustic_inputs, columns = ["Utterance_ID", "Acoustic_Embeddings", "Label"])
+linguistic_df = pd.DataFrame(linguistic_inputs, columns = ["Utterance_ID", "Linguistic_Embeddings", "Label"])
 
 fused = pd.merge(acoustic_df, linguistic_df, how='inner', on='Utterance_ID')
 fused = fused.drop_duplicates()
 
-save_path = ROOT / "results" / "artifacts" / "fused" / "fused_transcript" / "acou_ling_trans_val.csv"
+keep = ['Utterance_ID', 'Acoustic_Embeddings', 'Linguistic_Embeddings', 'Label_x']
+save_inputs = fused[keep].values.tolist()
+
+save_path = ROOT / "embeddings" / "fused" / "transcripts" / "fused_transcripts_val.pt"
 save_path.parent.mkdir(parents = True, exist_ok = True)
-fused.to_csv(save_path, index = False)
+
+torch.save(save_inputs, save_path)
 print(f"saved acoustic-linguistic merged csv of length {len(fused)} at {save_path}")

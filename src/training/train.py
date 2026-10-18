@@ -3,7 +3,7 @@ import torch.optim as optim
 import torch.nn as nn
 from torch.utils.data import DataLoader
 from src.models.mlp import MultiLayerPerceptron
-from src.models.dataloader import SpeechEmbeddingsDataset
+from src.models.dataloader import SpeechEmbeddingsDataset, FusedDataset
 from pathlib import Path
 from tqdm import tqdm
 import mlflow
@@ -21,12 +21,13 @@ mlflow.set_tracking_uri("http://127.0.0.1:8080")
 mlflow.set_experiment("/meld-multimodal")
 
 CONFIG = {
-    'EXP_NAME': 'direct fusion baseline',
+    'EXP_NAME': 'direct fusion baseline: wavlm & whisper-distilbert',
+
     'ACOUSTIC_INPUT_DIM': 768,
     'LINGUISTIC_INPUT_DIM': 768,
-    'HIDDEN_DIM': 128,
+
     'OUTPUT_DIM': 7,
-    'LEARNING_RATE': 0.001,
+
     'EPOCHS': 30,
     'BATCH_SIZE': 100,
 
@@ -34,10 +35,15 @@ CONFIG = {
     'ACOUSTIC_EMB_VAL_PATH': ROOT / "embeddings" / "acoustic" / "wavlm_val.pt",
 
     'LINGUISTIC_EMB_TRAIN_PATH': ROOT / "embeddings" / "linguistic" / "distilbert_reference" / "distilbert_reference_train.pt",
-
     'LINGUISTIC_EMB_VAL_PATH': ROOT / "embeddings" / "linguistic" / "distilbert_reference" / "distilbert_reference_val.pt",
 
-    'SAVE_PATH': ROOT / "results" / "models" / "base_transcript.pt"
+    'FUSION_REF_TRAIN_PATH': ROOT / "embeddings" / "fused" / "reference" / "fused_reference_train.pt",
+    'FUSION_REF_VAL_PATH': ROOT / "embeddings" / "fused" / "reference" / "fused_reference_val.pt",
+
+    'FUSION_TRANS_TRAIN_PATH': ROOT / "embeddings" / "fused" / "transcripts" / "fused_transcripts_train.pt",
+    'FUSION_TRANS_VAL_PATH': ROOT / "embeddings" / "fused" / "transcripts" / "fused_transcripts_val.pt",
+
+    'SAVE_PATH': ROOT / "results" / "models" / "base_fusion_trans.pt"
 }
 
 CONFIG_PATH = ROOT / "results" / "configs" / "baseline_fusion.json"
@@ -47,49 +53,59 @@ EXP_CONFIG = dict(EXP_CONFIG)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-def setup(path, mode, modality, modality_type, path_acoustic = None, path_linguistic = None):
+def setup(path, mode, modality, modality_type):
     if modality_type == 'UNIMODAL':
         inputs = torch.load(path)
 
         embeddings = torch.stack([i[1] for i in inputs]).to(device)
         labels = torch.tensor([i[2] for i in inputs], dtype = torch.long).to(device)
+        uids = pd.Series([i[0] for i in inputs], name = "uid")
 
         dataset = SpeechEmbeddingsDataset(embeddings, labels)
         loader = DataLoader(dataset, batch_size = CONFIG['BATCH_SIZE'], shuffle = True)
 
-        uids = pd.Series([i[0] for i in inputs], name = "uid")
-
         print(f"{modality} {mode} dataset and dataloader initialized....".upper())
 
-        model = MultiLayerPerceptron(input_dim = 768, hidden_dim = 128, output_dim = 7)
-
+        model = MultiLayerPerceptron(input_dim = 768, hidden_dim = EXP_CONFIG['HIDDEN_DIM'], output_dim = CONFIG['OUTPUT_DIM'])
         print("completed MLP....")
 
-        return inputs, embeddings, labels, uids, dataset, loader, model
+        return embeddings, labels, uids, loader, model
 
     elif modality_type == 'MULTIMODAL':
-        acoustic_inputs = torch.load(path_acoustic)
-        linguistic_inputs = torch.load(path_linguistic)
+        inputs = torch.load(path)
 
-        embeddings = 
+        uids = pd.Series([i[0] for i in inputs], name = "uid")
+        acoustic_embeddings = torch.stack([i[1] for i in inputs]).to(device)
+        linguistic_embeddings = torch.stack([i[2] for i in inputs]).to(device)
+        labels = torch.tensor([i[3] for i in inputs], dtype = torch.long).to(device)
+
+        dataset = FusedDataset(acoustic_embeddings, linguistic_embeddings, labels)
+        loader = DataLoader(dataset, CONFIG["BATCH_SIZE"], shuffle = True)
+
+        model = DirectFusedMLP(acoustic_input_dim = CONFIG["ACOUSTIC_INPUT_DIM"], linguistic_input_dim = CONFIG["LINGUISTIC_INPUT_DIM"], hidden_dim = EXP_CONFIG["HIDDEN_DIM"], output_dim = CONFIG["OUTPUT_DIM"], dropout = EXP_CONFIG["DROPOUT"])
+        print("completed MLP...")
+
+        return acoustic_embeddings, linguistic_embeddings, labels, uids, loader, model
 
 def train():
 
-    
-
-    model = DirectFusedMLP(acoustic_input_dim = CONFIG['ACOUSTIC_INPUT_DIM'], linguistic_input_dim= CONFIG['LINGUISTIC_INPUT_DIM'], hidden_dim = CONFIG['HIDDEN_DIM'], output_dim = CONFIG['OUTPUT_DIM'], dropout = 0.0)
-    print("completed MLP....")
+    train_aco_emb, train_ling_emb, train_labels, train_uids, train_loader, model = setup(CONFIG['FUSION_TRANS_TRAIN_PATH'], mode = 'train', modality = 'fusion', modality_type = 'MULTIMODAL')
 
     model = model.to(device)
 
+    val_aco_emb, val_ling_emb, val_labels, val_uids, val_loader, _ = setup(CONFIG['FUSION_TRANS_VAL_PATH'], mode = 'val', modality = 'fusion', modality_type = 'MULTIMODAL')
+    
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), CONFIG['LEARNING_RATE'])
+    optimizer = optim.Adam(model.parameters(), EXP_CONFIG['LEARNING_RATE'])
 
     train_manifest_path = ROOT / "results" / "artifacts" / "train_manifest.csv"
     val_manifest_path =  ROOT / "results" / "artifacts" / "val_manifest.csv"
 
-    sanity_check(acoustic_train_inputs, acoustic_train_labels, acoustic_train_uids, train_manifest_path, "train", "acoustic")
-    sanity_check(acoustic_val_inputs, acoustic_val_labels, acoustic_val_uids, val_manifest_path, "val", "acoustic")
+    sanity_check(train_aco_emb, train_labels, train_uids, train_manifest_path, "train", "acoustic")
+    sanity_check(val_aco_emb, val_labels, val_uids, val_manifest_path, "val", "acoustic")
+
+    sanity_check(train_ling_emb, train_labels, train_uids, train_manifest_path, "train", "linguistic")
+    sanity_check(val_ling_emb, val_labels, val_uids, val_manifest_path, "val", "linguistic")
 
     print("setup complete, starting training")
     print(CONFIG['EXP_NAME'].upper())
@@ -99,7 +115,7 @@ def train():
 
     class_labels = ['anger', 'disgust', 'fear', 'joy', 'neutral', 'sadness', 'surprise']
 
-    with mlflow.start_run(run_name = "baseline-direct-fusion") as run:
+    with mlflow.start_run(run_name = "baseline-direct-fusion-transcripts") as run:
         mlflow.log_params({
             'ACOUSTIC_INPUT_DIM': 768,
             'LINGUISTIC_INPUT_DIM': 768,
@@ -110,16 +126,20 @@ def train():
             'BATCH_SIZE': 100,
         })
 
-        for epoch in tqdm(range(CONFIG['EPOCHS']), desc = f"baseline transcripts training: "):
+        for epoch in tqdm(range(CONFIG['EPOCHS']), desc = f"baseline fusion training: "):
             # --- training ---
             all_preds, all_trues = [], []
             train_epoch_loss = 0.0
             model.train()
 
-            for batch_inputs, batch_labels in train_loader:
+            for batch_acoustic, batch_linguistic, batch_labels in train_loader:
+                batch_acoustic = batch_acoustic.to(device)
+                batch_linguistic = batch_linguistic.to(device)
+                batch_labels = batch_labels.to(device)
+
                 optimizer.zero_grad()
 
-                outputs = model(batch_inputs)
+                outputs = model(batch_acoustic, batch_linguistic)
                 loss = criterion(outputs, batch_labels)
 
                 loss.backward()
@@ -145,9 +165,12 @@ def train():
                 val_epoch_loss = 0.0
                 val_preds, val_trues = [], []
 
-                for batch_inputs, batch_labels in val_loader:
+                for batch_acoustic, batch_linguistic, batch_labels in val_loader:
+                    batch_acoustic = batch_acoustic.to(device)
+                    batch_linguistic = batch_linguistic.to(device)
+                    batch_labels = batch_labels.to(device)
 
-                    outputs = model(batch_inputs)
+                    outputs = model(batch_acoustic, batch_linguistic)
                     loss = criterion(outputs, batch_labels)
 
                     val_epoch_loss += loss.item()
@@ -166,7 +189,7 @@ def train():
                 val_conf_mat = confusion_matrix(val_trues, val_preds)
                 disp_cm = pd.DataFrame(val_conf_mat, index = class_labels, columns = class_labels)
 
-                cm_png = ConfusionMatrixDisplay(confusion_matrix=val_conf_mat)
+                cm_png = ConfusionMatrixDisplay(confusion_matrix=val_conf_mat, display_labels=class_labels)
                 fig, ax = plt.subplots(figsize=(5, 5))
                 cm_png.plot(ax=ax)
 

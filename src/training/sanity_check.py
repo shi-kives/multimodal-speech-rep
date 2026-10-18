@@ -2,8 +2,8 @@ from src.helpers.mapping import labels_mapping
 import pandas as pd
 from collections import Counter
 
-def sanity_check(embeddings, labels, uids, manifest_path, mode):
-    print("---- sanity check for {mode} ----".upper())
+def sanity_check(embeddings, labels, uids, manifest_path, mode, modality):
+    print(f"---- sanity check for {modality} {mode} ----".upper())
 
     print(f"number of samples in {mode}: {len(labels)}")
 

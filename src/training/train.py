@@ -11,47 +11,73 @@ import pandas as pd
 from sklearn.metrics import balanced_accuracy_score, confusion_matrix, f1_score, recall_score, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 from src.training.sanity_check import sanity_check
+from src.models.fusion import DirectFusedMLP
+import json
 
 current_dir = Path(__file__).resolve().parents
 ROOT = current_dir[2]
 
 mlflow.set_tracking_uri("http://127.0.0.1:8080")
-mlflow.set_experiment("/baseline-linguistic-transcripts-only")
+mlflow.set_experiment("/meld-multimodal")
 
 CONFIG = {
-    'INPUT_DIM': 768,
+    'EXP_NAME': 'direct fusion baseline',
+    'ACOUSTIC_INPUT_DIM': 768,
+    'LINGUISTIC_INPUT_DIM': 768,
     'HIDDEN_DIM': 128,
     'OUTPUT_DIM': 7,
     'LEARNING_RATE': 0.001,
     'EPOCHS': 30,
     'BATCH_SIZE': 100,
-    'TRAIN_EMBEDDINGS_PATH': ROOT / "embeddings" / "linguistic" / "distilbert_transcript" / "distilbert_transcripts_train.pt",
-    'VAL_EMBEDDINGS_PATH': ROOT / "embeddings" / "linguistic" / "distilbert_transcript" / "distilbert_transcripts_val.pt",
+
+    'ACOUSTIC_EMB_TRAIN_PATH': ROOT / "embeddings" / "acoustic" / "wavlm_train.pt",
+    'ACOUSTIC_EMB_VAL_PATH': ROOT / "embeddings" / "acoustic" / "wavlm_val.pt",
+
+    'LINGUISTIC_EMB_TRAIN_PATH': ROOT / "embeddings" / "linguistic" / "distilbert_reference" / "distilbert_reference_train.pt",
+
+    'LINGUISTIC_EMB_VAL_PATH': ROOT / "embeddings" / "linguistic" / "distilbert_reference" / "distilbert_reference_val.pt",
+
     'SAVE_PATH': ROOT / "results" / "models" / "base_transcript.pt"
 }
 
+CONFIG_PATH = ROOT / "results" / "configs" / "baseline_fusion.json"
+with open(CONFIG_PATH, 'r') as f:
+    EXP_CONFIG = json.load(f)
+EXP_CONFIG = dict(EXP_CONFIG)
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+def setup(path, mode, modality, modality_type, path_acoustic = None, path_linguistic = None):
+    if modality_type == 'UNIMODAL':
+        inputs = torch.load(path)
+
+        embeddings = torch.stack([i[1] for i in inputs]).to(device)
+        labels = torch.tensor([i[2] for i in inputs], dtype = torch.long).to(device)
+
+        dataset = SpeechEmbeddingsDataset(embeddings, labels)
+        loader = DataLoader(dataset, batch_size = CONFIG['BATCH_SIZE'], shuffle = True)
+
+        uids = pd.Series([i[0] for i in inputs], name = "uid")
+
+        print(f"{modality} {mode} dataset and dataloader initialized....".upper())
+
+        model = MultiLayerPerceptron(input_dim = 768, hidden_dim = 128, output_dim = 7)
+
+        print("completed MLP....")
+
+        return inputs, embeddings, labels, uids, dataset, loader, model
+
+    elif modality_type == 'MULTIMODAL':
+        acoustic_inputs = torch.load(path_acoustic)
+        linguistic_inputs = torch.load(path_linguistic)
+
+        embeddings = 
 
 def train():
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    train_embeddings = torch.load(CONFIG['TRAIN_EMBEDDINGS_PATH'])
+    
 
-    train_inputs = torch.stack([i[1] for i in train_embeddings]).to(device)
-    train_labels = torch.tensor([i[2] for i in train_embeddings], dtype = torch.long).to(device)
-
-    train_dataset = SpeechEmbeddingsDataset(train_inputs, train_labels)
-    train_loader = DataLoader(train_dataset, batch_size = CONFIG['BATCH_SIZE'], shuffle = True)
-
-    print("train dataset and dataloader initialized....")
-
-    val_embeddings = torch.load(CONFIG['VAL_EMBEDDINGS_PATH'])
-    val_inputs = torch.stack([i[1] for i in val_embeddings]).to(device)
-    val_labels = torch.tensor([i[2] for i in val_embeddings], dtype = torch.long).to(device)
-
-    val_dataset = SpeechEmbeddingsDataset(val_inputs, val_labels)
-    val_loader = DataLoader(val_dataset, batch_size = CONFIG['BATCH_SIZE'], shuffle = False)
-
-    model = MultiLayerPerceptron(input_dim = CONFIG['INPUT_DIM'], hidden_dim = CONFIG['HIDDEN_DIM'], output_dim = CONFIG['OUTPUT_DIM'])
+    model = DirectFusedMLP(acoustic_input_dim = CONFIG['ACOUSTIC_INPUT_DIM'], linguistic_input_dim= CONFIG['LINGUISTIC_INPUT_DIM'], hidden_dim = CONFIG['HIDDEN_DIM'], output_dim = CONFIG['OUTPUT_DIM'], dropout = 0.0)
     print("completed MLP....")
 
     model = model.to(device)
@@ -59,27 +85,24 @@ def train():
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), CONFIG['LEARNING_RATE'])
 
-    train_uids = pd.Series([i[0] for i in train_embeddings], name = "uid")
-    val_uids = pd.Series([i[0] for i in val_embeddings], name = "uid")
-
     train_manifest_path = ROOT / "results" / "artifacts" / "train_manifest.csv"
     val_manifest_path =  ROOT / "results" / "artifacts" / "val_manifest.csv"
 
-    sanity_check(train_inputs, train_labels, train_uids, train_manifest_path, "train")
-    sanity_check(val_inputs, val_labels, val_uids, val_manifest_path, "val")
-
+    sanity_check(acoustic_train_inputs, acoustic_train_labels, acoustic_train_uids, train_manifest_path, "train", "acoustic")
+    sanity_check(acoustic_val_inputs, acoustic_val_labels, acoustic_val_uids, val_manifest_path, "val", "acoustic")
 
     print("setup complete, starting training")
-    print("linguistic transcripts-only baseline training".upper())
+    print(CONFIG['EXP_NAME'].upper())
     
     best_val_ba = 0.0
     best_val_mf1 = 0.0
 
     class_labels = ['anger', 'disgust', 'fear', 'joy', 'neutral', 'sadness', 'surprise']
 
-    with mlflow.start_run() as run:
+    with mlflow.start_run(run_name = "baseline-direct-fusion") as run:
         mlflow.log_params({
-            'INPUT_DIM': 768,
+            'ACOUSTIC_INPUT_DIM': 768,
+            'LINGUISTIC_INPUT_DIM': 768,
             'HIDDEN_DIM': 128,
             'OUTPUT_DIM': 7,
             'LEARNING_RATE': 0.001,

@@ -32,7 +32,7 @@ INPUT_EMBEDDINGS = {
 }
 
 mlflow.set_tracking_uri("http://127.0.0.1:8080")
-mlflow.set_experiment("/meld-multimodal")
+mlflow.set_experiment("/rerun-inference")
 
 def run_evaluation(model_path, embeddings, mode, modality, run):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

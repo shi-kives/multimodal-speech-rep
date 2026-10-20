@@ -13,12 +13,14 @@ import matplotlib.pyplot as plt
 from src.training.sanity_check import sanity_check
 from src.models.fusion import DirectFusedMLP
 import json
+import random
+import numpy as np
 
 current_dir = Path(__file__).resolve().parents
 ROOT = current_dir[2]
 
 mlflow.set_tracking_uri("http://127.0.0.1:8080")
-mlflow.set_experiment("/meld-multimodal")
+mlflow.set_experiment("/training-reruns")
 
 CONFIG = {
     'EXP_NAME': 'direct fusion baseline: wavlm & whisper-distilbert',
@@ -34,22 +36,34 @@ CONFIG = {
     'ACOUSTIC_EMB_TRAIN_PATH': ROOT / "embeddings" / "acoustic" / "wavlm_train.pt",
     'ACOUSTIC_EMB_VAL_PATH': ROOT / "embeddings" / "acoustic" / "wavlm_val.pt",
 
-    'LINGUISTIC_EMB_TRAIN_PATH': ROOT / "embeddings" / "linguistic" / "distilbert_reference" / "distilbert_reference_train.pt",
-    'LINGUISTIC_EMB_VAL_PATH': ROOT / "embeddings" / "linguistic" / "distilbert_reference" / "distilbert_reference_val.pt",
+    'LINGUISTIC_EMB_REF_TRAIN_PATH': ROOT / "embeddings" / "linguistic" / "distilbert_reference" / "distilbert_reference_train.pt",
+    'LINGUISTIC_EMB_REF_VAL_PATH': ROOT / "embeddings" / "linguistic" / "distilbert_reference" / "distilbert_reference_val.pt",
+
+    'LINGUISTIC_EMB_TRANS_TRAIN_PATH': ROOT / "embeddings" / "linguistic" / "distilbert_transcript" / "distilbert_transcripts_train.pt",
+    'LINGUISTIC_EMB_TRANS_VAL_PATH': ROOT / "embeddings" / "linguistic" / "distilbert_transcript" / "distilbert_transcripts_val.pt",
 
     'FUSION_REF_TRAIN_PATH': ROOT / "embeddings" / "fused" / "reference" / "fused_reference_train.pt",
     'FUSION_REF_VAL_PATH': ROOT / "embeddings" / "fused" / "reference" / "fused_reference_val.pt",
 
     'FUSION_TRANS_TRAIN_PATH': ROOT / "embeddings" / "fused" / "transcripts" / "fused_transcripts_train.pt",
     'FUSION_TRANS_VAL_PATH': ROOT / "embeddings" / "fused" / "transcripts" / "fused_transcripts_val.pt",
-
-    'SAVE_PATH': ROOT / "results" / "models" / "base_fusion_trans.pt"
 }
 
 CONFIG_PATH = ROOT / "results" / "configs" / "baseline_fusion.json"
 with open(CONFIG_PATH, 'r') as f:
     EXP_CONFIG = json.load(f)
 EXP_CONFIG = dict(EXP_CONFIG)
+
+def set_seed(seed = 42):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+
+SEED = 42
+set_seed(SEED)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -62,7 +76,14 @@ def setup(path, mode, modality, modality_type):
         uids = pd.Series([i[0] for i in inputs], name = "uid")
 
         dataset = SpeechEmbeddingsDataset(embeddings, labels)
-        loader = DataLoader(dataset, batch_size = CONFIG['BATCH_SIZE'], shuffle = True)
+
+        generator = torch.Generator()
+        generator.manual_seed(SEED)
+
+        if mode == 'train':
+            loader = DataLoader(dataset, batch_size = CONFIG['BATCH_SIZE'], shuffle = True, generator=generator)
+        elif mode == 'val':
+            loader = DataLoader(dataset, batch_size = CONFIG['BATCH_SIZE'], shuffle = False, generator=generator)
 
         print(f"{modality} {mode} dataset and dataloader initialized....".upper())
 
@@ -80,20 +101,35 @@ def setup(path, mode, modality, modality_type):
         labels = torch.tensor([i[3] for i in inputs], dtype = torch.long).to(device)
 
         dataset = FusedDataset(acoustic_embeddings, linguistic_embeddings, labels)
-        loader = DataLoader(dataset, CONFIG["BATCH_SIZE"], shuffle = True)
+
+        generator = torch.Generator()
+        generator.manual_seed(SEED)
+        
+        if mode == 'train':
+            loader = DataLoader(dataset, batch_size = CONFIG['BATCH_SIZE'], shuffle = True, generator=generator)
+        elif mode == 'val':
+            loader = DataLoader(dataset, batch_size = CONFIG['BATCH_SIZE'], shuffle = False, generator=generator)
 
         model = DirectFusedMLP(acoustic_input_dim = CONFIG["ACOUSTIC_INPUT_DIM"], linguistic_input_dim = CONFIG["LINGUISTIC_INPUT_DIM"], hidden_dim = EXP_CONFIG["HIDDEN_DIM"], output_dim = CONFIG["OUTPUT_DIM"], dropout = EXP_CONFIG["DROPOUT"])
         print("completed MLP...")
 
         return acoustic_embeddings, linguistic_embeddings, labels, uids, loader, model
 
-def train():
+def train(train_path, val_path, modality, modality_type, r_name, save_path):
+    
+    if modality_type.upper() == 'UNIMODAL':
+        train_embeddings, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type)
 
-    train_aco_emb, train_ling_emb, train_labels, train_uids, train_loader, model = setup(CONFIG['FUSION_TRANS_TRAIN_PATH'], mode = 'train', modality = 'fusion', modality_type = 'MULTIMODAL')
+        model = model.to(device)
 
-    model = model.to(device)
+        val_embeddings, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type)
 
-    val_aco_emb, val_ling_emb, val_labels, val_uids, val_loader, _ = setup(CONFIG['FUSION_TRANS_VAL_PATH'], mode = 'val', modality = 'fusion', modality_type = 'MULTIMODAL')
+    elif modality_type.upper() == 'MULTIMODAL':
+        train_aco_emb, train_ling_emb, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type)
+
+        model = model.to(device)
+
+        val_aco_emb, val_ling_emb, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type)
     
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), EXP_CONFIG['LEARNING_RATE'])
@@ -101,11 +137,17 @@ def train():
     train_manifest_path = ROOT / "results" / "artifacts" / "train_manifest.csv"
     val_manifest_path =  ROOT / "results" / "artifacts" / "val_manifest.csv"
 
-    sanity_check(train_aco_emb, train_labels, train_uids, train_manifest_path, "train", "acoustic")
-    sanity_check(val_aco_emb, val_labels, val_uids, val_manifest_path, "val", "acoustic")
+    if modality_type.upper() == 'UNIMODAL':
+        sanity_check(train_embeddings, train_labels, train_uids, train_manifest_path, "train", modality)
 
-    sanity_check(train_ling_emb, train_labels, train_uids, train_manifest_path, "train", "linguistic")
-    sanity_check(val_ling_emb, val_labels, val_uids, val_manifest_path, "val", "linguistic")
+        sanity_check(val_embeddings, val_labels, val_uids, val_manifest_path, 'val', modality)
+
+    elif modality_type.upper() == 'MULTIMODAL':
+        sanity_check(train_aco_emb, train_labels, train_uids, train_manifest_path, "train", "acoustic")
+        sanity_check(val_aco_emb, val_labels, val_uids, val_manifest_path, "val", "acoustic")
+
+        sanity_check(train_ling_emb, train_labels, train_uids, train_manifest_path, "train", "linguistic")
+        sanity_check(val_ling_emb, val_labels, val_uids, val_manifest_path, "val", "linguistic")
 
     print("setup complete, starting training")
     print(CONFIG['EXP_NAME'].upper())
@@ -115,7 +157,7 @@ def train():
 
     class_labels = ['anger', 'disgust', 'fear', 'joy', 'neutral', 'sadness', 'surprise']
 
-    with mlflow.start_run(run_name = "baseline-direct-fusion-transcripts") as run:
+    with mlflow.start_run(run_name = r_name) as run:
         mlflow.log_params({
             'ACOUSTIC_INPUT_DIM': 768,
             'LINGUISTIC_INPUT_DIM': 768,
@@ -132,31 +174,53 @@ def train():
             train_epoch_loss = 0.0
             model.train()
 
-            for batch_acoustic, batch_linguistic, batch_labels in train_loader:
-                batch_acoustic = batch_acoustic.to(device)
-                batch_linguistic = batch_linguistic.to(device)
-                batch_labels = batch_labels.to(device)
+            if modality_type.upper() == 'UNIMODAL':
+                for batch_embeddings, batch_labels in train_loader:
+                    batch_embeddings = batch_embeddings.to(device)
+                    batch_labels = batch_labels.to(device)
 
-                optimizer.zero_grad()
+                    optimizer.zero_grad()
 
-                outputs = model(batch_acoustic, batch_linguistic)
-                loss = criterion(outputs, batch_labels)
+                    outputs = model(batch_embeddings)
+                    loss = criterion(outputs, batch_labels)
 
-                loss.backward()
-                optimizer.step()
+                    loss.backward()
+                    optimizer.step()
 
-                train_epoch_loss += loss.item()
+                    train_epoch_loss += loss.item()
 
-                preds = torch.argmax(outputs, dim = 1).detach().cpu().numpy()
-                all_preds.extend(preds)
-                all_trues.extend(batch_labels.cpu().numpy())
+                    preds = torch.argmax(outputs, dim = 1).detach().cpu().numpy()
+                    all_preds.extend(preds)
+                    all_trues.extend(batch_labels.cpu().numpy())
+
+            elif modality_type.upper() == 'MULTIMODAL':
+                for batch_acoustic, batch_linguistic, batch_labels in train_loader:
+                    batch_acoustic = batch_acoustic.to(device)
+                    batch_linguistic = batch_linguistic.to(device)
+                    batch_labels = batch_labels.to(device)
+
+                    optimizer.zero_grad()
+
+                    outputs = model(batch_acoustic, batch_linguistic)
+                    loss = criterion(outputs, batch_labels)
+
+                    loss.backward()
+                    optimizer.step()
+
+                    train_epoch_loss += loss.item()
+
+                    preds = torch.argmax(outputs, dim = 1).detach().cpu().numpy()
+                    all_preds.extend(preds)
+                    all_trues.extend(batch_labels.cpu().numpy())
 
             avg_loss = train_epoch_loss / len(train_loader)
             accuracy = balanced_accuracy_score(all_trues, all_preds)
-            print(f"\n{epoch + 1}/{CONFIG['EPOCHS']} - TRAINING - loss: {avg_loss:.4f}, balanced accuracy: {accuracy:.4f}\n")
+            macrof1 = f1_score(all_trues, all_preds, average='macro')
+            print(f"\n{epoch + 1}/{CONFIG['EPOCHS']} - TRAINING - loss: {avg_loss:.4f}, balanced accuracy: {accuracy:.4f}, macro f1: {macrof1:.4f}\n")
 
             mlflow.log_metric("avg_loss", avg_loss, step = epoch)
             mlflow.log_metric("bal_accuracy", accuracy, step = epoch)
+            mlflow.log_metric("macro_f1", macrof1, step = epoch)
 
             # --- validation ---
             model.eval()
@@ -165,19 +229,34 @@ def train():
                 val_epoch_loss = 0.0
                 val_preds, val_trues = [], []
 
-                for batch_acoustic, batch_linguistic, batch_labels in val_loader:
-                    batch_acoustic = batch_acoustic.to(device)
-                    batch_linguistic = batch_linguistic.to(device)
-                    batch_labels = batch_labels.to(device)
+                if modality_type.upper() == 'UNIMODAL':
+                    for batch_embeddings, batch_labels in val_loader:
+                        batch_embeddings = batch_embeddings.to(device)
+                        batch_labels = batch_labels.to(device)
 
-                    outputs = model(batch_acoustic, batch_linguistic)
-                    loss = criterion(outputs, batch_labels)
+                        outputs = model(batch_embeddings)
+                        loss = criterion(outputs, batch_labels)
 
-                    val_epoch_loss += loss.item()
+                        val_epoch_loss += loss.item()
 
-                    preds = torch.argmax(outputs, dim = 1).detach().cpu().numpy()
-                    val_preds.extend(preds)
-                    val_trues.extend(batch_labels.cpu().numpy())
+                        preds = torch.argmax(outputs, dim = 1).detach().cpu().numpy()
+                        val_preds.extend(preds)
+                        val_trues.extend(batch_labels.cpu().numpy())
+                    
+                elif modality_type.upper() == 'MULTIMODAL':
+                    for batch_acoustic, batch_linguistic, batch_labels in val_loader:
+                        batch_acoustic = batch_acoustic.to(device)
+                        batch_linguistic = batch_linguistic.to(device)
+                        batch_labels = batch_labels.to(device)
+
+                        outputs = model(batch_acoustic, batch_linguistic)
+                        loss = criterion(outputs, batch_labels)
+
+                        val_epoch_loss += loss.item()
+
+                        preds = torch.argmax(outputs, dim = 1).detach().cpu().numpy()
+                        val_preds.extend(preds)
+                        val_trues.extend(batch_labels.cpu().numpy())
 
                 avg_val_loss = val_epoch_loss / len(val_loader)
                 val_ba = balanced_accuracy_score(val_trues, val_preds)
@@ -193,7 +272,7 @@ def train():
                 fig, ax = plt.subplots(figsize=(5, 5))
                 cm_png.plot(ax=ax)
 
-                print(f"\nepoch {epoch}/{CONFIG['EPOCHS']} - VALIDATION - average loss: {avg_val_loss:.4f}, balanced accuracy {val_ba:.4f}, macro f1-score {val_mf1:.4f}, per-class recall: {val_recall}, confusion matrix: \n{disp_cm}\n")
+                print(f"\nepoch {epoch + 1}/{CONFIG['EPOCHS']} - VALIDATION - average loss: {avg_val_loss:.4f}, balanced accuracy {val_ba:.4f}, macro f1-score {val_mf1:.4f}, per-class recall: {val_recall}, confusion matrix: \n{disp_cm}\n")
 
                 mlflow.log_metric("avg_val_loss", avg_val_loss, step = epoch)
                 mlflow.log_metric("val_bal_acc", val_ba, step = epoch)
@@ -208,10 +287,15 @@ def train():
                 
                 if val_mf1 > best_val_mf1:
                     best_val_mf1 = val_mf1
-                    CONFIG['SAVE_PATH'].parent.mkdir(parents = True, exist_ok = True)
-                    torch.save(model.state_dict(), CONFIG['SAVE_PATH'])
-                    print(f"model with best balanced macro-f1: {best_val_mf1:.4f}, balanced accuracy: {val_ba:.4f} saved at {CONFIG['SAVE_PATH']}")
-                    mlflow.log_artifact(CONFIG['SAVE_PATH'])
+                    save_path.parent.mkdir(parents = True, exist_ok = True)
+                    torch.save(model.state_dict(), save_path)
+                    print(f"model with best balanced macro-f1: {best_val_mf1:.4f}, balanced accuracy: {val_ba:.4f} saved at {save_path}")
+                    mlflow.log_artifact(save_path)
+
+                mlflow.log_metric("best_val_ba", best_val_ba, step = epoch)
+                mlflow.log_metric("best_val_mf1", best_val_mf1, step = epoch)
 
 if __name__ == '__main__':
-    train()
+    save_path = ROOT / "results" / "models" / "base_fusion_trans.pt"
+
+    train(CONFIG['FUSION_TRANS_TRAIN_PATH'], CONFIG['FUSION_TRANS_VAL_PATH'], "fusion with whisper", "MULTIMODAL", "baseline fusion transcripts training", save_path)

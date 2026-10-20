@@ -2,8 +2,9 @@ from pathlib import Path
 import torch
 import mlflow
 from sklearn.metrics import f1_score, balanced_accuracy_score, confusion_matrix, recall_score, precision_score, ConfusionMatrixDisplay
-from src.models.dataloader import SpeechEmbeddingsDataset
+from src.models.dataloader import SpeechEmbeddingsDataset, FusedDataset
 from src.models.mlp import MultiLayerPerceptron
+from src.models.fusion import DirectFusedMLP
 from torch.utils.data import DataLoader
 import torch.nn as nn
 import matplotlib.pyplot as plt
@@ -18,21 +19,29 @@ BASE_EMB_PATH = ROOT / 'embeddings'
 MODEL_PATHS = {
     'baseline_acoustic': BASE_MODEL_PATH / 'base_acoustic.pt',
     'baseline_reference': BASE_MODEL_PATH / 'base_reference.pt',
-    'baseline_transcripts': BASE_MODEL_PATH / 'base_transcripts.pt'
+    'baseline_transcripts': BASE_MODEL_PATH / 'base_transcripts.pt',
+    'baseline_fused_ref': BASE_MODEL_PATH / 'base_fusion_ref.pt',
+    'baseline_fused_trans': BASE_MODEL_PATH / 'base_fusion_trans.pt'
 }
 INPUT_EMBEDDINGS = {
     'wavlm_test': BASE_EMB_PATH / 'acoustic' / 'wavlm_test.pt',
     'distilbert_reference': BASE_EMB_PATH / 'linguistic' / 'distilbert_reference' / 'distilbert_reference_test.pt',
-    'distilbert_transcripts': BASE_EMB_PATH / 'linguistic' / 'distilbert_transcript' / 'distilbert_transcripts_test.pt'
+    'distilbert_transcripts': BASE_EMB_PATH / 'linguistic' / 'distilbert_transcript' / 'distilbert_transcripts_test.pt',
+    'fused_reference_test': BASE_EMB_PATH / 'fused' / 'reference' / 'fused_reference_test.pt',
+    'fused_transcripts_test': BASE_EMB_PATH / 'fused' / 'transcripts' / 'fused_transcripts_test.pt'
 }
 
 mlflow.set_tracking_uri("http://127.0.0.1:8080")
-mlflow.set_experiment("baseline-testing-distilbert-transcripts-only")
+mlflow.set_experiment("/meld-multimodal")
 
-def run_evaluation(model_path, embeddings, mode):
+def run_evaluation(model_path, embeddings, mode, modality):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    model = MultiLayerPerceptron()
+    if modality.upper() == 'UNIMODAL':
+        model = MultiLayerPerceptron()
+    elif modality.upper() == 'MULTIMODAL':
+        model = DirectFusedMLP()
+    
     state_dict = torch.load(model_path, map_location = device)
     model.load_state_dict(state_dict)
     model = model.to(device)
@@ -40,28 +49,39 @@ def run_evaluation(model_path, embeddings, mode):
     test_inputs = torch.load(embeddings)
     criterion = nn.CrossEntropyLoss()
 
-    embeddings = torch.stack([i[1] for i in test_inputs])
-    labels = [i[2] for i in test_inputs]
+    if modality.upper() == 'UNIMODAL':
+        embeddings = torch.stack([i[1] for i in test_inputs])
+        labels = [i[2] for i in test_inputs]
 
-    test_dataset = SpeechEmbeddingsDataset(embeddings, labels)
+        test_dataset = SpeechEmbeddingsDataset(embeddings, labels)
+
+    elif modality.upper() == 'MULTIMODAL':
+        acoustic_embeddings = torch.stack([i[1] for i in test_inputs])
+        linguistic_embeddings = torch.stack([i[2] for i in test_inputs])
+        labels = [i[3] for i in test_inputs]
+
+        test_dataset = FusedDataset(acoustic_embeddings, linguistic_embeddings, labels)
+
     test_loader = DataLoader(test_dataset, batch_size=100, shuffle=False)
 
     class_labels = ['anger', 'disgust', 'fear', 'joy', 'neutral', 'sadness', 'surprise']
 
     uids = pd.Series([i[0] for i in test_inputs], name = "uid")
     manifest_path = ROOT / "results" / "artifacts" / "test_manifest.csv"
-    sanity_check(embeddings, labels, uids, manifest_path, "test")
-    
+    sanity_check(acoustic_embeddings, labels, uids, manifest_path, "test", "fused")
+    sanity_check(linguistic_embeddings, labels, uids, manifest_path, "test", "fused")
+ 
     model.eval()
-    with mlflow.start_run() as run:
+    with mlflow.start_run(run_name = 'testing-baseline-fused-reference') as run:
         with torch.no_grad():
             all_preds, all_trues = [], []
             overall_loss = 0.0
-            for batch_inputs, batch_labels in test_loader:
-                batch_inputs = batch_inputs.to(device)
+            for batch_acoustic, batch_linguistic, batch_labels in test_loader:
+                batch_acoustic = batch_acoustic.to(device)
+                batch_linguistic = batch_linguistic.to(device)
                 batch_labels = batch_labels.to(device)
 
-                outputs = model(batch_inputs)
+                outputs = model(batch_acoustic, batch_linguistic)
                 loss = criterion(outputs, batch_labels)
 
                 preds = torch.argmax(outputs, dim = 1).detach().cpu().numpy()
@@ -106,4 +126,4 @@ def run_evaluation(model_path, embeddings, mode):
             plt.close(fig)
 
 if __name__ == '__main__':
-    run_evaluation(MODEL_PATHS['baseline_transcripts'], INPUT_EMBEDDINGS['distilbert_transcripts'], "distilbert whisper transcripts")
+    run_evaluation(MODEL_PATHS['baseline_fused_trans'], INPUT_EMBEDDINGS['fused_transcripts_test'], "fused whisper transcripts", "MULTIMODAL")

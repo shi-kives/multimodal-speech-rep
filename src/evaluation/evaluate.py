@@ -34,8 +34,11 @@ INPUT_EMBEDDINGS = {
 mlflow.set_tracking_uri("http://127.0.0.1:8080")
 mlflow.set_experiment("/meld-multimodal")
 
-def run_evaluation(model_path, embeddings, mode, modality):
+def run_evaluation(model_path, embeddings, mode, modality, run):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    acoustic_embeddings = None # preventing UnboundLocalError
+    linguistic_embeddings = None
 
     if modality.upper() == 'UNIMODAL':
         model = MultiLayerPerceptron()
@@ -68,27 +71,47 @@ def run_evaluation(model_path, embeddings, mode, modality):
 
     uids = pd.Series([i[0] for i in test_inputs], name = "uid")
     manifest_path = ROOT / "results" / "artifacts" / "test_manifest.csv"
-    sanity_check(acoustic_embeddings, labels, uids, manifest_path, "test", "fused")
-    sanity_check(linguistic_embeddings, labels, uids, manifest_path, "test", "fused")
+
+    if modality.upper() == 'UNIMODAL':
+        sanity_check(embeddings, labels, uids, manifest_path, "test", modality)
+
+    elif modality.upper() == 'MULTIMODAL':
+        sanity_check(acoustic_embeddings, labels, uids, manifest_path, "test", "acoustic")
+        sanity_check(linguistic_embeddings, labels, uids, manifest_path, "test", "linguistic")
  
     model.eval()
-    with mlflow.start_run(run_name = 'testing-baseline-fused-reference') as run:
+    with mlflow.start_run(run_name = run) as run:
         with torch.no_grad():
             all_preds, all_trues = [], []
             overall_loss = 0.0
-            for batch_acoustic, batch_linguistic, batch_labels in test_loader:
-                batch_acoustic = batch_acoustic.to(device)
-                batch_linguistic = batch_linguistic.to(device)
-                batch_labels = batch_labels.to(device)
+            if modality.upper() == 'UNIMODAL':
+                for batch_embeddings, batch_labels in test_loader:
+                    batch_embeddings = batch_embeddings.to(device)
+                    batch_labels = batch_labels.to(device)
 
-                outputs = model(batch_acoustic, batch_linguistic)
-                loss = criterion(outputs, batch_labels)
+                    outputs = model(batch_embeddings)
+                    loss = criterion(outputs, batch_labels)
 
-                preds = torch.argmax(outputs, dim = 1).detach().cpu().numpy()
+                    preds = torch.argmax(outputs, dim = 1).detach().cpu().numpy()
+                    
+                    overall_loss += loss.item()
+                    all_preds.extend(preds)
+                    all_trues.extend(batch_labels.cpu().numpy())
                 
-                overall_loss += loss.item()
-                all_preds.extend(preds)
-                all_trues.extend(batch_labels.cpu().numpy())
+            elif modality.upper() == 'MULTIMODAL':
+                for batch_acoustic, batch_linguistic, batch_labels in test_loader:
+                    batch_acoustic = batch_acoustic.to(device)
+                    batch_linguistic = batch_linguistic.to(device)
+                    batch_labels = batch_labels.to(device)
+
+                    outputs = model(batch_acoustic, batch_linguistic)
+                    loss = criterion(outputs, batch_labels)
+
+                    preds = torch.argmax(outputs, dim = 1).detach().cpu().numpy()
+                    
+                    overall_loss += loss.item()
+                    all_preds.extend(preds)
+                    all_trues.extend(batch_labels.cpu().numpy())
 
             avg_loss = overall_loss / len(test_loader)
 
@@ -108,7 +131,7 @@ def run_evaluation(model_path, embeddings, mode, modality):
             cm_png.plot(ax=ax)
 
 
-            print(f"---- inference results for {mode} ----\n")
+            print(f"\n---- inference results for {mode} ----\n")
             print(f"average loss: {avg_loss:.4f}")
             print(f"balanced accuracy: {balanced_accuracy:.4f}")
             print(f"macro f1 score: {macro_f1:.4f}")
@@ -126,4 +149,4 @@ def run_evaluation(model_path, embeddings, mode, modality):
             plt.close(fig)
 
 if __name__ == '__main__':
-    run_evaluation(MODEL_PATHS['baseline_fused_trans'], INPUT_EMBEDDINGS['fused_transcripts_test'], "fused whisper transcripts", "MULTIMODAL")
+    run_evaluation(MODEL_PATHS['baseline_acoustic'], INPUT_EMBEDDINGS['wavlm_test'], "fused whisper transcripts", "UNIMODAL", "testing fused whisper")

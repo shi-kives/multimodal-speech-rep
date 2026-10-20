@@ -17,11 +17,16 @@ ROOT = current_dir[2]
 BASE_MODEL_PATH = ROOT / 'results' / 'models'
 BASE_EMB_PATH = ROOT / 'embeddings'
 MODEL_PATHS = {
-    'baseline_acoustic': BASE_MODEL_PATH / 'base_acoustic.pt',
-    'baseline_reference': BASE_MODEL_PATH / 'base_reference.pt',
-    'baseline_transcripts': BASE_MODEL_PATH / 'base_transcripts.pt',
-    'baseline_fused_ref': BASE_MODEL_PATH / 'base_fusion_ref.pt',
-    'baseline_fused_trans': BASE_MODEL_PATH / 'base_fusion_trans.pt'
+    'baseline_acoustic': BASE_MODEL_PATH / 'baselines' / 'base_acoustic.pt',
+    'baseline_reference': BASE_MODEL_PATH / 'baselines' / 'base_reference.pt',
+    'baseline_transcripts': BASE_MODEL_PATH / 'baselines' / 'base_transcripts.pt',
+    'baseline_fused_ref': BASE_MODEL_PATH / 'baselines' / 'base_fusion_ref.pt',
+    'baseline_fused_trans': BASE_MODEL_PATH / 'baselines' / 'base_fusion_trans.pt',
+
+    'acoustic_lr_001': BASE_MODEL_PATH / 'tuned' / 'acoustic_lr_001.pt',
+    'fusion_ref_lr_001': BASE_MODEL_PATH / 'tuned' / 'fusion_ref_lr_001.pt',
+    'fusion_ref_lr_0003': BASE_MODEL_PATH / 'tuned' / 'fusion_ref_lr_0003.pt', 
+    'fusion_ref_lr_0005': BASE_MODEL_PATH / 'tuned' / 'fusion_ref_lr_0005.pt' 
 }
 INPUT_EMBEDDINGS = {
     'wavlm_test': BASE_EMB_PATH / 'acoustic' / 'wavlm_test.pt',
@@ -32,7 +37,7 @@ INPUT_EMBEDDINGS = {
 }
 
 mlflow.set_tracking_uri("http://127.0.0.1:8080")
-mlflow.set_experiment("/rerun-inference")
+mlflow.set_experiment("/tuning-inference")
 
 def run_evaluation(model_path, embeddings, mode, modality, run):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -149,4 +154,4 @@ def run_evaluation(model_path, embeddings, mode, modality, run):
             plt.close(fig)
 
 if __name__ == '__main__':
-    run_evaluation(MODEL_PATHS['baseline_acoustic'], INPUT_EMBEDDINGS['wavlm_test'], "fused whisper transcripts", "UNIMODAL", "testing fused whisper")
+    run_evaluation(MODEL_PATHS['acoustic_lr_001'], INPUT_EMBEDDINGS['wavlm_test'], 'acoustic only with lr 0.01', 'UNIMODAL', 'testing acoustic only with lr 0.01')

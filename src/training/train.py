@@ -12,7 +12,7 @@ from sklearn.metrics import balanced_accuracy_score, confusion_matrix, f1_score,
 import matplotlib.pyplot as plt
 from src.training.sanity_check import sanity_check
 from src.models.fusion import DirectFusedMLP
-import json
+from src.models.early_stopping import EarlyStopping
 import random
 import numpy as np
 
@@ -20,18 +20,19 @@ current_dir = Path(__file__).resolve().parents
 ROOT = current_dir[2]
 
 mlflow.set_tracking_uri("http://127.0.0.1:8080")
-mlflow.set_experiment("/training-reruns")
+mlflow.set_experiment("/tuning-experiments")
 
 CONFIG = {
-    'EXP_NAME': 'direct fusion baseline: wavlm & whisper-distilbert',
 
     'ACOUSTIC_INPUT_DIM': 768,
     'LINGUISTIC_INPUT_DIM': 768,
-
+    'HIDDEN_DIM': 128,
     'OUTPUT_DIM': 7,
 
     'EPOCHS': 30,
     'BATCH_SIZE': 100,
+
+    'LEARNING_RATE': 0.001,
 
     'ACOUSTIC_EMB_TRAIN_PATH': ROOT / "embeddings" / "acoustic" / "wavlm_train.pt",
     'ACOUSTIC_EMB_VAL_PATH': ROOT / "embeddings" / "acoustic" / "wavlm_val.pt",
@@ -47,12 +48,9 @@ CONFIG = {
 
     'FUSION_TRANS_TRAIN_PATH': ROOT / "embeddings" / "fused" / "transcripts" / "fused_transcripts_train.pt",
     'FUSION_TRANS_VAL_PATH': ROOT / "embeddings" / "fused" / "transcripts" / "fused_transcripts_val.pt",
-}
 
-CONFIG_PATH = ROOT / "results" / "configs" / "baseline_fusion.json"
-with open(CONFIG_PATH, 'r') as f:
-    EXP_CONFIG = json.load(f)
-EXP_CONFIG = dict(EXP_CONFIG)
+    'SAVE_PATH_BASE': ROOT / "results" / "models"
+}
 
 def set_seed(seed = 42):
     random.seed(seed)
@@ -67,9 +65,10 @@ set_seed(SEED)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-def setup(path, mode, modality, modality_type):
-    if modality_type == 'UNIMODAL':
-        inputs = torch.load(path)
+def setup(path, mode, modality, modality_type, dropout, hidden_dim, batch_size):
+    model = None
+    if modality_type.upper() == 'UNIMODAL':
+        inputs = torch.load(path, map_location='cpu')
 
         embeddings = torch.stack([i[1] for i in inputs]).to(device)
         labels = torch.tensor([i[2] for i in inputs], dtype = torch.long).to(device)
@@ -80,20 +79,21 @@ def setup(path, mode, modality, modality_type):
         generator = torch.Generator()
         generator.manual_seed(SEED)
 
-        if mode == 'train':
-            loader = DataLoader(dataset, batch_size = CONFIG['BATCH_SIZE'], shuffle = True, generator=generator)
-        elif mode == 'val':
-            loader = DataLoader(dataset, batch_size = CONFIG['BATCH_SIZE'], shuffle = False, generator=generator)
+        if mode.lower() == 'train':
+            loader = DataLoader(dataset, batch_size = batch_size, shuffle = True, generator=generator)
+        elif mode.lower() == 'val':
+            loader = DataLoader(dataset, batch_size = batch_size, shuffle = False, generator=generator)
 
         print(f"{modality} {mode} dataset and dataloader initialized....".upper())
 
-        model = MultiLayerPerceptron(input_dim = 768, hidden_dim = EXP_CONFIG['HIDDEN_DIM'], output_dim = CONFIG['OUTPUT_DIM'])
-        print("completed MLP....")
+        if mode.lower() == 'train':
+            model = MultiLayerPerceptron(input_dim = 768, hidden_dim = hidden_dim, output_dim = CONFIG['OUTPUT_DIM'], dropout = dropout)
+            print("completed MLP....")
 
         return embeddings, labels, uids, loader, model
 
-    elif modality_type == 'MULTIMODAL':
-        inputs = torch.load(path)
+    elif modality_type.upper() == 'MULTIMODAL':
+        inputs = torch.load(path, map_location='cpu')
 
         uids = pd.Series([i[0] for i in inputs], name = "uid")
         acoustic_embeddings = torch.stack([i[1] for i in inputs]).to(device)
@@ -105,34 +105,35 @@ def setup(path, mode, modality, modality_type):
         generator = torch.Generator()
         generator.manual_seed(SEED)
         
-        if mode == 'train':
-            loader = DataLoader(dataset, batch_size = CONFIG['BATCH_SIZE'], shuffle = True, generator=generator)
-        elif mode == 'val':
-            loader = DataLoader(dataset, batch_size = CONFIG['BATCH_SIZE'], shuffle = False, generator=generator)
+        if mode.lower() == 'train':
+            loader = DataLoader(dataset, batch_size = batch_size, shuffle = True, generator=generator)
+        elif mode.lower() == 'val':
+            loader = DataLoader(dataset, batch_size = batch_size, shuffle = False, generator=generator)
 
-        model = DirectFusedMLP(acoustic_input_dim = CONFIG["ACOUSTIC_INPUT_DIM"], linguistic_input_dim = CONFIG["LINGUISTIC_INPUT_DIM"], hidden_dim = EXP_CONFIG["HIDDEN_DIM"], output_dim = CONFIG["OUTPUT_DIM"], dropout = EXP_CONFIG["DROPOUT"])
-        print("completed MLP...")
+        if mode.lower() == 'train':
+            model = DirectFusedMLP(acoustic_input_dim = CONFIG["ACOUSTIC_INPUT_DIM"], linguistic_input_dim = CONFIG["LINGUISTIC_INPUT_DIM"], hidden_dim = hidden_dim, output_dim = CONFIG["OUTPUT_DIM"], dropout = dropout)
+            print("completed MLP...")
 
         return acoustic_embeddings, linguistic_embeddings, labels, uids, loader, model
 
-def train(train_path, val_path, modality, modality_type, r_name, save_path):
+def train(train_path, val_path, modality, modality_type, r_name, save_path, lr, batch_size, no_epochs, hidden_dim, dropout, weight_decay, patience, min_delta):
     
     if modality_type.upper() == 'UNIMODAL':
-        train_embeddings, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type)
+        train_embeddings, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type, dropout = dropout, hidden_dim = hidden_dim, batch_size = batch_size)
 
         model = model.to(device)
 
-        val_embeddings, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type)
+        val_embeddings, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type, dropout = None, hidden_dim = None, batch_size = batch_size)
 
     elif modality_type.upper() == 'MULTIMODAL':
-        train_aco_emb, train_ling_emb, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type)
+        train_aco_emb, train_ling_emb, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type, dropout = dropout, hidden_dim = hidden_dim, batch_size = batch_size)
 
         model = model.to(device)
 
-        val_aco_emb, val_ling_emb, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type)
+        val_aco_emb, val_ling_emb, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type, dropout = None, hidden_dim = None, batch_size = batch_size)
     
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), EXP_CONFIG['LEARNING_RATE'])
+    optimizer = optim.Adam(model.parameters(), lr = lr, weight_decay = weight_decay)
 
     train_manifest_path = ROOT / "results" / "artifacts" / "train_manifest.csv"
     val_manifest_path =  ROOT / "results" / "artifacts" / "val_manifest.csv"
@@ -150,25 +151,29 @@ def train(train_path, val_path, modality, modality_type, r_name, save_path):
         sanity_check(val_ling_emb, val_labels, val_uids, val_manifest_path, "val", "linguistic")
 
     print("setup complete, starting training")
-    print(CONFIG['EXP_NAME'].upper())
+    print(r_name.upper())
     
     best_val_ba = 0.0
     best_val_mf1 = 0.0
 
     class_labels = ['anger', 'disgust', 'fear', 'joy', 'neutral', 'sadness', 'surprise']
+    early_stopping = EarlyStopping(patience, min_delta)
 
     with mlflow.start_run(run_name = r_name) as run:
         mlflow.log_params({
             'ACOUSTIC_INPUT_DIM': 768,
             'LINGUISTIC_INPUT_DIM': 768,
-            'HIDDEN_DIM': 128,
+            'HIDDEN_DIM': hidden_dim,
             'OUTPUT_DIM': 7,
-            'LEARNING_RATE': 0.001,
-            'EPOCHS': 30,
-            'BATCH_SIZE': 100,
+            'LEARNING_RATE': lr,
+            'EPOCHS': no_epochs,
+            'BATCH_SIZE': batch_size,
+            'DROPOUT': dropout,
+            'WEIGHT_DECAY': weight_decay,
+            'MODALITY': modality
         })
 
-        for epoch in tqdm(range(CONFIG['EPOCHS']), desc = f"baseline fusion training: "):
+        for epoch in tqdm(range(no_epochs), desc = f"baseline fusion training: "):
             # --- training ---
             all_preds, all_trues = [], []
             train_epoch_loss = 0.0
@@ -282,6 +287,15 @@ def train(train_path, val_path, modality, modality_type, r_name, save_path):
                 
                 plt.close(fig)
 
+                early_stopping(val_mf1, model)
+                if early_stopping.early_stop:
+                    print("early stopping triggered! halting loop")
+                    early_stopping.load_best_model(model)
+                    torch.save(model.state_dict(), save_path)
+                    print(f"model with best balanced macro-f1: {best_val_mf1:.4f}, balanced accuracy: {val_ba:.4f} saved at {save_path}")
+                    mlflow.log_artifact(save_path)
+                    break
+
                 if val_ba > best_val_ba:
                     best_val_ba = val_ba
                 
@@ -291,11 +305,11 @@ def train(train_path, val_path, modality, modality_type, r_name, save_path):
                     torch.save(model.state_dict(), save_path)
                     print(f"model with best balanced macro-f1: {best_val_mf1:.4f}, balanced accuracy: {val_ba:.4f} saved at {save_path}")
                     mlflow.log_artifact(save_path)
-
+                
                 mlflow.log_metric("best_val_ba", best_val_ba, step = epoch)
                 mlflow.log_metric("best_val_mf1", best_val_mf1, step = epoch)
 
 if __name__ == '__main__':
-    save_path = ROOT / "results" / "models" / "base_fusion_trans.pt"
-
-    train(CONFIG['FUSION_TRANS_TRAIN_PATH'], CONFIG['FUSION_TRANS_VAL_PATH'], "fusion with whisper", "MULTIMODAL", "baseline fusion transcripts training", save_path)
+    save_path = CONFIG['SAVE_PATH_BASE'] / 'tuned' / 'fusion_ref_lr_0005.pt'
+    
+    train(CONFIG['FUSION_REF_TRAIN_PATH'], CONFIG['FUSION_REF_VAL_PATH'], 'fusion reference', 'MULTIMODAL', "testing lr = 0.005 on fusion reference", save_path, lr = 0.005, batch_size = 100, no_epochs = 30, hidden_dim = 128, dropout = 0.0, weight_decay = 0.0, patience = 30.0, min_delta = 0.0)

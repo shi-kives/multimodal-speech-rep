@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 class MultiLayerPerceptron(nn.Module):
-    def __init__(self, input_dim = 768, hidden_dim = 128, output_dim = 7):
+    def __init__(self, input_dim = 768, hidden_dim = 128, output_dim = 7, dropout = 0.0):
         super(MultiLayerPerceptron, self).__init__()
 
         self.network = nn.Sequential(
@@ -11,6 +11,7 @@ class MultiLayerPerceptron(nn.Module):
 
             nn.Linear(hidden_dim, hidden_dim),
             nn.ReLU(),
+            nn.Dropout(p = dropout),
 
             nn.Linear(hidden_dim, output_dim)
         )

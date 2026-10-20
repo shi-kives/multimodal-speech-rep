@@ -1,8 +1,0 @@
-{
-    "CONFIG_NAME": "baseline_fusion",
-    "ARCHITECTURE": "direct_fusion",
-    "HIDDEN_DIM": 128,
-    "DROPOUT": 0.0,
-    "LEARNING_RATE": 0.001,
-    "SEED": 42 
-}

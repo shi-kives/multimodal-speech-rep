@@ -14,6 +14,7 @@ from src.training.sanity_check import sanity_check
 from src.models.fusion import DirectFusedMLP, ProjectionFusedMLP
 from src.models.early_stopping import EarlyStopping
 from src.models.weighting import class_weighting, weight_sampling
+from src.models.data_scarcity import generate_sampler
 import random
 import numpy as np
 
@@ -21,7 +22,7 @@ current_dir = Path(__file__).resolve().parents
 ROOT = current_dir[2]
 
 mlflow.set_tracking_uri("http://127.0.0.1:8080")
-mlflow.set_experiment("/testing-fusion-types")
+mlflow.set_experiment("/testing-data-scarcity")
 
 CONFIG = {
 
@@ -67,7 +68,7 @@ set_seed(SEED)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-def setup(path, mode, modality, modality_type, fusion_class, dropout, hidden_dim, batch_size, enable_weighted_sampling):
+def setup(path, mode, modality, modality_type, fusion_class, dropout, hidden_dim, batch_size, enable_weighted_sampling, percentage):
     model = None
     if modality_type.upper() == 'UNIMODAL':
         inputs = torch.load(path, map_location='cpu')
@@ -85,6 +86,9 @@ def setup(path, mode, modality, modality_type, fusion_class, dropout, hidden_dim
             if enable_weighted_sampling:
                 sampler = weight_sampling(labels)
                 loader = DataLoader(dataset, batch_size = batch_size, shuffle = False, generator=generator, sampler=sampler)
+            elif percentage != 1.0:
+                sampler = generate_sampler(dataset, percentage)
+                loader = DataLoader(dataset, batch_size = batch_size, generator = generator, sampler = sampler)
             else:
                 loader = DataLoader(dataset, batch_size = batch_size, shuffle = True, generator=generator)
 
@@ -116,6 +120,9 @@ def setup(path, mode, modality, modality_type, fusion_class, dropout, hidden_dim
             if enable_weighted_sampling:
                 sampler = weight_sampling(labels)
                 loader = DataLoader(dataset, batch_size = batch_size, shuffle = False, generator=generator, sampler=sampler)
+            elif percentage != 1.0:
+                sampler = generate_sampler(dataset, percentage)
+                loader = DataLoader(dataset, batch_size = batch_size, generator = generator, sampler = sampler)
             else:
                 loader = DataLoader(dataset, batch_size = batch_size, shuffle = True, generator=generator)
         elif mode.lower() == 'val':
@@ -126,25 +133,25 @@ def setup(path, mode, modality, modality_type, fusion_class, dropout, hidden_dim
                 model = DirectFusedMLP(acoustic_input_dim = CONFIG["ACOUSTIC_INPUT_DIM"], linguistic_input_dim = CONFIG["LINGUISTIC_INPUT_DIM"], hidden_dim = hidden_dim, output_dim = CONFIG["OUTPUT_DIM"], dropout = dropout)
                 print("completed MLP...")
             elif fusion_class.upper() == 'PROJECTION':
-                model = ProjectionFusedMLP(acoustic_input_dim = CONFIG['ACOUSTIC_INPUT_DIM'], linguistic_input_dim = CONFIG['LINGUISTIC_INPUT_DIM'], projection_dim = 256, hidden_dim = 128, output_dim = 7, dropout = dropout)
+                model = ProjectionFusedMLP(acoustic_input_dim = CONFIG['ACOUSTIC_INPUT_DIM'], linguistic_input_dim = CONFIG['LINGUISTIC_INPUT_DIM'], projection_dim = 128, hidden_dim = 128, output_dim = 7, dropout = dropout)
 
         return acoustic_embeddings, linguistic_embeddings, labels, uids, loader, model
 
-def train(train_path, val_path, modality, modality_type, fusion_class, r_name, save_path, lr, batch_size, no_epochs, hidden_dim, dropout, weight_decay, patience, min_delta, enable_class_weighting, enable_weight_sampling, label_smoothing):
+def train(train_path, val_path, modality, modality_type, fusion_class, r_name, save_path, lr, batch_size, no_epochs, hidden_dim, dropout, weight_decay, patience, min_delta, enable_class_weighting, enable_weight_sampling, label_smoothing, percentage):
     
     if modality_type.upper() == 'UNIMODAL':
-        train_embeddings, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type, fusion_class = None, dropout = dropout, hidden_dim = hidden_dim, batch_size = batch_size, enable_weighted_sampling=enable_weight_sampling)
+        train_embeddings, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type, fusion_class = None, dropout = dropout, hidden_dim = hidden_dim, batch_size = batch_size, enable_weighted_sampling=enable_weight_sampling, percentage = percentage)
 
         model = model.to(device)
 
-        val_embeddings, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type, fusion_class = None, dropout = None, hidden_dim = None, batch_size = batch_size, enable_weighted_sampling=None)
+        val_embeddings, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type, fusion_class = None, dropout = None, hidden_dim = None, batch_size = batch_size, enable_weighted_sampling=None, percentage = None)
 
     elif modality_type.upper() == 'MULTIMODAL':
-        train_aco_emb, train_ling_emb, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type, fusion_class = fusion_class, dropout = dropout, hidden_dim = hidden_dim, batch_size = batch_size, enable_weighted_sampling=enable_weight_sampling)
+        train_aco_emb, train_ling_emb, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type, fusion_class = fusion_class, dropout = dropout, hidden_dim = hidden_dim, batch_size = batch_size, enable_weighted_sampling=enable_weight_sampling, percentage = percentage)
 
         model = model.to(device)
 
-        val_aco_emb, val_ling_emb, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type, fusion_class = None, dropout = None, hidden_dim = None, batch_size = batch_size, enable_weighted_sampling=None)
+        val_aco_emb, val_ling_emb, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type, fusion_class = None, dropout = None, hidden_dim = None, batch_size = batch_size, enable_weighted_sampling=None, percentage = None)
 
     class_weights = None
     if enable_class_weighting:
@@ -329,6 +336,6 @@ def train(train_path, val_path, modality, modality_type, fusion_class, r_name, s
                 mlflow.log_metric("best_val_mf1", best_val_mf1, step = epoch)
 
 if __name__ == '__main__':
-    save_path = CONFIG['SAVE_PATH_BASE'] / 'fusion' / 'fusion_ref_projection_256.pt'
+    save_path = CONFIG['SAVE_PATH_BASE'] / 'data' / 'fusion_ref_25.pt'
     
-    train(CONFIG['FUSION_REF_TRAIN_PATH'], CONFIG['FUSION_REF_VAL_PATH'], 'fusion reference', 'MULTIMODAL', 'PROJECTION' , "testing projected fusion on fusion reference with 256 proj dim", save_path, lr = 0.001, batch_size = 100, no_epochs = 30, hidden_dim = 128, dropout = 0.0, weight_decay = 0.0, patience = 30.0, min_delta = 0.0, enable_class_weighting = False, enable_weight_sampling = False, label_smoothing = 0.0)
+    train(CONFIG['FUSION_REF_TRAIN_PATH'], CONFIG['FUSION_REF_VAL_PATH'], 'fusion reference', 'MULTIMODAL', 'DIRECT' , "testing projected fusion with 25% train data", save_path, lr = 0.001, batch_size = 100, no_epochs = 30, hidden_dim = 128, dropout = 0.0, weight_decay = 0.0, patience = 30.0, min_delta = 0.0, enable_class_weighting = False, enable_weight_sampling = False, label_smoothing = 0.0, percentage = 0.25)

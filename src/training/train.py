@@ -1,7 +1,7 @@
 import torch
 import torch.optim as optim
 import torch.nn as nn
-from torch.utils.data import DataLoader, WeightedRandomSampler
+from torch.utils.data import DataLoader
 from src.models.mlp import MultiLayerPerceptron
 from src.models.dataloader import SpeechEmbeddingsDataset, FusedDataset
 from pathlib import Path
@@ -11,8 +11,9 @@ import pandas as pd
 from sklearn.metrics import balanced_accuracy_score, confusion_matrix, f1_score, recall_score, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 from src.training.sanity_check import sanity_check
-from src.models.fusion import DirectFusedMLP
+from src.models.fusion import DirectFusedMLP, ProjectionFusedMLP
 from src.models.early_stopping import EarlyStopping
+from src.models.weighting import class_weighting, weight_sampling
 import random
 import numpy as np
 
@@ -20,7 +21,7 @@ current_dir = Path(__file__).resolve().parents
 ROOT = current_dir[2]
 
 mlflow.set_tracking_uri("http://127.0.0.1:8080")
-mlflow.set_experiment("/tuning-experiments")
+mlflow.set_experiment("/testing-fusion-types")
 
 CONFIG = {
 
@@ -63,25 +64,10 @@ def set_seed(seed = 42):
 SEED = 42
 set_seed(SEED)
 
-class_distb = torch.tensor([471, 140, 106, 670, 1816, 261, 497])
-def class_weighting():
-    no_classes = len(class_distb)
-    total_samples = class_distb.sum()
-
-    class_weights = total_samples / (no_classes * class_distb)
-    return class_weights
-
-def weight_sampling(class_labels):
-    class_weights = 1.0 / class_distb
-    sample_weights = class_weights[class_labels]
-
-    sampler = WeightedRandomSampler(sample_weights, len(sample_weights), replacement=True)
-
-    return sampler
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-def setup(path, mode, modality, modality_type, dropout, hidden_dim, batch_size, enable_weighted_sampling):
+def setup(path, mode, modality, modality_type, fusion_class, dropout, hidden_dim, batch_size, enable_weighted_sampling):
     model = None
     if modality_type.upper() == 'UNIMODAL':
         inputs = torch.load(path, map_location='cpu')
@@ -136,26 +122,29 @@ def setup(path, mode, modality, modality_type, dropout, hidden_dim, batch_size, 
             loader = DataLoader(dataset, batch_size = batch_size, shuffle = False, generator=generator)
 
         if mode.lower() == 'train':
-            model = DirectFusedMLP(acoustic_input_dim = CONFIG["ACOUSTIC_INPUT_DIM"], linguistic_input_dim = CONFIG["LINGUISTIC_INPUT_DIM"], hidden_dim = hidden_dim, output_dim = CONFIG["OUTPUT_DIM"], dropout = dropout)
-            print("completed MLP...")
+            if fusion_class.upper() == 'DIRECT':
+                model = DirectFusedMLP(acoustic_input_dim = CONFIG["ACOUSTIC_INPUT_DIM"], linguistic_input_dim = CONFIG["LINGUISTIC_INPUT_DIM"], hidden_dim = hidden_dim, output_dim = CONFIG["OUTPUT_DIM"], dropout = dropout)
+                print("completed MLP...")
+            elif fusion_class.upper() == 'PROJECTION':
+                model = ProjectionFusedMLP(acoustic_input_dim = CONFIG['ACOUSTIC_INPUT_DIM'], linguistic_input_dim = CONFIG['LINGUISTIC_INPUT_DIM'], projection_dim = 256, hidden_dim = 128, output_dim = 7, dropout = dropout)
 
         return acoustic_embeddings, linguistic_embeddings, labels, uids, loader, model
 
-def train(train_path, val_path, modality, modality_type, r_name, save_path, lr, batch_size, no_epochs, hidden_dim, dropout, weight_decay, patience, min_delta, enable_class_weighting, enable_weight_sampling, label_smoothing):
+def train(train_path, val_path, modality, modality_type, fusion_class, r_name, save_path, lr, batch_size, no_epochs, hidden_dim, dropout, weight_decay, patience, min_delta, enable_class_weighting, enable_weight_sampling, label_smoothing):
     
     if modality_type.upper() == 'UNIMODAL':
-        train_embeddings, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type, dropout = dropout, hidden_dim = hidden_dim, batch_size = batch_size, enable_weighted_sampling=enable_weight_sampling)
+        train_embeddings, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type, fusion_class = None, dropout = dropout, hidden_dim = hidden_dim, batch_size = batch_size, enable_weighted_sampling=enable_weight_sampling)
 
         model = model.to(device)
 
-        val_embeddings, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type, dropout = None, hidden_dim = None, batch_size = batch_size, enable_weighted_sampling=None)
+        val_embeddings, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type, fusion_class = None, dropout = None, hidden_dim = None, batch_size = batch_size, enable_weighted_sampling=None)
 
     elif modality_type.upper() == 'MULTIMODAL':
-        train_aco_emb, train_ling_emb, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type, dropout = dropout, hidden_dim = hidden_dim, batch_size = batch_size, enable_weighted_sampling=enable_weight_sampling)
+        train_aco_emb, train_ling_emb, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type, fusion_class = fusion_class, dropout = dropout, hidden_dim = hidden_dim, batch_size = batch_size, enable_weighted_sampling=enable_weight_sampling)
 
         model = model.to(device)
 
-        val_aco_emb, val_ling_emb, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type, dropout = None, hidden_dim = None, batch_size = batch_size, enable_weighted_sampling=None)
+        val_aco_emb, val_ling_emb, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type, fusion_class = None, dropout = None, hidden_dim = None, batch_size = batch_size, enable_weighted_sampling=None)
 
     class_weights = None
     if enable_class_weighting:
@@ -340,6 +329,6 @@ def train(train_path, val_path, modality, modality_type, r_name, save_path, lr, 
                 mlflow.log_metric("best_val_mf1", best_val_mf1, step = epoch)
 
 if __name__ == '__main__':
-    save_path = CONFIG['SAVE_PATH_BASE'] / 'tuned' / 'fusion_ref_label_smoothing_03.pt'
+    save_path = CONFIG['SAVE_PATH_BASE'] / 'fusion' / 'fusion_ref_projection_256.pt'
     
-    train(CONFIG['FUSION_REF_TRAIN_PATH'], CONFIG['FUSION_REF_VAL_PATH'], 'fusion reference', 'MULTIMODAL', "RERUN testing label smoothing 0.3 on fusion reference", save_path, lr = 0.001, batch_size = 100, no_epochs = 30, hidden_dim = 128, dropout = 0.0, weight_decay = 0.0, patience = 30.0, min_delta = 0.0, enable_class_weighting = False, enable_weight_sampling = False, label_smoothing = 0.3)
+    train(CONFIG['FUSION_REF_TRAIN_PATH'], CONFIG['FUSION_REF_VAL_PATH'], 'fusion reference', 'MULTIMODAL', 'PROJECTION' , "testing projected fusion on fusion reference with 256 proj dim", save_path, lr = 0.001, batch_size = 100, no_epochs = 30, hidden_dim = 128, dropout = 0.0, weight_decay = 0.0, patience = 30.0, min_delta = 0.0, enable_class_weighting = False, enable_weight_sampling = False, label_smoothing = 0.0)

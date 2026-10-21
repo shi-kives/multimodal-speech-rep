@@ -1,7 +1,7 @@
 import torch
 import torch.optim as optim
 import torch.nn as nn
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, WeightedRandomSampler
 from src.models.mlp import MultiLayerPerceptron
 from src.models.dataloader import SpeechEmbeddingsDataset, FusedDataset
 from pathlib import Path
@@ -63,9 +63,25 @@ def set_seed(seed = 42):
 SEED = 42
 set_seed(SEED)
 
+class_distb = torch.tensor([471, 140, 106, 670, 1816, 261, 497])
+def class_weighting():
+    no_classes = len(class_distb)
+    total_samples = class_distb.sum()
+
+    class_weights = total_samples / (no_classes * class_distb)
+    return class_weights
+
+def weight_sampling(class_labels):
+    class_weights = 1.0 / class_distb
+    sample_weights = class_weights[class_labels]
+
+    sampler = WeightedRandomSampler(sample_weights, len(sample_weights), replacement=True)
+
+    return sampler
+
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-def setup(path, mode, modality, modality_type, dropout, hidden_dim, batch_size):
+def setup(path, mode, modality, modality_type, dropout, hidden_dim, batch_size, enable_weighted_sampling):
     model = None
     if modality_type.upper() == 'UNIMODAL':
         inputs = torch.load(path, map_location='cpu')
@@ -80,7 +96,12 @@ def setup(path, mode, modality, modality_type, dropout, hidden_dim, batch_size):
         generator.manual_seed(SEED)
 
         if mode.lower() == 'train':
-            loader = DataLoader(dataset, batch_size = batch_size, shuffle = True, generator=generator)
+            if enable_weighted_sampling:
+                sampler = weight_sampling(labels)
+                loader = DataLoader(dataset, batch_size = batch_size, shuffle = False, generator=generator, sampler=sampler)
+            else:
+                loader = DataLoader(dataset, batch_size = batch_size, shuffle = True, generator=generator)
+
         elif mode.lower() == 'val':
             loader = DataLoader(dataset, batch_size = batch_size, shuffle = False, generator=generator)
 
@@ -106,7 +127,11 @@ def setup(path, mode, modality, modality_type, dropout, hidden_dim, batch_size):
         generator.manual_seed(SEED)
         
         if mode.lower() == 'train':
-            loader = DataLoader(dataset, batch_size = batch_size, shuffle = True, generator=generator)
+            if enable_weighted_sampling:
+                sampler = weight_sampling(labels)
+                loader = DataLoader(dataset, batch_size = batch_size, shuffle = False, generator=generator, sampler=sampler)
+            else:
+                loader = DataLoader(dataset, batch_size = batch_size, shuffle = True, generator=generator)
         elif mode.lower() == 'val':
             loader = DataLoader(dataset, batch_size = batch_size, shuffle = False, generator=generator)
 
@@ -116,23 +141,28 @@ def setup(path, mode, modality, modality_type, dropout, hidden_dim, batch_size):
 
         return acoustic_embeddings, linguistic_embeddings, labels, uids, loader, model
 
-def train(train_path, val_path, modality, modality_type, r_name, save_path, lr, batch_size, no_epochs, hidden_dim, dropout, weight_decay, patience, min_delta):
+def train(train_path, val_path, modality, modality_type, r_name, save_path, lr, batch_size, no_epochs, hidden_dim, dropout, weight_decay, patience, min_delta, enable_class_weighting, enable_weight_sampling, label_smoothing):
     
     if modality_type.upper() == 'UNIMODAL':
-        train_embeddings, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type, dropout = dropout, hidden_dim = hidden_dim, batch_size = batch_size)
+        train_embeddings, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type, dropout = dropout, hidden_dim = hidden_dim, batch_size = batch_size, enable_weighted_sampling=enable_weight_sampling)
 
         model = model.to(device)
 
-        val_embeddings, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type, dropout = None, hidden_dim = None, batch_size = batch_size)
+        val_embeddings, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type, dropout = None, hidden_dim = None, batch_size = batch_size, enable_weighted_sampling=None)
 
     elif modality_type.upper() == 'MULTIMODAL':
-        train_aco_emb, train_ling_emb, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type, dropout = dropout, hidden_dim = hidden_dim, batch_size = batch_size)
+        train_aco_emb, train_ling_emb, train_labels, train_uids, train_loader, model = setup(train_path, mode = 'train', modality = modality, modality_type = modality_type, dropout = dropout, hidden_dim = hidden_dim, batch_size = batch_size, enable_weighted_sampling=enable_weight_sampling)
 
         model = model.to(device)
 
-        val_aco_emb, val_ling_emb, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type, dropout = None, hidden_dim = None, batch_size = batch_size)
+        val_aco_emb, val_ling_emb, val_labels, val_uids, val_loader, _ = setup(val_path, mode = 'val', modality = modality, modality_type = modality_type, dropout = None, hidden_dim = None, batch_size = batch_size, enable_weighted_sampling=None)
+
+    class_weights = None
+    if enable_class_weighting:
+        class_weights = class_weighting()
+        class_weights.to(device) 
     
-    criterion = nn.CrossEntropyLoss()
+    criterion = nn.CrossEntropyLoss(weight=class_weights, label_smoothing=label_smoothing)
     optimizer = optim.Adam(model.parameters(), lr = lr, weight_decay = weight_decay)
 
     train_manifest_path = ROOT / "results" / "artifacts" / "train_manifest.csv"
@@ -310,6 +340,6 @@ def train(train_path, val_path, modality, modality_type, r_name, save_path, lr, 
                 mlflow.log_metric("best_val_mf1", best_val_mf1, step = epoch)
 
 if __name__ == '__main__':
-    save_path = CONFIG['SAVE_PATH_BASE'] / 'tuned' / 'fusion_ref_early_07_del_0003.pt'
+    save_path = CONFIG['SAVE_PATH_BASE'] / 'tuned' / 'fusion_ref_label_smoothing_03.pt'
     
-    train(CONFIG['FUSION_REF_TRAIN_PATH'], CONFIG['FUSION_REF_VAL_PATH'], 'fusion reference', 'MULTIMODAL', "testing ES w patience = 7 and min delta = 0.003 on fusion reference", save_path, lr = 0.001, batch_size = 100, no_epochs = 30, hidden_dim = 128, dropout = 0.0, weight_decay = 0.0, patience = 7.0, min_delta = 0.003)
+    train(CONFIG['FUSION_REF_TRAIN_PATH'], CONFIG['FUSION_REF_VAL_PATH'], 'fusion reference', 'MULTIMODAL', "RERUN testing label smoothing 0.3 on fusion reference", save_path, lr = 0.001, batch_size = 100, no_epochs = 30, hidden_dim = 128, dropout = 0.0, weight_decay = 0.0, patience = 30.0, min_delta = 0.0, enable_class_weighting = False, enable_weight_sampling = False, label_smoothing = 0.3)

@@ -13,7 +13,7 @@ class EarlyStopping:
     def __call__(self, mf1, model):
         if self.best_model_wts is None:
             self.best_mf1 = mf1
-            self.model = copy.deepcopy(model.state_dict())
+            self.best_model_wts = copy.deepcopy(model.state_dict())
 
         elif mf1 < self.best_mf1 - self.min_delta:
             self.counter += 1 

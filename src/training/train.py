@@ -221,7 +221,7 @@ def train(train_path, val_path, modality, modality_type, r_name, save_path, lr, 
             avg_loss = train_epoch_loss / len(train_loader)
             accuracy = balanced_accuracy_score(all_trues, all_preds)
             macrof1 = f1_score(all_trues, all_preds, average='macro')
-            print(f"\n{epoch + 1}/{CONFIG['EPOCHS']} - TRAINING - loss: {avg_loss:.4f}, balanced accuracy: {accuracy:.4f}, macro f1: {macrof1:.4f}\n")
+            print(f"\n{epoch + 1}/{no_epochs} - TRAINING - loss: {avg_loss:.4f}, balanced accuracy: {accuracy:.4f}, macro f1: {macrof1:.4f}\n")
 
             mlflow.log_metric("avg_loss", avg_loss, step = epoch)
             mlflow.log_metric("bal_accuracy", accuracy, step = epoch)
@@ -277,7 +277,7 @@ def train(train_path, val_path, modality, modality_type, r_name, save_path, lr, 
                 fig, ax = plt.subplots(figsize=(5, 5))
                 cm_png.plot(ax=ax)
 
-                print(f"\nepoch {epoch + 1}/{CONFIG['EPOCHS']} - VALIDATION - average loss: {avg_val_loss:.4f}, balanced accuracy {val_ba:.4f}, macro f1-score {val_mf1:.4f}, per-class recall: {val_recall}, confusion matrix: \n{disp_cm}\n")
+                print(f"\nepoch {epoch + 1}/{no_epochs} - VALIDATION - average loss: {avg_val_loss:.4f}, balanced accuracy {val_ba:.4f}, macro f1-score {val_mf1:.4f}, per-class recall: {val_recall}, confusion matrix: \n{disp_cm}\n")
 
                 mlflow.log_metric("avg_val_loss", avg_val_loss, step = epoch)
                 mlflow.log_metric("val_bal_acc", val_ba, step = epoch)
@@ -310,6 +310,6 @@ def train(train_path, val_path, modality, modality_type, r_name, save_path, lr, 
                 mlflow.log_metric("best_val_mf1", best_val_mf1, step = epoch)
 
 if __name__ == '__main__':
-    save_path = CONFIG['SAVE_PATH_BASE'] / 'tuned' / 'fusion_ref_lr_0005.pt'
+    save_path = CONFIG['SAVE_PATH_BASE'] / 'tuned' / 'fusion_ref_early_07_del_0003.pt'
     
-    train(CONFIG['FUSION_REF_TRAIN_PATH'], CONFIG['FUSION_REF_VAL_PATH'], 'fusion reference', 'MULTIMODAL', "testing lr = 0.005 on fusion reference", save_path, lr = 0.005, batch_size = 100, no_epochs = 30, hidden_dim = 128, dropout = 0.0, weight_decay = 0.0, patience = 30.0, min_delta = 0.0)
+    train(CONFIG['FUSION_REF_TRAIN_PATH'], CONFIG['FUSION_REF_VAL_PATH'], 'fusion reference', 'MULTIMODAL', "testing ES w patience = 7 and min delta = 0.003 on fusion reference", save_path, lr = 0.001, batch_size = 100, no_epochs = 30, hidden_dim = 128, dropout = 0.0, weight_decay = 0.0, patience = 7.0, min_delta = 0.003)

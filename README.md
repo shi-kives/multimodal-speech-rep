@@ -12,7 +12,7 @@ The Acoustic-Linguistic Emotion Classification model is a multimodal, fused syst
 `PyTorch`, `HuggingFace Transformers (WavLM, DistilBERT)`, `Whisper`, `collections`, `mlflow`, `pandas`, `matplotlib`, `Jupyter`
 
 ## Architecture Diagram
-![Architecture Diagram](architecture_diagram.jpeg)
+![Architecture Diagram](architecture_diagram.png)
 
 ## How to Run
 1. Install Required Libraries: 

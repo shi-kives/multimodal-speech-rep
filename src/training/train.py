@@ -22,7 +22,7 @@ current_dir = Path(__file__).resolve().parents
 ROOT = current_dir[2]
 
 mlflow.set_tracking_uri("http://127.0.0.1:8080")
-mlflow.set_experiment("/testing-data-scarcity")
+mlflow.set_experiment("/ablations-train")
 
 CONFIG = {
 
@@ -67,6 +67,7 @@ set_seed(SEED)
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+class_distb = torch.tensor([471, 140, 106, 670, 1816, 261, 497])
 
 def setup(path, mode, modality, modality_type, fusion_class, dropout, hidden_dim, batch_size, enable_weighted_sampling, percentage):
     model = None
@@ -84,7 +85,7 @@ def setup(path, mode, modality, modality_type, fusion_class, dropout, hidden_dim
 
         if mode.lower() == 'train':
             if enable_weighted_sampling:
-                sampler = weight_sampling(labels)
+                sampler = weight_sampling(class_distb, labels)
                 loader = DataLoader(dataset, batch_size = batch_size, shuffle = False, generator=generator, sampler=sampler)
             elif percentage != 1.0:
                 sampler = generate_sampler(dataset, percentage)
@@ -155,7 +156,7 @@ def train(train_path, val_path, modality, modality_type, fusion_class, r_name, s
 
     class_weights = None
     if enable_class_weighting:
-        class_weights = class_weighting()
+        class_weights = class_weighting(class_distb)
         class_weights.to(device) 
     
     criterion = nn.CrossEntropyLoss(weight=class_weights, label_smoothing=label_smoothing)
@@ -336,6 +337,6 @@ def train(train_path, val_path, modality, modality_type, fusion_class, r_name, s
                 mlflow.log_metric("best_val_mf1", best_val_mf1, step = epoch)
 
 if __name__ == '__main__':
-    save_path = CONFIG['SAVE_PATH_BASE'] / 'data' / 'fusion_ref_25.pt'
+    save_path = CONFIG['SAVE_PATH_BASE'] / 'tuned' / 'hidden' / 'dir_fusion_ref_hidden_64.pt'
     
-    train(CONFIG['FUSION_REF_TRAIN_PATH'], CONFIG['FUSION_REF_VAL_PATH'], 'fusion reference', 'MULTIMODAL', 'DIRECT' , "testing projected fusion with 25% train data", save_path, lr = 0.001, batch_size = 100, no_epochs = 30, hidden_dim = 128, dropout = 0.0, weight_decay = 0.0, patience = 30.0, min_delta = 0.0, enable_class_weighting = False, enable_weight_sampling = False, label_smoothing = 0.0, percentage = 0.25)
+    train(CONFIG['FUSION_REF_TRAIN_PATH'], CONFIG['FUSION_REF_VAL_PATH'], 'fusion reference', 'MULTIMODAL', 'DIRECT' , "re-training direct fusion with hdim 64", save_path, lr = 0.001, batch_size = 100, no_epochs = 30, hidden_dim = 64, dropout = 0.0, weight_decay = 0.0, patience = 30.0, min_delta = 0.0, enable_class_weighting = False, enable_weight_sampling = False, label_smoothing = 0.0, percentage = 1.0)

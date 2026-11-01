@@ -4,12 +4,17 @@ import mlflow
 from sklearn.metrics import f1_score, balanced_accuracy_score, confusion_matrix, recall_score, precision_score, ConfusionMatrixDisplay
 from src.models.dataloader import SpeechEmbeddingsDataset, FusedDataset
 from src.models.mlp import MultiLayerPerceptron
-from src.models.fusion import DirectFusedMLP
+from src.models.fusion import DirectFusedMLP, ProjectionFusedMLP
 from torch.utils.data import DataLoader
 import torch.nn as nn
 import matplotlib.pyplot as plt
 import pandas as pd
 from src.training.sanity_check import sanity_check
+from src.training.train import set_seed
+from src.models.weighting import class_weighting
+
+SEED = 42
+set_seed(SEED)
 
 current_dir = Path(__file__).resolve().parents
 ROOT = current_dir[2]
@@ -23,10 +28,30 @@ MODEL_PATHS = {
     'baseline_fused_ref': BASE_MODEL_PATH / 'baselines' / 'base_fusion_ref.pt',
     'baseline_fused_trans': BASE_MODEL_PATH / 'baselines' / 'base_fusion_trans.pt',
 
-    'acoustic_lr_001': BASE_MODEL_PATH / 'tuned' / 'acoustic_lr_001.pt',
-    'fusion_ref_lr_001': BASE_MODEL_PATH / 'tuned' / 'fusion_ref_lr_001.pt',
-    'fusion_ref_lr_0003': BASE_MODEL_PATH / 'tuned' / 'fusion_ref_lr_0003.pt', 
-    'fusion_ref_lr_0005': BASE_MODEL_PATH / 'tuned' / 'fusion_ref_lr_0005.pt' 
+    'dir_fusion_ref_lr_0003': BASE_MODEL_PATH / 'tuned' / 'learning_rate' / 'dir_fusion_ref_lr_0003.pt', 
+    'dir_fusion_ref_lr_0005': BASE_MODEL_PATH / 'tuned' / 'learning_rate' / 'dir_fusion_ref_lr_0005.pt',
+
+    'dir_fusion_ref_hidden_64': BASE_MODEL_PATH / 'tuned' / 'hidden' / 'dir_fusion_ref_hidden_64.pt',
+
+    'dir_fusion_ref_decay_e2': BASE_MODEL_PATH / 'tuned' / 'decay' / 'dir_fusion_ref_decay_e2.pt',
+    'dir_fusion_ref_decay_e3': BASE_MODEL_PATH / 'tuned' / 'decay' / 'dir_fusion_ref_decay_e3.pt',
+
+    'dir_fusion_ref_early_05_del_001': BASE_MODEL_PATH / 'tuned' / 'early_stopping' / 'dir_fusion_ref_early_05_del_001.pt',
+    'dir_fusion_ref_early_05_del_0003': BASE_MODEL_PATH / 'tuned' / 'early_stopping' / 'dir_fusion_ref_early_05_del_0003.pt',
+
+    'dir_fusion_ref_dropout_01': BASE_MODEL_PATH / 'tuned' / 'dropout' / 'dir_fusion_ref_dropout_01.pt',
+    'dir_fusion_ref_dropout_03': BASE_MODEL_PATH / 'tuned' / 'dropout' / 'dir_fusion_ref_dropout_03.pt',
+
+    'dir_fusion_ref_class_weights': BASE_MODEL_PATH / 'tuned' / 'weighting' / 'dir_fusion_ref_class_weights.pt',
+
+    'dir_fusion_ref_25': BASE_MODEL_PATH / 'data' / 'dir_fusion_ref_25.pt',
+    'dir_fusion_ref_50': BASE_MODEL_PATH / 'data' / 'dir_fusion_ref_50.pt',
+    'dir_fusion_ref_75': BASE_MODEL_PATH / 'data' / 'dir_fusion_ref_75.pt',
+
+
+    'proj_fusion_ref': BASE_MODEL_PATH / 'fusion' / 'proj_fusion_ref.pt',
+    'proj_fusion_ref_256': BASE_MODEL_PATH / 'fusion' / 'proj_fusion_ref_256.pt'
+
 }
 INPUT_EMBEDDINGS = {
     'wavlm_test': BASE_EMB_PATH / 'acoustic' / 'wavlm_test.pt',
@@ -37,25 +62,36 @@ INPUT_EMBEDDINGS = {
 }
 
 mlflow.set_tracking_uri("http://127.0.0.1:8080")
-mlflow.set_experiment("/tuning-inference")
+mlflow.set_experiment("/ablations")
 
-def run_evaluation(model_path, embeddings, mode, modality, run):
+def run_evaluation(model_path, embeddings, modality, run_name, model_name, hidden_dim, dropout, enable_class_weighting, projection_dim):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     acoustic_embeddings = None # preventing UnboundLocalError
     linguistic_embeddings = None
 
+    model = None
     if modality.upper() == 'UNIMODAL':
-        model = MultiLayerPerceptron()
+        model = MultiLayerPerceptron(input_dim = 768, hidden_dim = hidden_dim, output_dim = 7, dropout = dropout)
     elif modality.upper() == 'MULTIMODAL':
-        model = DirectFusedMLP()
+        if model_name.upper() == 'DIRECT':
+            model = DirectFusedMLP(acoustic_input_dim = 768, linguistic_input_dim = 768, hidden_dim = hidden_dim, output_dim = 7, dropout = dropout)
+        elif model_name.upper() == 'PROJECTION':
+            model = ProjectionFusedMLP(acoustic_input_dim = 768, linguistic_input_dim = 768, projection_dim = projection_dim, hidden_dim = hidden_dim, output_dim = 7, dropout = dropout)
     
     state_dict = torch.load(model_path, map_location = device)
     model.load_state_dict(state_dict)
     model = model.to(device)
-    
+
+    class_weights = None
+    class_distb = torch.tensor([204, 74, 49, 40, 28, 9, 7])
+    if enable_class_weighting:
+        class_weights = class_weighting(class_distb)
+        class_weights = class_weights.to(device)
+
+
     test_inputs = torch.load(embeddings)
-    criterion = nn.CrossEntropyLoss()
+    criterion = nn.CrossEntropyLoss(weight = class_weights)
 
     if modality.upper() == 'UNIMODAL':
         embeddings = torch.stack([i[1] for i in test_inputs])
@@ -77,15 +113,15 @@ def run_evaluation(model_path, embeddings, mode, modality, run):
     uids = pd.Series([i[0] for i in test_inputs], name = "uid")
     manifest_path = ROOT / "results" / "artifacts" / "test_manifest.csv"
 
-    if modality.upper() == 'UNIMODAL':
+    '''if modality.upper() == 'UNIMODAL':
         sanity_check(embeddings, labels, uids, manifest_path, "test", modality)
 
     elif modality.upper() == 'MULTIMODAL':
         sanity_check(acoustic_embeddings, labels, uids, manifest_path, "test", "acoustic")
-        sanity_check(linguistic_embeddings, labels, uids, manifest_path, "test", "linguistic")
+        sanity_check(linguistic_embeddings, labels, uids, manifest_path, "test", "linguistic")'''
  
     model.eval()
-    with mlflow.start_run(run_name = run) as run:
+    with mlflow.start_run(run_name = run_name) as run:
         with torch.no_grad():
             all_preds, all_trues = [], []
             overall_loss = 0.0
@@ -136,7 +172,7 @@ def run_evaluation(model_path, embeddings, mode, modality, run):
             cm_png.plot(ax=ax)
 
 
-            print(f"\n---- inference results for {mode} ----\n")
+            print(f"\n---- inference results for {run_name} ----\n")
             print(f"average loss: {avg_loss:.4f}")
             print(f"balanced accuracy: {balanced_accuracy:.4f}")
             print(f"macro f1 score: {macro_f1:.4f}")

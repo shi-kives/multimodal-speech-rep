@@ -50,7 +50,24 @@ MODEL_PATHS = {
 
 
     'proj_fusion_ref': BASE_MODEL_PATH / 'fusion' / 'proj_fusion_ref.pt',
-    'proj_fusion_ref_256': BASE_MODEL_PATH / 'fusion' / 'proj_fusion_ref_256.pt'
+    'proj_fusion_ref_256': BASE_MODEL_PATH / 'fusion' / 'proj_fusion_ref_256.pt',
+    'proj_fusion_whisper': BASE_MODEL_PATH / 'fusion' / 'proj_fusion_whisper.pt',
+
+    'dir_full_model': BASE_MODEL_PATH / 'ablations' / 'direct' / 'full_model.pt',
+    'dir_no_decay': BASE_MODEL_PATH / 'ablations' / 'direct' / 'no_decay.pt',
+    'dir_no_es': BASE_MODEL_PATH / 'ablations' / 'direct' / 'no_es.pt',
+    'dir_no_weighting': BASE_MODEL_PATH / 'ablations' / 'direct' / 'no_weighting.pt',
+
+    'proj_full_model': BASE_MODEL_PATH / 'ablations' / 'projected' / 'full_model.pt',
+    'proj_no_decay': BASE_MODEL_PATH / 'ablations' / 'projected' / 'no_decay.pt',
+    'proj_no_es': BASE_MODEL_PATH / 'ablations' / 'projected' / 'no_es.pt',
+    'proj_no_weighting': BASE_MODEL_PATH / 'ablations' / 'projected' / 'no_weighting.pt',
+
+    'dir_reference': BASE_MODEL_PATH / 'ablations' / 'reference' / 'direct.pt',
+    'proj_reference': BASE_MODEL_PATH / 'ablations' / 'reference' / 'projected.pt',
+
+    'dir_whisper': BASE_MODEL_PATH / 'ablations' / 'whisper' / 'direct.pt',
+    'proj_whisper': BASE_MODEL_PATH / 'ablations' / 'whisper' / 'projected.pt',
 
 }
 INPUT_EMBEDDINGS = {
@@ -64,7 +81,7 @@ INPUT_EMBEDDINGS = {
 mlflow.set_tracking_uri("http://127.0.0.1:8080")
 mlflow.set_experiment("/ablations")
 
-def run_evaluation(model_path, embeddings, modality, run_name, model_name, hidden_dim, dropout, enable_class_weighting, projection_dim):
+def run_evaluation(model_path, embeddings, modality, run_name, model_name, hidden_dim, dropout, projection_dim):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     acoustic_embeddings = None # preventing UnboundLocalError
@@ -83,15 +100,8 @@ def run_evaluation(model_path, embeddings, modality, run_name, model_name, hidde
     model.load_state_dict(state_dict)
     model = model.to(device)
 
-    class_weights = None
-    class_distb = torch.tensor([204, 74, 49, 40, 28, 9, 7])
-    if enable_class_weighting:
-        class_weights = class_weighting(class_distb)
-        class_weights = class_weights.to(device)
-
-
     test_inputs = torch.load(embeddings)
-    criterion = nn.CrossEntropyLoss(weight = class_weights)
+    criterion = nn.CrossEntropyLoss()
 
     if modality.upper() == 'UNIMODAL':
         embeddings = torch.stack([i[1] for i in test_inputs])

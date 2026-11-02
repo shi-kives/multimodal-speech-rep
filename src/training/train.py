@@ -337,6 +337,6 @@ def train(train_path, val_path, modality, modality_type, fusion_class, r_name, s
                 mlflow.log_metric("best_val_mf1", best_val_mf1, step = epoch)
 
 if __name__ == '__main__':
-    save_path = CONFIG['SAVE_PATH_BASE'] / 'tuned' / 'hidden' / 'dir_fusion_ref_hidden_64.pt'
+    save_path = CONFIG['SAVE_PATH_BASE'] / 'fusion' / 'proj_fusion_whisper.pt'
     
-    train(CONFIG['FUSION_REF_TRAIN_PATH'], CONFIG['FUSION_REF_VAL_PATH'], 'fusion reference', 'MULTIMODAL', 'DIRECT' , "re-training direct fusion with hdim 64", save_path, lr = 0.001, batch_size = 100, no_epochs = 30, hidden_dim = 64, dropout = 0.0, weight_decay = 0.0, patience = 30.0, min_delta = 0.0, enable_class_weighting = False, enable_weight_sampling = False, label_smoothing = 0.0, percentage = 1.0)
+    train(CONFIG['FUSION_TRANS_TRAIN_PATH'], CONFIG['FUSION_TRANS_VAL_PATH'], 'fusion whisper', 'MULTIMODAL', 'PROJECTION' , "training projection model on whisper", save_path, lr = 0.001, batch_size = 100, no_epochs = 30, hidden_dim = 128, dropout = 0.0, weight_decay = 0.0, patience = 30.0, min_delta = 0.01, enable_class_weighting = False, enable_weight_sampling = False, label_smoothing = 0.0, percentage = 1.0)
